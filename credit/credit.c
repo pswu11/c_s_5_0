@@ -6,4 +6,12 @@ int main(void)
 
 }
 
-bool validate()
+bool validate(string card_num)
+{
+
+}
+
+string process(string card_num)
+{
+    
+}
