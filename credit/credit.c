@@ -3,14 +3,11 @@
 #include <ctype.h>
 #include <string.h>
 
+string get_card(void);
 int main(void)
 {
-    
-}
-
-string validate(string card_num)
-{
-
+    string processed_card_num = process(get_card());
+    printf(processed_card_num);
 }
 
 string process(string card_num)
@@ -19,4 +16,10 @@ string process(string card_num)
     {
         printf(cardnum[i]);
     }
+}
+
+string get_card(void)
+{
+    string card_num = get_string("Input your card number: ");
+    return card_num;
 }
