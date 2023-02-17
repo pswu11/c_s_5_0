@@ -11,16 +11,15 @@ int main(void)
     printf("%s", processed_card_num);
 }
 
-string process(string card_num)
+void process(string card_num)
 {
-    string processed = "";
     char *str = card_num;
-    for (int i = 0; i < strlen(card_num); i++)
+    size_t length = strlen(str);
+
+    for (size_t i = 0; i < length; i++)
     {
-        strcat(processed, str[i]);
-        printf("%c", processed);
+        printf("%c", str[i]);
     }
-    return processed;
 }
 
 string get_card(void)
