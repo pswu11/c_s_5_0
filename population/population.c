@@ -39,12 +39,16 @@ int get_end_size(int s)
     return end_size;
 }
 
-int yearly_change(int size)
+int yearly_change(int start)
 {
-    return size / 3 - size / 4
+    return start / 3 - start / 4;
 }
 
-int years_required(float year)
+float years_required(int start, int end)
 {
-    
+    int year_end = start;
+    do
+    {
+        yearly_change
+    }
 }
