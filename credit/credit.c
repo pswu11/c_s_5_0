@@ -4,17 +4,18 @@
 #include <string.h>
 
 string get_card(void);
+string process(string card_num);
 int main(void)
 {
     string processed_card_num = process(get_card());
-    printf(processed_card_num);
+    printf("%s", processed_card_num);
 }
 
 string process(string card_num)
 {
     for (int i = 0; i < strlen(card_num); i++)
     {
-        printf(cardnum[i]);
+        printf(card_num[i]);
     }
 }
 
