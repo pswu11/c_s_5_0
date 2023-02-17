@@ -21,7 +21,7 @@ void print_pyramid(int height)
         {
             printf("#");
         }
-        print("  ");
+        printf("  ");
         for (int l = 0; l <= i; l++)
         {
             printf("#");
