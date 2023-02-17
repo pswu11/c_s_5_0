@@ -16,7 +16,7 @@ void print_pyramid(int height)
     for (int i = 0; i < height; i++)
     {
         // left half of pyramid
-        for (int j = 0; j < height; j++)
+        for (int j = 0; j < i; j++)
         {
             printf(" ");
         }
@@ -25,15 +25,15 @@ void print_pyramid(int height)
             printf("#");
         }
         printf("  ");
-        // right half of pyramid
+/*         // right half of pyramid
         for (int l = 0; l <= i; l++)
         {
             printf("#");
         }
-        for (int m = 0; m < height; m++)
+        for (int m = 0; m < height - i; m++)
         {
             printf(" ");
-        }
+        } */
         printf("\n");
     }
 }
