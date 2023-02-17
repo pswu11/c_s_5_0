@@ -2,17 +2,19 @@
 #include <stdio.h>
 
 int get_start_size(void);
-int get_end_size(void);
-int yearly_change(int size);
+int get_end_size(int s);
+float cal_years_required(int start, int end);
+
 int main(void)
 {
     // TODO: Prompt for start size
-    start = get_start_size()
+    start = get_start_size();
     // TODO: Prompt for end size
-    end = get_end_size(s)
+    end = get_end_size(s);
     // TODO: Calculate number of years until we reach threshold
-    yearly_change
+    years = cal_years_required(start, end);
     // TODO: Print number of years
+    printf("Years: %f\n", years);
 }
 
 int get_start_size(void)
@@ -39,16 +41,14 @@ int get_end_size(int s)
     return end_size;
 }
 
-int yearly_change(int start)
-{
-    return start / 3 - start / 4;
-}
-
-float years_required(int start, int end)
+float cal_years_required(int start, int end)
 {
     int year_end = start;
+    year_count = 0;
     do
     {
-        yearly_change
+        year_end += year_end / 3 - year_end / 4;
+        year_count++;
     }
+    while (year_end < end);
 }
