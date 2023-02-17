@@ -7,8 +7,7 @@ string get_card(void);
 string process(string card_num);
 int main(void)
 {
-    string processed_card_num = process(get_card());
-    printf("%s", processed_card_num);
+    process("233459-8723");
 }
 
 void process(string card_num)
