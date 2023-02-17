@@ -3,7 +3,7 @@
 
 int get_start_size(void);
 int get_end_size(int s);
-float cal_years_required(int start, int end);
+int cal_years_required(int start, int end);
 
 int main(void)
 {
@@ -22,21 +22,21 @@ int get_start_size(void)
     int start_size;
     do
     {
-        start_size = get_input("Start size:\n")
+        start_size = get_int("Start size:\n");
     }
     while (start_size <= 0);
     printf("Start size: %i\n", start_size);
     return start_size;
 }
 
-int get_end_size(int s)
+int get_end_size(int start)
 {
     int end_size;
     do
     {
-        end_size = get_input("End size:\n")
+        end_size = get_int("End size:\n");
     }
-    while (end_size <= get_start_size(s));
+    while (end_size <= start);
     printf("End size: %i\n", end_size);
     return end_size;
 }
@@ -44,11 +44,12 @@ int get_end_size(int s)
 int cal_years_required(int start, int end)
 {
     int year_end = start;
-    year_count = 0;
+    int year_count = 0;
     do
     {
         year_end += year_end / 3 - year_end / 4;
         year_count++;
     }
     while (year_end < end);
+    return year_count;
 }
