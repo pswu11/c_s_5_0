@@ -41,7 +41,7 @@ int get_end_size(int s)
     return end_size;
 }
 
-float cal_years_required(int start, int end)
+int cal_years_required(int start, int end)
 {
     int year_end = start;
     year_count = 0;
