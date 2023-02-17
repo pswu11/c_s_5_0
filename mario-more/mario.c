@@ -31,10 +31,6 @@ void print_pyramid(int height)
         {
             printf("#");
         }
-        for (int j = height - 1; j > i; j--)
-        {
-            printf(" ");
-        }
         printf("\n");
     }
 }
@@ -46,6 +42,6 @@ int get_height(void)
     {
         height = get_int("What is the height?\n");
     }
-    while (height <= 0 || height > 8); // the height should be greater than 0
+    while (height <= 0 || height > 8); // the height should be between 
     return height;
 }
