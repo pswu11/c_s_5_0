@@ -15,7 +15,7 @@ string process(string card_num)
 {
     for (int i = 0; i < strlen(card_num); i++)
     {
-        printf(card_num[i]);
+        printf("%c", card_num[i]);
     }
 }
 
