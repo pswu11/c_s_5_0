@@ -8,13 +8,13 @@ float cal_years_required(int start, int end);
 int main(void)
 {
     // TODO: Prompt for start size
-    start = get_start_size();
+    int start = get_start_size();
     // TODO: Prompt for end size
-    end = get_end_size(s);
+    int end = get_end_size(start);
     // TODO: Calculate number of years until we reach threshold
-    years = cal_years_required(start, end);
+    int years = cal_years_required(start, end);
     // TODO: Print number of years
-    printf("Years: %f\n", years);
+    printf("Years: %i\n", years);
 }
 
 int get_start_size(void)
