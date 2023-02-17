@@ -13,10 +13,13 @@ int main(void)
 
 string process(string card_num)
 {
+    string processed = "";
     for (int i = 0; i < strlen(card_num); i++)
     {
-        card_num = card_num[i]
+        strcat(processed, card_num[i]);
+        printf("%s", processed)
     }
+    return processed;
 }
 
 string get_card(void)
