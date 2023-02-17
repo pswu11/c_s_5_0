@@ -15,7 +15,7 @@ void print_pyramid(int height)
 {
     for (int i = 0; i < height; i++)
     {
-        // left half
+        // left half of pyramid
         for (int j = 0; j <= height - i; j++)
         {
             printf(" ");
@@ -25,7 +25,7 @@ void print_pyramid(int height)
             printf("#");
         }
         printf("  ");
-        // right half
+        // right half of pyramid
         for (int l = 0; l <= i; l++)
         {
             printf("#");
@@ -45,6 +45,6 @@ int get_height(void)
     {
         height = get_int("What is the height?\n");
     }
-    while (height <= 0);
+    while (height <= 0); // the height should be greater than 0
     return height;
 }
