@@ -17,7 +17,7 @@ void process(string card_num)
 
     for (size_t i = 0; i < length; i++)
     {
-        if (isdigit(str[i]) == true)
+        if (isdigit(str[i]) == true) // this needs to be rewrite.
         {
             printf("%c\n", str[i]);
         }
