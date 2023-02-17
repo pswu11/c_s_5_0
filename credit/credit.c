@@ -4,7 +4,7 @@
 #include <string.h>
 
 string get_card(void);
-string process(string card_num);
+void process(string card_num);
 int main(void)
 {
     process("233459-8723");
@@ -17,7 +17,11 @@ void process(string card_num)
 
     for (size_t i = 0; i < length; i++)
     {
-        printf("%c", str[i]);
+        if (isdigit(str[i]) == true)
+        {
+            printf("%c\n", str[i]);
+        }
+
     }
 }
 
