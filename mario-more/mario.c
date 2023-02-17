@@ -15,7 +15,7 @@ void print_pyramid(int height)
 {
     for (int i = 0; i < height; i++)
     {
-        // left half of pyramid
+        // left half of pyramid including space
         for (int j = height - 1; j > i; j--)
         {
             printf(" ");
@@ -42,6 +42,6 @@ int get_height(void)
     {
         height = get_int("What is the height?\n");
     }
-    while (height <= 0 || height > 8); // the height should be between 1 and 8 inclusive. 
+    while (height <= 0 || height > 8); // the height should be between 1 and 8 inclusive.
     return height;
 }
