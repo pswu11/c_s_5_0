@@ -18,19 +18,12 @@ void print_pyramid(int height)
         // left half of pyramid
         for (int j = 0; j <= i; j++)
         {
-            for (int k = 0; k)
-            printf("#");
-        }
-        printf("  ");
-/*         // right half of pyramid
-        for (int l = 0; l <= i; l++)
-        {
-            printf("#");
-        }
-        for (int m = 0; m < height - i; m++)
-        {
             printf(" ");
-        } */
+        }
+        for (int j = 0; j <= i; j++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
 }
