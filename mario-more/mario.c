@@ -42,6 +42,6 @@ int get_height(void)
     {
         height = get_int("What is the height?\n");
     }
-    while (height <= 0 || height > 8); // the height should be between 
+    while (height <= 0 || height > 8); // the height should be between 1 and 8 inclusive. 
     return height;
 }
