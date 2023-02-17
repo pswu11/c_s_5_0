@@ -14,6 +14,7 @@ int main(void)
 string process(string card_num)
 {
     string processed = "";
+    char card_num[] = card_num;
     for (int i = 0; i < strlen(card_num); i++)
     {
         strcat(processed, card_num[i]);
