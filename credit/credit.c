@@ -14,11 +14,11 @@ int main(void)
 string process(string card_num)
 {
     string processed = "";
-    char card_array[] = card_num;
+    char *str = card_num;
     for (int i = 0; i < strlen(card_num); i++)
     {
-        strcat(processed, card_array[i]);
-        printf("%s", processed);
+        strcat(processed, str[i]);
+        printf("%c", processed);
     }
     return processed;
 }
