@@ -24,7 +24,7 @@ int get_start_size(void)
     {
         start_size = get_int("Start size:\n");
     }
-    while (start_size <= 0);
+    while (start_size <= 4);
     printf("Start size: %i\n", start_size);
     return start_size;
 }
