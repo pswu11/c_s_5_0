@@ -1,16 +1,50 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int get_start_size(void);
+int get_end_size(void);
+int yearly_change(int size);
 int main(void)
 {
     // TODO: Prompt for start size
-    int start_size = get_input("Start size:\n");
-    printf("Start size: %i"\n);
+    start = get_start_size()
     // TODO: Prompt for end size
-    int start_size = get_input("Start size:\n");
-    printf("Start size: %i"\n);
+    end = get_end_size(s)
     // TODO: Calculate number of years until we reach threshold
-    int start_size = get_input("Start size:\n");
-    printf("Start size: %i"\n);
+    yearly_change
     // TODO: Print number of years
+}
+
+int get_start_size(void)
+{
+    int start_size;
+    do
+    {
+        start_size = get_input("Start size:\n")
+    }
+    while (start_size <= 0);
+    printf("Start size: %i\n", start_size);
+    return start_size;
+}
+
+int get_end_size(int s)
+{
+    int end_size;
+    do
+    {
+        end_size = get_input("End size:\n")
+    }
+    while (end_size <= get_start_size(s));
+    printf("End size: %i\n", end_size);
+    return end_size;
+}
+
+int yearly_change(int size)
+{
+    return size / 3 - size / 4
+}
+
+int years_required(float year)
+{
+    
 }
