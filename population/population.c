@@ -17,6 +17,7 @@ int main(void)
     printf("Years: %i\n", years);
 }
 
+// get user input for start population
 int get_start_size(void)
 {
     int start_size;
@@ -29,6 +30,7 @@ int get_start_size(void)
     return start_size;
 }
 
+// get user input for end population
 int get_end_size(int start)
 {
     int end_size;
@@ -41,6 +43,7 @@ int get_end_size(int start)
     return end_size;
 }
 
+// calculate years required to grow from start to end population
 int cal_years_required(int start, int end)
 {
     int year_end = start;
