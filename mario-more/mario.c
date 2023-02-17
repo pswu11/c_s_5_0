@@ -13,13 +13,22 @@ void print_pyramid(int height)
 {
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j <= i; j++)
+        for (int j = 0; j <= height - i; j++)
         {
-            printf("#");
+            printf(" ");
         }
         for (int k = 0; k <= i; k++)
         {
             printf("#");
+        }
+        print("  ");
+        for (int l = 0; l <= i; l++)
+        {
+            printf("#");
+        }
+        for (int m = 0; m <= height - i; m++)
+        {
+            printf(" ");
         }
         printf("\n");
     }
