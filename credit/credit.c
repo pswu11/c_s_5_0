@@ -77,15 +77,22 @@ bool checksum(long card_num)
         {
             digit = card_num % 10;
             card_num = card_num / 10;
-            printf("two: %i\n", digit * 2);
-            sum1 += digit * 2;
+            if (digit / 10 == 0)
+            {
+                sum1 += digit;
+                printf("Sum1: %i", sum1);
+            }
+            else
+            {
+                sum1 += digit / 10 + digit % 10;
+            }
+            printf("Sum1: %i", sum1);
         }
         else
         {
             digit = card_num % 10;
             card_num = card_num / 10;
-            printf("%i\n", digit);
-            sum2 += digit;
+
         }
     }
     printf("%i %i", sum1, sum2);
