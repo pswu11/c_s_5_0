@@ -7,8 +7,6 @@
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 int compute_score(string word);
-int get_index(char c);
-
 int main(void)
 {
     // Get input words from both players
@@ -45,13 +43,13 @@ int compute_score(string word)
         {
            if (isupper(word[i]))
             {
+                // 'A' => 65, the gap between ASCII and actual index.
                 score += POINTS[word[i] - 'A'];
-                printf("%i", POINTS[word[i] - 'A']);
             }
-            else if (islower(word[i]))
+            else
             {
+                // 'a' => 97, the gap between ASCII and actual index.
                 score += POINTS[word[i] - 'a'];
-                printf("%i", POINTS[word[i] - 'a']);
             }
         }
         else {
