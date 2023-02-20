@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 long get_card(void);
-void process(string card_num);
+int count_digit(long card_num);
+void validate(long card_num);
 int main(void)
 {
     get_card();
@@ -12,7 +14,7 @@ int main(void)
 
 void validate(long card_num)
 {
-    int length = strlen(str(card_num));
+    int length = count_digit(card_num);
     // AMEX
     if (length == 15)
     {
@@ -31,6 +33,18 @@ void validate(long card_num)
             printf("AMEX\n");
         }
     }
+}
+
+int count_digit(long card_num)
+{
+    int count = 0;
+    do
+    {
+    n /= 10;
+    ++count;
+    }
+    while (n != 0);
+    return count;
 }
 
 long get_card(void)
