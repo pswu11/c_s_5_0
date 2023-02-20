@@ -7,7 +7,7 @@
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 // Create an array for alphabets
-char *string = "abcdefghijklmnopqrstuvwxyz";
+string alphabets = "abcdefghijklmnopqrstuvwxyz";
 
 int compute_score(string word);
 string convert_lower(string word);
@@ -58,3 +58,13 @@ int compute_score(string word)
     return score;
 }
 
+int get_index(char c)
+{
+    int index = 0;
+    do
+    {
+        index++
+    }
+    while (alphabets[index] != c);
+    return index;
+}
