@@ -26,7 +26,7 @@ void process(string card_num)
 
 long get_card(void)
 {
-    long card_num = get_int("Input your card number: ");
-    printf("%ln", card_num);
+    long card_num = get_long("Input your card number: ");
+    printf("%li\n", card_num);
     return card_num;
 }
