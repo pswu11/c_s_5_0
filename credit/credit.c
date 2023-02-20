@@ -13,7 +13,7 @@ int main(void)
 {
     long card_num = get_card();
     bool val = checksum(card_num);
-    printf("")
+    printf("%d\n", val);
 /*     if (checksum(card) == true)
     {
         validate(card);
