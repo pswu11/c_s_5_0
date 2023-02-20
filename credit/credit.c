@@ -9,7 +9,8 @@ int count_digit(long card_num);
 void validate(long card_num);
 int main(void)
 {
-    get_card();
+    long card = get_card();
+    validate(card);
 }
 
 void validate(long card_num)
@@ -51,6 +52,7 @@ void validate(long card_num)
 int count_digit(long card_num)
 {
     int count = 0;
+    long n = card_num;
     do
     {
     n /= 10;
@@ -64,6 +66,4 @@ long get_card(void)
 {
     long card_num = get_long("Input your card number: ");
     printf("%li\n", card_num);
-    string val = validate(card_num);
-    return val;
 }
