@@ -66,19 +66,21 @@ void validate(long card_num)
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
-    int val = 0;
+    int sum1 = 0;
+    int sum2 = 0;
     for (int i = 0; i < length; i++)
     {
         if (i % 2 == 1)
         {
-            val += card_num % 10 * 2;
+            sum1 += card_num % 10 * 2;
         }
         else
         {
-            val += card_num % 10;
+            sum2 += card_num % 10;
         }
     }
-    if (val % 10 == 0)
+    printf("%i %i", sum1, sum2);
+    if (sum1 + sum2 % 10 == 0)
     {
         return true;
     }
