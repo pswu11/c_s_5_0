@@ -23,4 +23,6 @@ int main(void)
 
 
 // .c file: your application
-// .h file: a library that can be reused 
+// .h file: a library that can be reused
+
+// decompiling: reverse the process of compiling
