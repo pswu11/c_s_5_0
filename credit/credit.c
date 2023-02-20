@@ -25,8 +25,18 @@ void process(string card_num)
     }
 }
 
-string get_card(void)
+int get_card(void)
 {
-    string card_num = get_string("Input your card number: ");
+    int card_num;
+
+    do
+    {
+        card_num = get_int("Input your card number: ")
+    }
+    while
+    {
+        !isint(card_num);
+    }
+
     return card_num;
 }
