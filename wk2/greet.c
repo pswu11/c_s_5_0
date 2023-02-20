@@ -30,4 +30,9 @@ int main(int argc, string argv[])
 
 // 404:
 // a kind of error
-// use "echo $?" to find out what happened in my last command. 
+// use "echo $?" to find out the exit status of the last command
+// which will be the int that was returned in the main function.
+
+
+// Cryptography:
+// an algorithm to encrypt a normal text into ciphertext.
