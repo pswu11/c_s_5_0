@@ -82,7 +82,6 @@ bool checksum(long card_num)
     int length = count_digit(card_num);
     int sum1 = 0;
     int sum2 = 0;
-
     for (int i = 0; i < length; i++)
     {
         int digit = 0;
@@ -108,7 +107,7 @@ bool checksum(long card_num)
             sum2 += digit;
         }
     }
-    // sum of two values
+    // sum of two values and see if the last digit equals to zero
     if ((sum1 + sum2) % 10 == 0)
     {
         return true;
