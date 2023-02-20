@@ -41,15 +41,12 @@ int main(void)
 int compute_score(string word)
 {
     int score = 0;
+    // should I use switch here?
     for (int i = 0; i < strlen(word); i++)
     {
         char c;
-        int point;
-        if (isalpha(c))
-        {
-            point = 0;
-        }
-        else if (isupper(word[i]))
+        int point = 0;
+        if (isupper(word[i]))
         {
             c = tolower(word[i]);
         }
