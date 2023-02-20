@@ -29,6 +29,7 @@ void validate(long card_num)
     // AMEX
     if (length == 15)
     {
+        // get the first two digits of card number
         int first_two = card_num / 10000000000000;
         if (first_two == 34 || first_two == 37)
         {
@@ -42,6 +43,7 @@ void validate(long card_num)
     // MASTER
     else if (length == 16)
     {
+        // get the first two digits of card number
         int first_two = card_num / 100000000000000;
         if (first_two >= 51 && first_two <= 55)
         {
@@ -59,6 +61,7 @@ void validate(long card_num)
     // VISA
     else if (length == 13)
     {
+        // get the first digit of card number
         int first_one = card_num / 1000000000000;
         if (first_one == 4)
         {
