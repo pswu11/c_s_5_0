@@ -20,3 +20,7 @@ int main(void)
 // assembly code is what our intel or arm cpu actually understands
 // 3. assemble (convert from assembly to machine code) =>
 // 4. link (linking the machine codes from hello.c, stdio.h, cs50.h)
+
+
+// .c file: your application
+// .h file: a library that can be reused 
