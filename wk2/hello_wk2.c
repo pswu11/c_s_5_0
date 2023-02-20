@@ -3,6 +3,7 @@
 #include <math.h>
 
 const int size = 3;
+float avg(int numbers[], int length);
 
 int main(void)
 {
@@ -19,16 +20,18 @@ int main(void)
     int scores[size];
     // And you can use index to access/assign an value to the integer.
     // When there are repetitive codes, loop could help.
-    for (int i = 0; 0 < size; i++)
+    for (int i = 0; i < size; i++)
     {
         scores[i] = get_int("Score: ");
     }
+
+    int avg = avg(scores[size], size);
 }
 
-float avg(int numbers[])
+float avg(int numbers[], int length)
 {
     int sum = 0;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         sum += numbers[i];
     }
