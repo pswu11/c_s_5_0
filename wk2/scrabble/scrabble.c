@@ -52,6 +52,9 @@ int compute_score(string word)
                 score += POINTS[word[i] - 'a'];
             }
         }
+        else {
+            score += 0;
+        }
     }
     return score;
 }
