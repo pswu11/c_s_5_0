@@ -35,7 +35,9 @@ int main(void)
 
 int compute_score(string word)
 {
-    // 
+    uint score = 0;
+    // should I use switch here?
     switch(c)
-    case A:
+    case "a":
+
 }
