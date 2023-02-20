@@ -7,14 +7,13 @@ float average(int numbers[], int length);
 
 int main(void)
 {
-    string name = get_string("What's your name? \n");
-    printf("hello, %s\n", name);
-
     // Introducing Arrays:
     // An arrary a data structure that stores your data back to back in the memory.
     // It's gonna be more memory efficient to store an array of 50 scores
     // than storing 50 integers separately.
 
+    // Int in memory:
+    // Each int declared uses 32 bits of memory.
     // Initializing an array of 3 integers.
     // int scores[3]; ==> 3 is the magic number, you should declare a variable if it's reused.
     int scores[size];
@@ -28,11 +27,10 @@ int main(void)
     int avg = average(scores, size);
     printf("Average: %i\n", avg);
 
-    // Strings
+    // Strings in memory:
     string sentence = "Hi!"; // String is basically an array of characters.
-    // at the end of the string, there's a special "\0"
-    // to represent end of the string in the memory. 
-    char[] string_array = sentence;
+    // At the end of the string, there's a special "\0" or NUL
+    // to represent end of the string in the memory.
 }
 
 float average(int numbers[], int length)
