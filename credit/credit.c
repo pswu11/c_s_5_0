@@ -77,7 +77,7 @@ bool checksum(long card_num)
         {
             digit = card_num % 10;
             card_num = card_num / 10;
-            printf("Pos: %i %i\n", i, digit * 2);
+            printf("two: %i\n", digit);
             sum1 += digit * 2;
         }
         else
