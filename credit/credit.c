@@ -43,10 +43,6 @@ void validate(long card_num)
         int first_one = card_num / 1000000000000;
         if (first_one == 4)
         {
-            printf("MASTER\n");
-        }
-        else if (first_two / 10 == 4)
-        {
             printf("VISA\n");
         }
     }
