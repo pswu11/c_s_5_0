@@ -41,8 +41,11 @@ int compute_score(string word)
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        char c;
-        if (isupper(word[i]))
+        if (!isalpha(word[i]))
+        {
+            score += 0;
+        }
+        else if (isupper(word[i]))
         {
             score += word[i] - 'A';
         }
