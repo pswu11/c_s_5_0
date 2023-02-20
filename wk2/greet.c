@@ -30,3 +30,4 @@ int main(int argc, string argv[])
 
 // 404:
 // a kind of error
+// use "echo $?" to find out what happened in my last command. 
