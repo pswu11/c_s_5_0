@@ -7,6 +7,7 @@
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 int compute_score(string word);
+string convert_lower(string word);
 
 int main(void)
 {
@@ -19,6 +20,7 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
+    string convert_lower(string word);
     if (score1 > score2)
     {
         printf("Player 1 wins!");
@@ -35,9 +37,26 @@ int main(void)
 
 int compute_score(string word)
 {
-    uint score = 0;
+    int score = 0;
     // should I use switch here?
-    switch(c)
-    case "a":
+    for (int i = 0; i < strlen(word); i++)
+    {
+        char c = word[i];
+        printf("%c", c);
 
+    }
+    return 50;
+}
+
+string convert_lower(string word)
+{
+    for (int i = 0; i < strlen(word); i++)
+    {
+        if (isupper(word[i]))
+        {
+            word[i] = tolower(word[i]);
+        }
+    }
+    printf("%s", word);
+    return 
 }
