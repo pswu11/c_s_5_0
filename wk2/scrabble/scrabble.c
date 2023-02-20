@@ -5,8 +5,6 @@
 
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
-// Create an array for alphabets
-string alphabets = "abcdefghijklmnopqrstuvwxyz";
 
 int compute_score(string word);
 int get_index(char c);
@@ -41,32 +39,17 @@ int main(void)
 int compute_score(string word)
 {
     int score = 0;
-    // should I use switch here?
     for (int i = 0; i < strlen(word); i++)
     {
         char c;
-        int point = 0;
         if (isupper(word[i]))
         {
-            c = tolower(word[i]);
+            score += word[i] - 'A';
         }
         else
         {
-            c = word[i];
+            score += word[i] - 'a';
         }
-        point = POINTS[get_index(c)];
-        score += point;
     }
     return score;
-}
-
-// Return the index of char in the alphabets string
-int get_index(char c)
-{
-    int i = 0;
-    while (alphabets[i] != c)
-    {
-        i++;
-    }
-    return i;
 }
