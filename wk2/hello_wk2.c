@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
-#include <math.h>
+#include <string.h>
+#include <ctype.h>
 
 const int size = 3;
 float average(int numbers[], int length);
@@ -31,7 +32,13 @@ int main(void)
     string s = "Hi!"; // String is basically an array of characters.
     // At the end of the string, there's a special "\0" or NUL
     // to represent end of the string in the memory.
-    printf("%c %c %c", s[0], s[1], [2]);
+    printf("%c %c %c\n", s[0], s[1], s[2]);
+
+    for (int i = 0; i < strlen(s); i++)
+    {
+        printf("%c", toupper(s[i]));
+    }
+    printf("\n");
 }
 
 float average(int numbers[], int length)
