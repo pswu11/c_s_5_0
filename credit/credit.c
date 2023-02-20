@@ -80,7 +80,7 @@ void validate(long card_num)
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
-    int sum1, sum2 = 0;
+    int sum1 = 0, sum2 = 0;
     for (int i = 0; i < length; i++)
     {
         int digit = 0;
