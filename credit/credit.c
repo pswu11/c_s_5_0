@@ -40,7 +40,7 @@ void validate(long card_num)
         int first_two = card_num / 100000000000000;
         if (first_two >= 51 && first_two <= 55)
         {
-            printf("MASTER\n");
+            printf("MASTERCARD\n");
         }
         else if (first_two / 10 == 4)
         {
