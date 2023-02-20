@@ -33,6 +33,10 @@ void validate(long card_num)
         {
             printf("AMEX\n");
         }
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     // MASTER
     else if (length == 16)
@@ -46,6 +50,10 @@ void validate(long card_num)
         {
             printf("VISA\n");
         }
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     // VISA
     else if (length == 13)
@@ -54,6 +62,10 @@ void validate(long card_num)
         if (first_one == 4)
         {
             printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
         }
     }
     // INVALID
