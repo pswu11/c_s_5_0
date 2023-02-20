@@ -61,7 +61,7 @@ bool checksum(long card_num)
     int val;
     for (int i = 1; i <= length; i++)
     {
-
+        
     }
 }
 
