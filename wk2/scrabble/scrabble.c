@@ -41,17 +41,16 @@ int compute_score(string word)
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        if (!isalpha(word[i]))
+        if (isalpha(word[i]))
         {
-            score += 0;
-        }
-        else if (isupper(word[i]))
-        {
-            score += POINTS[word[i] - 'A'];
-        }
-        else
-        {
-            score += POINTS[word[i] - 'a'];
+           if (isupper(word[i]))
+            {
+                score += POINTS[word[i] - 'A'];
+            }
+            else
+            {
+                score += POINTS[word[i] - 'a'];
+            }
         }
     }
     return score;
