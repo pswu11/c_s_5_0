@@ -33,4 +33,4 @@ int main(void)
 
 // Debugging:
 // 1. Logging: Use printf() to debug when it's a simple program. But it gets messy.
-// 2. Debugger:
+// 2. Debugger: use breakpoints to debug 
