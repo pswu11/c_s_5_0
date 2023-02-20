@@ -20,7 +20,8 @@ int main(int argc, string argv[]) // taking a user input as arguments.
         printf("hello, world!\n"); // default if only one argument was given
     }
 
-    printf(" o)__\n(_  _`\\\n z/z\\__)\n");
+    printf(
+        "    _____\n   /     \\______\n  | o     |     \\____\n  /\\_____/           \\___\n /                       \\\n|_______/                 \\\n  \\______   _       ___    \\\n        /\\_//      /   \\    |       // //______/    /___/      /\\/\\/\\      \\   / \\ \\\n                    \\ \\   \\ \\\n                      \\ \\   \\ \\\n                        \\ \\  \\ \\\n                         \\ \\ /\\/\\\n                         /\\/\\\n");
 }
 
 // cowsay
