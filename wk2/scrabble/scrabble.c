@@ -41,7 +41,7 @@ int compute_score(string word)
     // should I use switch here?
     for (int i = 0; i < strlen(word); i++)
     {
-        char c = "";
+        char c;
         if (isupper(word[i]))
         {
             c = tolower(word[i]);
@@ -59,8 +59,11 @@ int compute_score(string word)
             case "p":
                 score +=5;
                 break;
+            default:
+                score +=1;
+                break;
         }
     }
-    return 50;
+    return score;
 }
 
