@@ -32,3 +32,5 @@ int main(void)
 // - for loop and while loop might look different
 
 // Debugging:
+// 1. Logging: Use printf() to debug when it's a simple program. But it gets messy.
+// 2. Debugger: 
