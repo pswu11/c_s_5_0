@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(int argc, string argv[]) // taking a user input as arguments.
+// taking a user input as arguments.
+// int is always with main
+// means main always return an int.
+int main(int argc, string argv[])
 {
     // string name = get_string("What's your name?\n");
     // printf("hello, %s\n", name);
@@ -26,4 +29,4 @@ int main(int argc, string argv[]) // taking a user input as arguments.
 // cowsay -f duck  quack!
 
 // 404:
-// a kind of error 
+// a kind of error
