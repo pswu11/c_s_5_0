@@ -18,7 +18,7 @@ void validate(long card_num)
     // AMEX
     if (length == 15)
     {
-        int first_two = card_num / pow10l(14);
+        int first_two = card_num / pow10(14);
         if (first_two == 34 || first_two == 37)
         {
             printf("AMEX\n");
