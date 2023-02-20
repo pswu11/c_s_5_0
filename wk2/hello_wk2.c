@@ -28,10 +28,10 @@ int main(void)
     printf("Average: %i\n", avg);
 
     // Strings in memory:
-    string sentence = "Hi!"; // String is basically an array of characters.
+    string s = "Hi!"; // String is basically an array of characters.
     // At the end of the string, there's a special "\0" or NUL
     // to represent end of the string in the memory.
-    printf("%c", s[0])
+    printf("%c %c %c", s[0], s[1], [2]);
 }
 
 float average(int numbers[], int length)
