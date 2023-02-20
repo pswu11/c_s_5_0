@@ -27,6 +27,10 @@ int main(void)
 
     int avg = average(scores, size);
     printf("Average: %i\n", avg);
+
+    // Strings
+    string sentence = "Hi!"; // String is basically an array of characters.
+    char[] string_array = sentence;
 }
 
 float average(int numbers[], int length)
