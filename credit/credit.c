@@ -81,6 +81,11 @@ int count_digit(long card_num)
     return count;
 }
 
+int convert_array(long card_num)
+{
+    
+}
+
 long get_card(void)
 {
     long card_num = get_long("Input your card number: ");
