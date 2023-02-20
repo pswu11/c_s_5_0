@@ -7,6 +7,7 @@
 long get_card(void);
 int count_digit(long card_num);
 void validate(long card_num);
+bool checksum(long card_num);
 
 int main(void)
 {
@@ -65,14 +66,25 @@ void validate(long card_num)
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
-    int val;
+    int val = 0;
     for (int i = 0; i < length; i++)
     {
         if (i % 2 == 1)
-            {
-                val += card_num % 10 * 2;
-                printf("%i", val);
-            }
+        {
+            val += card_num % 10 * 2;
+        }
+        else
+        {
+            val += card_num % 10;
+        }
+    }
+    if (val % 10 == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
