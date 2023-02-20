@@ -72,8 +72,8 @@ bool checksum(long card_num)
     int sum2 = 0;
     for (int i = 0; i < length; i++)
     {
-        long digit = card_num;
-        if (i % 2 == 1)
+        long digit = 0;
+        if (i % 2 == 0)
         {
             digit = card_num % 10;
             card_num = card_num / 10;
