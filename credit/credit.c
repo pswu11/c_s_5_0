@@ -1,8 +1,5 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <math.h>
 
 long get_card(void);
 int count_digit(long card_num);
@@ -79,7 +76,7 @@ void validate(long card_num)
     }
 }
 
-// use luhn's algorithm to validate
+// use luhn's algorithm to validate and return boolean
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
