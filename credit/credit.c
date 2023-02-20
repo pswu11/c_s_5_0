@@ -88,7 +88,7 @@ bool checksum(long card_num)
     for (int i = 0; i < length; i++)
     {
         int digit = 0;
-        // multiply every other digit by 2 starting from the second-to-last digit as sum1
+        // step1. multiply every other digit by 2 starting from the second-to-last digit as sum1
         if (i % 2 == 1)
         {
             digit = card_num % 10 * 2;
@@ -102,7 +102,7 @@ bool checksum(long card_num)
                 sum1 += digit / 10 + digit % 10;
             }
         }
-        // add the sum of the digits that were not multiplied by 2 as sum2
+        // step2. add the sum of the digits that were not multiplied by 2 as sum2
         else
         {
             digit = card_num % 10;
@@ -110,7 +110,7 @@ bool checksum(long card_num)
             sum2 += digit;
         }
     }
-    // sum of two values and see if the last digit equals to zero
+    // step3. get sum two values and check if the last digit equals to zero
     if ((sum1 + sum2) % 10 == 0)
     {
         return true;
