@@ -76,6 +76,7 @@ bool checksum(long card_num)
         if (i % 2 == 1)
         {
             digit = card_num % 10;
+            printf("Digit: %i\n", digit);
             card_num = card_num / 10;
             if (digit / 10 == 0)
             {
