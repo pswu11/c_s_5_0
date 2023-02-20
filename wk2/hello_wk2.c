@@ -30,6 +30,8 @@ int main(void)
 
     // Strings
     string sentence = "Hi!"; // String is basically an array of characters.
+    // at the end of the string, there's a special "\0"
+    // to represent end of the string in the memory. 
     char[] string_array = sentence;
 }
 
