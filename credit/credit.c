@@ -9,7 +9,7 @@ bool checksum(long card_num);
 int main(void)
 {
     long card_num = get_card();
-    if (checksum(card_num) == true)
+    if (checksum(card_num))
     {
         validate(card_num);
     }
