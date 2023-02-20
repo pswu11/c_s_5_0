@@ -5,6 +5,9 @@ int main(void)
 {
     string name = get_string("What's your name? \n");
     printf("hello, %s\n", name);
+
+    // initializing an array of 3 integers.
+    int scores[3];
 }
 
 // WK2 Notes
@@ -37,3 +40,8 @@ int main(void)
 // 2. Debugger: Use breakpoints to trace the bugs, i.e. use debug50 for now
 // 3. Rubber Duck: Talk to others, or a imaginary person like rubber duck.
 
+
+// Introducing Arrays:
+// An arrary a data structure that stores your data back to back in the memory.
+// It's gonna be more memory efficient to store an array of 50 scores
+// than storing 50 integers separately.
