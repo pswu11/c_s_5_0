@@ -36,3 +36,4 @@ int main(void)
 // 1. Logging: Use printf() to debug when it's a simple program. But it gets messy.
 // 2. Debugger: Use breakpoints to trace the bugs, i.e. use debug50 for now
 // 3. Rubber Duck: Talk to others, or a imaginary person like rubber duck.
+
