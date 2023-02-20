@@ -20,3 +20,5 @@ int main(int argc, string argv[]) // taking a user input as arguments.
         printf("hello, world!\n"); // default if only one argument was given
     }
 }
+
+// cowsay
