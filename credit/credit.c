@@ -93,6 +93,8 @@ bool checksum(long card_num)
         {
             digit = card_num % 10;
             card_num = card_num / 10;
+            sum2 += digit;
+            printf("Sum2: %i\n", sum2);
 
         }
     }
