@@ -23,4 +23,7 @@ int main(int argc, string argv[]) // taking a user input as arguments.
     printf("    _____\n   /     \\______\n  | o     |     \\____\n  /\\_____/           \\___\n /                       \\\n|_______/                 \\\n  \\______   _       ___    \\\n        /\\_//      /   \\    |\n       // //______/    /___/\n      /\\/\\/\\      \\   / \\ \\\n                    \\ \\   \\ \\\n        Pei Pei       \\ \\   \\ \\\n                        \\ \\  \\ \\\n                         \\ \\ /\\/\\\n                         /\\/\\\n");
 }
 
-// cowsay
+// cowsay -f duck  quack!
+
+// 404:
+// a kind of error 
