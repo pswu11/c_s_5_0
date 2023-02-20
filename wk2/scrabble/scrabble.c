@@ -53,7 +53,9 @@ int compute_score(string word)
         {
             c = word[i];
         }
-        score += POINTS[get_index(c)];
+        int point = POINTS[get_index(c)];
+        printf("%c: %i\n", c, point);
+        score += point;
     }
     return score;
 }
