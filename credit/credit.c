@@ -22,6 +22,7 @@ int main(void)
     }
 }
 
+// validate credit card's provider
 void validate(long card_num)
 {
     int length = count_digit(card_num);
@@ -75,6 +76,7 @@ void validate(long card_num)
     }
 }
 
+// use luhn's algorithm to validate
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
@@ -86,25 +88,21 @@ bool checksum(long card_num)
         if (i % 2 == 1)
         {
             digit = card_num % 10 * 2;
-            printf("Digit: %i\n", digit);
             card_num = card_num / 10;
             if (digit / 10 == 0)
             {
                 sum1 += digit;
-                printf("Sum1: %i\n", sum1);
             }
             else
             {
                 sum1 += digit / 10 + digit % 10;
             }
-            printf("Sum1: %i\n", sum1);
         }
         else
         {
             digit = card_num % 10;
             card_num = card_num / 10;
             sum2 += digit;
-            printf("Sum2: %i\n", sum2);
         }
     }
     printf("%i\n", sum1 + sum2);
@@ -118,6 +116,7 @@ bool checksum(long card_num)
     }
 }
 
+// count the digits of credit card number
 int count_digit(long card_num)
 {
     int count = 0;
@@ -131,9 +130,9 @@ int count_digit(long card_num)
     return count;
 }
 
+// get input of credit card number
 long get_card(void)
 {
     long card_num = get_long("Input your card number: ");
-    printf("%li\n", card_num);
     return card_num;
 }
