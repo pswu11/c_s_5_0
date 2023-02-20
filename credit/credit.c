@@ -7,6 +7,7 @@
 long get_card(void);
 int count_digit(long card_num);
 void validate(long card_num);
+
 int main(void)
 {
     long card = get_card();
@@ -47,6 +48,11 @@ void validate(long card_num)
             printf("VISA\n");
         }
     }
+    // INVALID
+    else
+    {
+        printf("INVALID\n");
+    }
 }
 
 int count_digit(long card_num)
@@ -66,4 +72,5 @@ long get_card(void)
 {
     long card_num = get_long("Input your card number: ");
     printf("%li\n", card_num);
+    return card_num;
 }
