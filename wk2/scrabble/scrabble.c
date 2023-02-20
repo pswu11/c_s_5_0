@@ -45,6 +45,7 @@ int compute_score(string word)
     for (int i = 0; i < strlen(word); i++)
     {
         char c;
+        int point = 0;
         if (isupper(word[i]))
         {
             c = tolower(word[i]);
@@ -53,7 +54,8 @@ int compute_score(string word)
         {
             c = word[i];
         }
-        score += POINTS[get_index(c)];
+        point = POINTS[get_index(c)];
+        score += point;
     }
     return score;
 }
