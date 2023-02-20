@@ -19,3 +19,4 @@ int main(void)
 // 2. compile (from C to Assembly code) =>
 // assembly code is what our intel or arm cpu actually understands
 // 3. assemble (convert from assembly to machine code) =>
+// 4. link (linking the machine codes from hello.c, stdio.h, cs50.h)
