@@ -11,15 +11,17 @@ bool checksum(long card_num);
 
 int main(void)
 {
-    long card = get_card();
-    if (checksum(card) == true)
+    long card_num = get_card();
+    bool val = checksum(card_num);
+    printf("")
+/*     if (checksum(card) == true)
     {
         validate(card);
     }
     else
     {
         printf("INVALID\n");
-    }
+    } */
 }
 
 void validate(long card_num)
@@ -79,8 +81,7 @@ bool checksum(long card_num)
             sum2 += card_num % 10;
         }
     }
-    printf("%i %i", sum1, sum2);
-    if (sum1 + sum2 % 10 == 0)
+    if ((sum1 + sum2) % 10 == 0)
     {
         return true;
     }
