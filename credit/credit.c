@@ -18,19 +18,19 @@ void validate(long card_num)
     // AMEX
     if (length == 15)
     {
-        int first_two = card_num / pow10(14);
+        int first_two = card_num / 10000000000000;
         if (first_two == 34 || first_two == 37)
         {
             printf("AMEX\n");
         }
     }
     // MASTER
-    if (length == 16)
+    else if (length == 16)
     {
-        int first_two = card_num / 10000000000000;
-        if (first_two == 34 || first_two == 37)
+        int first_two = card_num / 100000000000000;
+        if (first_two >= 51 && first_two <= 55)
         {
-            printf("AMEX\n");
+            printf("MASTER\n");
         }
     }
 }
