@@ -41,7 +41,7 @@ int compute_score(string word)
     {
         if (isalpha(word[i]))
         {
-           if (isupper(word[i]))
+            if (isupper(word[i]))
             {
                 // 'A' => 65, the gap between ASCII and actual index.
                 score += POINTS[word[i] - 'A'];
@@ -52,7 +52,8 @@ int compute_score(string word)
                 score += POINTS[word[i] - 'a'];
             }
         }
-        else {
+        else
+        {
             score += 0;
         }
     }
