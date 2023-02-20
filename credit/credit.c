@@ -3,11 +3,11 @@
 #include <ctype.h>
 #include <string.h>
 
-string get_card(void);
+int get_card(void);
 void process(string card_num);
 int main(void)
 {
-    process("233459-8723");
+    get_card();
 }
 
 void process(string card_num)
@@ -27,16 +27,6 @@ void process(string card_num)
 
 int get_card(void)
 {
-    int card_num;
-
-    do
-    {
-        card_num = get_int("Input your card number: ")
-    }
-    while
-    {
-        !isint(card_num);
-    }
-
+    int card_num = get_int("Input your card number: ");
     return card_num;
 }
