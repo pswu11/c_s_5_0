@@ -73,11 +73,11 @@ bool checksum(long card_num)
     for (int i = 0; i < length; i++)
     {
         int digit = 0;
-        if (i % 2 == 0)
+        if (i % 2 == 1)
         {
             digit = card_num % 10;
             card_num = card_num / 10;
-            printf("two: %i\n", digit);
+            printf("two: %i\n", digit * 2);
             sum1 += digit * 2;
         }
         else
@@ -85,7 +85,7 @@ bool checksum(long card_num)
             digit = card_num % 10;
             card_num = card_num / 10;
             printf("%i\n", digit);
-            sum1 += digit;
+            sum2 += digit;
         }
     }
     printf("%i %i", sum1, sum2);
