@@ -63,7 +63,7 @@ int get_index(char c)
     int index = 0;
     do
     {
-        index++
+        index
     }
     while (alphabets[index] != c);
     return index;
