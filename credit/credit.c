@@ -61,10 +61,7 @@ bool checksum(long card_num)
     int val;
     for (int i = 1; i <= length; i++)
     {
-        if (i % 2 == 0)
-        {
-            val += card_num[-i] * 2;
-        }
+
     }
 }
 
@@ -79,11 +76,6 @@ int count_digit(long card_num)
     }
     while (n != 0);
     return count;
-}
-
-int convert_array(long card_num)
-{
-    
 }
 
 long get_card(void)
