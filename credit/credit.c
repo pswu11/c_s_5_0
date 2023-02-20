@@ -74,11 +74,15 @@ bool checksum(long card_num)
     {
         if (i % 2 == 1)
         {
-            sum1 += card_num % 10 * 2;
+            int test1 = card_num % 10 * 2;
+            printf("%i", test1);
+            sum1 += test1;
         }
         else
         {
-            sum2 += card_num % 10;
+            int test2 = card_num % 10;
+            printf("%i", test2);
+            sum2 += test2;
         }
     }
     if ((sum1 + sum2) % 10 == 0)
