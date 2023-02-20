@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int get_card(void);
+long get_card(void);
 void process(string card_num);
 int main(void)
 {
@@ -21,12 +21,12 @@ void process(string card_num)
         {
             printf("%c\n", str[i]);
         }
-
     }
 }
 
-int get_card(void)
+long get_card(void)
 {
-    int card_num = get_int("Input your card number: ");
+    long card_num = get_int("Input your card number: ");
+    printf("%ln", card_num);
     return card_num;
 }
