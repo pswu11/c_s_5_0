@@ -9,4 +9,5 @@ int main(int argc, string argv[]) // taking a user input as argument.
     // why 1 here?
     // it turns out that when we send "./greet Pei"
     // "./greet" => argv[0] ; "Pei" => argv[1]
+    printf("The length is: %i\n", argc);
 }
