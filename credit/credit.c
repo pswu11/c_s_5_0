@@ -95,10 +95,9 @@ bool checksum(long card_num)
             card_num = card_num / 10;
             sum2 += digit;
             printf("Sum2: %i\n", sum2);
-
         }
     }
-    printf("%i %i", sum1, sum2);
+    printf("%i %i\n", sum1, sum2);
     if ((sum1 + sum2) % 10 == 0)
     {
         return true;
