@@ -47,11 +47,11 @@ int compute_score(string word)
         }
         else if (isupper(word[i]))
         {
-            score += word[i] - 'A';
+            score += POINTS[word[i] - 'A'];
         }
         else
         {
-            score += word[i] - 'a';
+            score += POINTS[word[i] - 'a'];
         }
     }
     return score;
