@@ -46,10 +46,12 @@ int compute_score(string word)
            if (isupper(word[i]))
             {
                 score += POINTS[word[i] - 'A'];
+                printf("%i", POINTS[word[i] - 'A']);
             }
             else if (islower(word[i]))
             {
                 score += POINTS[word[i] - 'a'];
+                printf("%i", POINTS[word[i] - 'a']);
             }
         }
         else {
