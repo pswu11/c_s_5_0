@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <math.h>
+
+const int size = 3;
 
 int main(void)
 {
@@ -12,10 +15,26 @@ int main(void)
     // than storing 50 integers separately.
 
     // Initializing an array of 3 integers.
-    int scores[3];
+    // int scores[3]; ==> 3 is the magic number, you should declare a variable if it's reused.
+    int scores[size];
     // And you can use index to access/assign an value to the integer.
-    score[0] = 72;
+    // When there are repetitive codes, loop could help.
+    for (int i = 0; 0 < size; i++)
+    {
+        scores[i] = get_int("Score: ");
+    }
 }
+
+float avg(int numbers[])
+{
+    int sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum += numbers[i];
+    }
+    return sum / (float) size;
+}
+
 
 // WK2 Notes
 
