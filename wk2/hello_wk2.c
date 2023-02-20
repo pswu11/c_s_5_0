@@ -3,7 +3,7 @@
 #include <math.h>
 
 const int size = 3;
-float avg(int numbers[], int length);
+float average(int numbers[], int length);
 
 int main(void)
 {
@@ -25,17 +25,18 @@ int main(void)
         scores[i] = get_int("Score: ");
     }
 
-    int avg = avg(scores, size);
+    int avg = average(scores, size);
+    printf("Average: %i\n", avg);
 }
 
-float avg(int numbers[], int length)
+float average(int numbers[], int length)
 {
     int sum = 0;
     for (int i = 0; i < length; i++)
     {
         sum += numbers[i];
     }
-    return sum / (float) size;
+    return sum / (float) length;
 }
 
 
@@ -68,5 +69,3 @@ float avg(int numbers[], int length)
 // 1. Logging: Use printf() to debug when it's a simple program. But it gets messy.
 // 2. Debugger: Use breakpoints to trace the bugs, i.e. use debug50 for now
 // 3. Rubber Duck: Talk to others, or a imaginary person like rubber duck.
-
-
