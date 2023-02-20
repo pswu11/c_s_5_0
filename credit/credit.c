@@ -12,7 +12,10 @@ int main(void)
 
 string validate(long card_num)
 {
-
+    int length = strlen(str(card_num);
+    if (length == 15)
+    {
+    }
 }
 
 long get_card(void)
