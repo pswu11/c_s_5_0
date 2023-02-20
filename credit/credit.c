@@ -12,9 +12,14 @@ int main(void)
 
 string validate(long card_num)
 {
-    int length = strlen(str(card_num);
+    int length = strlen(str(card_num));
     if (length == 15)
     {
+        int first_two = card_num / 10000000000000;
+        if (first_two == 34 || first_two == 37)
+        {
+            
+        }
     }
 }
 
