@@ -80,13 +80,13 @@ bool checksum(long card_num)
             if (digit / 10 == 0)
             {
                 sum1 += digit;
-                printf("Sum1: %i", sum1);
+                printf("Sum1: %i\n", sum1);
             }
             else
             {
                 sum1 += digit / 10 + digit % 10;
             }
-            printf("Sum1: %i", sum1);
+            printf("Sum1: %i\n", sum1);
         }
         else
         {
