@@ -58,11 +58,11 @@ void validate(long card_num)
 bool checksum(long card_num)
 {
     int length = count_digit(card_num);
-    for (int i = 0; i < length; i++)
+    for (int i = length; i > 0; i--)
     {
         if (i % 2 == 0)
         {
-            
+
         }
     }
 }
