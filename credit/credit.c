@@ -82,9 +82,11 @@ bool checksum(long card_num)
     int length = count_digit(card_num);
     int sum1 = 0;
     int sum2 = 0;
+
     for (int i = 0; i < length; i++)
     {
         int digit = 0;
+        // multiply every other digit by 2 starting from the second-to-last digit as sum1
         if (i % 2 == 1)
         {
             digit = card_num % 10 * 2;
@@ -98,6 +100,7 @@ bool checksum(long card_num)
                 sum1 += digit / 10 + digit % 10;
             }
         }
+        // add the sum of the digits that were not multiplied by 2 as sum2
         else
         {
             digit = card_num % 10;
@@ -105,7 +108,7 @@ bool checksum(long card_num)
             sum2 += digit;
         }
     }
-    printf("%i\n", sum1 + sum2);
+    // sum of two values
     if ((sum1 + sum2) % 10 == 0)
     {
         return true;
@@ -123,8 +126,8 @@ int count_digit(long card_num)
     long n = card_num;
     do
     {
-    n /= 10;
-    ++count;
+        n /= 10;
+        count++;
     }
     while (n != 0);
     return count;
