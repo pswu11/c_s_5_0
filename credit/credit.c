@@ -121,13 +121,12 @@ bool checksum(long card_num)
 int count_digit(long card_num)
 {
     int count = 0;
-    long n = card_num;
     do
     {
-        n /= 10;
+        card_num /= 10;
         count++;
     }
-    while (n != 0);
+    while (card_num != 0);
     return count;
 }
 
