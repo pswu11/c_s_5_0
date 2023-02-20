@@ -19,8 +19,8 @@ int main(int argc, string argv[]) // taking a user input as arguments.
     {
         printf("hello, world!\n"); // default if only one argument was given
     }
-
-    printf("    _____\n   /     \\______\n  | o     |     \\____\n  /\\_____/           \\___\n /                       \\\n|_______/                 \\\n  \\______   _       ___    \\\n        /\\_//      /   \\    |\n       // //______/    /___/\n      /\\/\\/\\      \\   / \\ \\\n                    \\ \\   \\ \\\n                      \\ \\   \\ \\\n                        \\ \\  \\ \\\n                         \\ \\ /\\/\\\n                         /\\/\\\n");
+    // print a nice frog
+    printf("    _____\n   /     \\______\n  | o     |     \\____\n  /\\_____/           \\___\n /                       \\\n|_______/                 \\\n  \\______   _       ___    \\\n        /\\_//      /   \\    |\n       // //______/    /___/\n      /\\/\\/\\      \\   / \\ \\\n                    \\ \\   \\ \\\n        Pei Pei       \\ \\   \\ \\\n                        \\ \\  \\ \\\n                         \\ \\ /\\/\\\n                         /\\/\\\n");
 }
 
 // cowsay
