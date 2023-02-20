@@ -32,6 +32,23 @@ void validate(long card_num)
         {
             printf("MASTER\n");
         }
+        else if (first_two / 10 == 4)
+        {
+            printf("VISA\n");
+        }
+    }
+    // VISA
+    else if (length == 13)
+    {
+        int first_one = card_num / 1000000000000;
+        if (first_one == 4)
+        {
+            printf("MASTER\n");
+        }
+        else if (first_two / 10 == 4)
+        {
+            printf("VISA\n");
+        }
     }
 }
 
