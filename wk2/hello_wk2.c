@@ -44,7 +44,6 @@ float average(int numbers[], int length)
     return sum / (float) length;
 }
 
-
 // WK2 Notes
 
 // 3rd party Lib:
