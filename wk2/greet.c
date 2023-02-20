@@ -35,4 +35,5 @@ int main(int argc, string argv[])
 
 
 // Cryptography:
-// an algorithm to encrypt a normal text into ciphertext.
+// an algorithm that takes a text and a key
+// and encrypt the text into ciphertext.
