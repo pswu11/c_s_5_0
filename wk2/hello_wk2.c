@@ -25,7 +25,7 @@ int main(void)
         scores[i] = get_int("Score: ");
     }
 
-    int avg = avg(scores[size], size);
+    int avg = avg(scores, size);
 }
 
 float avg(int numbers[], int length)
