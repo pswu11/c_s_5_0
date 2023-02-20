@@ -10,15 +10,25 @@ int main(void)
     get_card();
 }
 
-string validate(long card_num)
+void validate(long card_num)
 {
     int length = strlen(str(card_num));
+    // AMEX
     if (length == 15)
     {
         int first_two = card_num / 10000000000000;
         if (first_two == 34 || first_two == 37)
         {
-            
+            printf("AMEX\n");
+        }
+    }
+    // MASTER
+    if (length == 16)
+    {
+        int first_two = card_num / 10000000000000;
+        if (first_two == 34 || first_two == 37)
+        {
+            printf("AMEX\n");
         }
     }
 }
