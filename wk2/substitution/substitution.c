@@ -15,7 +15,7 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
-    char result[] = "";
+    char result[26];
     for (int i = 0; i < strlen(txt); i++)
     {
         if (isupper(txt[i]))
@@ -27,7 +27,7 @@ string convert(string txt, string sub)
             result[i] = sub[txt[i] - 'a'];
         }
     }
-    return string(result);
+    return ;
 }
 
 bool validate_key(string key)
