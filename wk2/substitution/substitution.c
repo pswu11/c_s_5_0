@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     string sub = argv[1];
     if (!validate_key(sub))
     {
-        return 0;
+        return 1;
     }
     string input;
     input = get_string("plaintext: ");
