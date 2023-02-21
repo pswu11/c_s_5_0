@@ -13,6 +13,10 @@ int main(int argc, string argv[])
     {
         return 1;
     }
+    if (argc != 1)
+    {
+        return 1;
+    }
     string input;
     input = get_string("plaintext: ");
     convert(input, sub);
