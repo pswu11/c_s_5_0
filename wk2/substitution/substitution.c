@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
-    char result[] = {};
+    string result;
     for (int i = 0; i < strlen(txt); i++)
     {
         if (isupper(txt[i]))
