@@ -25,7 +25,19 @@ int main(void)
     float S = sentence_count / (float) word_count * 100;
     printf("L: %f \nS: %f \n", L, S);
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    printf("Grade %i\n", index);
+    if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (index >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", index);
+    }
+
 }
 
 // Count the number of letters
