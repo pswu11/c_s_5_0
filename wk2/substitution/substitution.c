@@ -34,7 +34,7 @@ bool validate_key(string key)
         {
             for (int j = i + 1; j < strlen(key); j++)
             {
-                if (key[i] == key[j])
+                if (tolower(key[i]) == tolower(key[j]))
                 {
                     return false;
                 }
@@ -45,6 +45,8 @@ bool validate_key(string key)
             }
         }
     }
-
-
+    else
+    {
+        return false
+    }
 }
