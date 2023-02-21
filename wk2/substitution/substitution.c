@@ -9,12 +9,12 @@ string convert(string txt, string sub);
 int main(int argc, string argv[])
 {
     string sub = argv[1];
-    string input;
-    do
+    if (!validate_key(sub))
     {
-        input = get_string("plaintext: ");
+        return 0;
     }
-    while (!validate_key(sub));
+    string input;
+    input = get_string("plaintext: ");
     printf("Cipher: %s\n", convert(input, sub));
 }
 
