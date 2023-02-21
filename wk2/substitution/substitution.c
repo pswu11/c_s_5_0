@@ -15,7 +15,7 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
-    char result[26];
+    string result;
     for (int i = 0; i < strlen(txt); i++)
     {
         if (isupper(txt[i]))
@@ -24,10 +24,10 @@ string convert(string txt, string sub)
         }
         else if (islower(txt[i]))
         {
-            result[i] = sub[txt[i] - 'a'];
+            printf("%i\n", sub[txt[i] - 'a']);
         }
     }
-    return ;
+    return "ANAN";
 }
 
 bool validate_key(string key)
