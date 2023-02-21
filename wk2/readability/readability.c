@@ -60,7 +60,7 @@ int count_sentences(string t)
     int count = 0;
     for (int i = 0; i < strlen(t); i++)
     {
-        if (strcmp(t[i], ".") || strcmp(t[i], "!") || strcmp(t[i], "?"))
+        if (string(t[i] == "."))
         {
             count += 1;
         }
