@@ -11,11 +11,17 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
+    char result[] = {};
     for (int i = 0; i < strlen(txt); i++)
     {
         if (isupper(txt[i]))
         {
-            txt[i] 
+            result[i] = sub[txt[i] - 'A'];
+        }
+        else if (islower(txt[i]))
+        {
+            result[i] = sub[txt[i] - 'a'];
         }
     }
+    return result;
 }
