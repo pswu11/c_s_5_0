@@ -20,11 +20,7 @@ int main(void)
     int S = sentence_count / (float) word_count * 100;
     printf("L: %i \nS: %i \n", L, S);
     float index = 0.0588 * L - 0.296 * S - 15.8;
-}
-
-int return_level(float index)
-{
-
+    printf("Score: %f", index);
 }
 
 int count_letters(string t)
