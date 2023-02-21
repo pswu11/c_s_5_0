@@ -23,9 +23,8 @@ int main(void)
     // Calcuate the Coleman-Liau index
     float L = letter_count / (float) word_count * 100;
     float S = sentence_count / (float) word_count * 100;
-    printf("L: %f \nS: %f \n", L, S);
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    
+
     // Set conditions for before grade 1 and above 16
     if (index < 1)
     {
