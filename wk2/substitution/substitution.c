@@ -9,7 +9,7 @@ int main(int argc, string argv[])
 {
     string sub = argv[1];
     string input = get_string("plaintext: ");
-    bool b = validate_key(input);
+    bool b = validate_key(sub);
     printf("%d", b);
 }
 
@@ -36,6 +36,16 @@ bool validate_key(string key)
 {
     if (strlen(key) == 26)
     {
+        for (int i = 0; i < strlen(key); i++)
+        {
+            for (int j = i + 1; j < strlen(key); j++)
+            {
+                if (key[i] == key[j])
+                {
+                    return false;
+                }
+            }
+        }
         return true;
     }
     else
