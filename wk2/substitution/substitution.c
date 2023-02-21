@@ -27,7 +27,8 @@ string convert(string txt, string sub)
             printf("%i\n", sub[txt[i] - 'a']);
         }
     }
-    return result;
+    string test = result;
+    return "cc";
 }
 
 bool validate_key(string key)
@@ -49,9 +50,10 @@ bool validate_key(string key)
             }
             return true;
         }
+        return true;
     }
     else
     {
-        return false
+        return false;
     }
 }
