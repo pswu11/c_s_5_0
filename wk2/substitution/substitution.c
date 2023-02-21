@@ -23,5 +23,5 @@ string convert(string txt, string sub)
             result[i] = sub[txt[i] - 'a'];
         }
     }
-    return result;
+    return str(result);
 }
