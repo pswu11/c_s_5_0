@@ -21,7 +21,7 @@ int main(int argc, string argv[])
 string convert(string txt, string sub)
 {
     string s;
-    char result[26];
+    char result[strlen(txt)];
     for (int i = 0; i < strlen(txt); i++)
     {
         if(!isalpha(txt[i]))
