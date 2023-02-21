@@ -57,6 +57,7 @@ bool validate_key(string key)
             {
                 if (key[i] == key[j])
                 {
+                    printf("Key must contain 26 characters.\n");
                     return false;
                 }
             }
@@ -65,6 +66,7 @@ bool validate_key(string key)
     }
     else
     {
+        printf("Key must contain 26 characters.\n");
         return false;
     }
 }
