@@ -3,10 +3,14 @@
 #include <string.h>
 #include <ctype.h>
 
+bool validate_key(string key);
+
 int main(int argc, string argv[])
 {
     string sub = argv[1];
     string input = get_string("plaintext: ");
+    bool b = validate_key(input);
+    printf("%d", b);
 }
 
 string convert(string txt, string sub)
@@ -36,8 +40,6 @@ bool validate_key(string key)
             {
                 return false;
             }
-
-            
             for (int j = i + 1; j < strlen(key); j++)
             {
                 if (tolower(key[i]) == tolower(key[j]))
@@ -45,6 +47,7 @@ bool validate_key(string key)
                     return false;
                 }
             }
+            return true;
         }
     }
     else
