@@ -20,7 +20,7 @@ string convert(string txt, string sub)
     {
         if (isupper(txt[i]))
         {
-            result[i] = sub[txt[i] - 'A'];
+            strcat(result, (sub[txt[i] - 'A']));
         }
         else if (islower(txt[i]))
         {
