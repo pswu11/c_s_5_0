@@ -53,15 +53,21 @@ bool validate_key(string key)
     {
         for (int i = 0; i < strlen(key); i++)
         {
-            if (key[i])
-
-            for (int j = i + 1; j < strlen(key); j++)
+            if (isalpha(key[i]))
             {
-                if (key[i] == key[j])
+                for (int j = i + 1; j < strlen(key); j++)
                 {
-                    printf("Key must contain 26 characters.\n");
-                    return false;
+                    if (key[i] == key[j])
+                    {
+                        printf("Key must contain 26 characters.\n");
+                        return false;
+                    }
                 }
+            }
+            else
+            {
+                printf("Key must only contain alphabetic characters.\n");
+                return false;
             }
         }
         return true;
