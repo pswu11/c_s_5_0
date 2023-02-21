@@ -25,31 +25,30 @@ void convert(string txt, string sub)
 {
     // string s;
     char result[strlen(txt)];
-    printf("ciphertext: ", s);
+    printf("ciphertext: ");
     for (int i = 0; i < strlen(txt); i++)
     {
         if(!isalpha(txt[i]))
         {
             result[i] = txt[i];
-            printf("%i: %c\n", i, txt[i]);
+            printf("%c", txt[i]);
         }
         else
         {
             if (isupper(txt[i]))
             {
                 result[i] = toupper(sub[txt[i] - 'A']);
-                printf("%i: %c\n", i, txt[i]);
+                printf("%c", txt[i]);
             }
             else if (islower(txt[i]))
             {
                 result[i] = tolower(sub[txt[i] - 'a']);
-                printf("%i: %c\n", i, txt[i]);
+                printf("%c", txt[i]);
             }
         }
     }
     // s = result;
-    // printf("ciphertext: %s\n", s);
-    printf("ciphertext: ", s);
+    printf("\n");
 }
 
 bool validate_key(string key)
