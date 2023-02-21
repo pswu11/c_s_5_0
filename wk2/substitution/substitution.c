@@ -8,17 +8,17 @@ string convert(string txt, string sub);
 
 int main(int argc, string argv[])
 {
-    if (argc > 1 || argc == 0)
+    if (argc != 2)
     {
         return 1;
     }
     string sub = argv[1];
-    if (validate_key(sub))
+    bool valid = validate_key(sub);
+    if (valid)
     {
         string input = get_string("plaintext: ");
         convert(input, sub);
     }
-
 }
 
 string convert(string txt, string sub)
@@ -64,7 +64,7 @@ bool validate_key(string key)
                 // Check if key contains repeated characters.
                 for (int j = i + 1; j < strlen(key); j++)
                 {
-                    if (toupper(key[i]) == toupper(key[j]))
+                    if (tolower(key[i]) == tolower(key[j]))
                     {
                         printf("Key must not contain repeated characters.\n");
                         return false;
