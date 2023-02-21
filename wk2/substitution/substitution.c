@@ -15,6 +15,7 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
+    string s;
     char result[26];
     for (int i = 0; i < strlen(txt); i++)
     {
@@ -27,8 +28,8 @@ string convert(string txt, string sub)
             printf("%i\n", sub[txt[i] - 'a']);
         }
     }
-    string test = result;
-    return "cc";
+    s = result;
+    return s;
 }
 
 bool validate_key(string key)
@@ -37,10 +38,6 @@ bool validate_key(string key)
     {
         for (int i = 0; i < strlen(key); i++)
         {
-            if (!isalpha(key[i]))
-            {
-                return false;
-            }
             for (int j = i + 1; j < strlen(key); j++)
             {
                 if (tolower(key[i]) == tolower(key[j]))
@@ -48,7 +45,6 @@ bool validate_key(string key)
                     return false;
                 }
             }
-            return true;
         }
         return true;
     }
