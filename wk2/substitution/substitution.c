@@ -12,11 +12,11 @@ int main(int argc, string argv[])
     {
         return 1;
     }
+    string sub = argv[1];
     if (!validate_key(sub))
     {
         return 1;
     }
-    string sub = argv[1];
     string input = get_string("plaintext: ");
     convert(input, sub);
 }
