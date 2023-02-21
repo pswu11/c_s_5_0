@@ -59,5 +59,5 @@ int count_sentences(string t)
             count += 1;
         }
     }
-    return count + 1;
+    return count;
 }
