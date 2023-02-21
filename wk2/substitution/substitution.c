@@ -9,11 +9,11 @@ string convert(string txt, string sub);
 int main(int argc, string argv[])
 {
     string sub = argv[1];
-    if (!validate_key(sub))
+    if (argc > 1 || argc == 0)
     {
         return 1;
     }
-    if (argc != 1)
+    if (!validate_key(sub))
     {
         return 1;
     }
