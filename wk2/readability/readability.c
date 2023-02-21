@@ -10,6 +10,8 @@ int count_sentences(string t);
 
 int main(void)
 {
+    // Get text from user input and return
+    // the numbers of letters, words, and sentences
     string t = get_string("Text:");
     int letter_count = count_letters(t);
     int word_count = count_words(t);
@@ -17,6 +19,8 @@ int main(void)
     printf("Letters: %i\n", letter_count);
     printf("Words: %i\n", word_count);
     printf("Sentences: %i\n", sentence_count);
+
+    // Calcuate the Coleman-Liau index
     float L = letter_count / (float) word_count * 100;
     float S = sentence_count / (float) word_count * 100;
     printf("L: %f \nS: %f \n", L, S);
@@ -24,11 +28,13 @@ int main(void)
     printf("Grade %i\n", index);
 }
 
+// Count the number of letters
 int count_letters(string t)
 {
     int count = 0;
     for (int i = 0; i < strlen(t); i++)
     {
+        // Check if the char is alphabetical
         if (isalpha(t[i]))
         {
             count += 1;
@@ -37,11 +43,13 @@ int count_letters(string t)
     return count;
 }
 
+// Count the number of words
 int count_words(string t)
 {
     int count = 0;
     for (int i = 0; i < strlen(t); i++)
     {
+        // Count the number of spaces to determin the number of words
         if (isspace(t[i]))
         {
             count += 1;
@@ -50,6 +58,7 @@ int count_words(string t)
     return count + 1;
 }
 
+// Count the number of sentences
 int count_sentences(string t)
 {
     int count = 0;
