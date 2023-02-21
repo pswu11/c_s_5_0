@@ -30,19 +30,19 @@ void convert(string txt, string sub)
         if(!isalpha(txt[i]))
         {
             result[i] = txt[i];
-            printf("%c", txt[i]);
+            printf("%c", result[i]);
         }
         else
         {
             if (isupper(txt[i]))
             {
                 result[i] = toupper(sub[txt[i] - 'A']);
-                printf("%c", txt[i]);
+                printf("%c", result[i]);
             }
             else if (islower(txt[i]))
             {
                 result[i] = tolower(sub[txt[i] - 'a']);
-                printf("%c", txt[i]);
+                printf("%c", result[i]);
             }
         }
     }
