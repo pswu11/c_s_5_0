@@ -32,10 +32,6 @@ string convert(string txt, string sub)
             result[i] = txt[i];
             // printf("%i: %c\n", i, txt[i]);
         }
-        else if (isdigit(txt[i]))
-        {
-            result[i] = txt[i];
-        }
         else
         {
             if (isupper(txt[i]))
