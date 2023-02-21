@@ -4,13 +4,18 @@
 #include <ctype.h>
 
 bool validate_key(string key);
+string convert(string txt, string sub);
 
 int main(int argc, string argv[])
 {
     string sub = argv[1];
-    string input = get_string("plaintext: ");
-    bool b = validate_key(sub);
-    printf("%d", b);
+    string input;
+    do
+    {
+        input = get_string("plaintext: ");
+    }
+    while (!validate_key(sub));
+    printf("Cipher: %s\n", convert(input, sub));
 }
 
 string convert(string txt, string sub)
@@ -19,13 +24,20 @@ string convert(string txt, string sub)
     char result[26];
     for (int i = 0; i < strlen(txt); i++)
     {
-        if (isupper(txt[i]))
+        if(!isalpha(txt[i]))
         {
-            result[i] = sub[txt[i] - 'A'];
+            result[i] = txt[i];
         }
-        else if (islower(txt[i]))
+        else
         {
-            printf("%i\n", sub[txt[i] - 'a']);
+            if (isupper(txt[i]))
+            {
+                result[i] = sub[txt[i] - 'A'];
+            }
+            else if (islower(txt[i]))
+            {
+                result[i] = sub[txt[i] - 'a'];
+            }
         }
     }
     s = result;
