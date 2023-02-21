@@ -53,7 +53,7 @@ bool validate_key(string key)
     {
         for (int i = 0; i < strlen(key); i++)
         {
-            if 
+            if (key[i])
 
             for (int j = i + 1; j < strlen(key); j++)
             {
