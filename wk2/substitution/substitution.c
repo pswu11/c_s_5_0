@@ -8,37 +8,42 @@ void convert(string txt, string sub);
 
 int main(int argc, string argv[])
 {
+    // Handle no argument or too many arguments.
     if (argc != 2)
     {
         return 1;
     }
     string sub = argv[1];
-    if (!validate_key(sub))
+    // Handles when key is not valid.
+    if (!validate_key(argv[1]))
     {
         return 1;
     }
-    string input = get_string("plaintext: ");
-    convert(input, sub);
+    convert(get_string("plaintext: "), argv[1]);
 }
 
+// Covert the plain text into ciphertext with given arguments.
 void convert(string txt, string sub)
 {
     char result[strlen(txt)];
     printf("ciphertext: ");
     for (int i = 0; i < strlen(txt); i++)
     {
-        if(!isalpha(txt[i]))
+        // Return the original char when it is not alphabetic
+        if (!isalpha(txt[i]))
         {
             result[i] = txt[i];
             printf("%c", result[i]);
         }
         else
         {
+            // Handle the upper case character
             if (isupper(txt[i]))
             {
                 result[i] = toupper(sub[txt[i] - 'A']);
                 printf("%c", result[i]);
             }
+            // Handle the lower case character
             else if (islower(txt[i]))
             {
                 result[i] = tolower(sub[txt[i] - 'a']);
@@ -49,6 +54,7 @@ void convert(string txt, string sub)
     printf("\n");
 }
 
+// Validate key
 bool validate_key(string key)
 {
     // Check if key contains 26 characters.
