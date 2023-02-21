@@ -16,9 +16,9 @@ int main(void)
     printf("Letters: %i\n", letter_count);
     printf("Words: %i\n", word_count);
     printf("Sentences: %i\n", sentence_count);
-    int L = letter_count / (float) word_count * 100;
-    int S = sentence_count / (float) word_count * 100;
-    printf("L: %i \nS: %i \n", L, S);
+    float L = letter_count / (float) word_count * 100;
+    float S = sentence_count / (float) word_count * 100;
+    printf("L: %f \nS: %f \n", L, S);
     float index = 0.0588 * L - 0.296 * S - 15.8;
     printf("Score: %f", index);
 }
