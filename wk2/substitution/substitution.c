@@ -15,7 +15,7 @@ int main(int argc, string argv[])
     }
     string input;
     input = get_string("plaintext: ");
-    printf("Cipher: %s\n", convert(input, sub));
+    printf("Ciphertext: %s\n", convert(input, sub));
 }
 
 string convert(string txt, string sub)
