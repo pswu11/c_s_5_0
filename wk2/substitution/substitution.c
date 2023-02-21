@@ -28,5 +28,11 @@ string convert(string txt, string sub)
 
 bool validate_key(string key)
 {
-    if (strlen(key) != 26 || )
+    if (strlen(key) == 26)
+
+        for (int = i; i < strlen(key); i++)
+        {
+
+        }
+
 }
