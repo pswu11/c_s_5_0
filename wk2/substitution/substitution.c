@@ -61,7 +61,7 @@ bool validate_key(string key)
                 // Check if key contains repeated characters.
                 for (int j = i + 1; j < strlen(key); j++)
                 {
-                    if (key[i] == key[j])
+                    if (toupper(key[i]) == toupper(key[j]))
                     {
                         printf("Key must not contain repeated characters.\n");
                         return false;
