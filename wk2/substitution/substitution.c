@@ -36,16 +36,6 @@ bool validate_key(string key)
 {
     if (strlen(key) == 26)
     {
-        for (int i = 0; i < strlen(key); i++)
-        {
-            for (int j = i + 1; j < strlen(key); j++)
-            {
-                if (tolower(key[i]) == tolower(key[j]))
-                {
-                    return false;
-                }
-            }
-        }
         return true;
     }
     else
