@@ -27,14 +27,14 @@ string convert(string txt, string sub)
         if(!isalpha(txt[i]))
         {
             result[i] = txt[i];
-            printf("%i: %c\n", i, txt[i]);
+            // printf("%i: %c\n", i, txt[i]);
         }
         else
         {
             if (isupper(txt[i]))
             {
                 result[i] = toupper(sub[txt[i] - 'A']);
-                printf("%i: %c\n", i, txt[i]);
+                // printf("%i: %c\n", i, txt[i]);
             }
             else if (islower(txt[i]))
             {
@@ -44,6 +44,7 @@ string convert(string txt, string sub)
         }
     }
     s = result;
+    printf("%s\n", s);
     return s;
 }
 
