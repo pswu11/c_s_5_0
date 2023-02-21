@@ -23,7 +23,6 @@ int main(int argc, string argv[])
 
 void convert(string txt, string sub)
 {
-    // string s;
     char result[strlen(txt)];
     printf("ciphertext: ");
     for (int i = 0; i < strlen(txt); i++)
@@ -47,7 +46,6 @@ void convert(string txt, string sub)
             }
         }
     }
-    // s = result;
     printf("\n");
 }
 
