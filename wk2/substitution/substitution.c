@@ -16,11 +16,11 @@ string convert(string txt, string sub)
     {
         if (isupper(txt[i]))
         {
-            result[i] = sub[txt[i] - 'A'];
+            result = strcat(result, sub[txt[i] - 'A']);
         }
         else if (islower(txt[i]))
         {
-            result[i] = sub[txt[i] - 'a'];
+            result = strcat(result, sub[txt[i] - 'a']);
         }
     }
     return result;
