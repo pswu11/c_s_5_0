@@ -13,12 +13,12 @@ int main(int argc, string argv[])
         return 1;
     }
     string sub = argv[1];
-    bool valid = validate_key(sub);
-    if (valid)
+    if (!validate_key(sub))
     {
-        string input = get_string("plaintext: ");
-        convert(input, sub);
+        return 1;
     }
+    string input = get_string("plaintext: ");
+    convert(input, sub);
 }
 
 string convert(string txt, string sub)
