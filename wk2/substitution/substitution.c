@@ -16,12 +16,12 @@ string convert(string txt, string sub)
     {
         if (isupper(txt[i]))
         {
-            printf("%c\n", sub[txt[i] - 'A']);
+            result[i] = sub[txt[i] - 'A'];
         }
         else if (islower(txt[i]))
         {
-            //strcat(result, sub[txt[i] - 'a']);
+            result[i] = sub[txt[i] - 'a'];
         }
     }
-    return "what";
+    return result;
 }
