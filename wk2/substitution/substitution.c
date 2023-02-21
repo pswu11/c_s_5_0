@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 bool validate_key(string key);
-string convert(string txt, string sub);
+void convert(string txt, string sub);
 
 int main(int argc, string argv[])
 {
@@ -21,10 +21,11 @@ int main(int argc, string argv[])
     convert(input, sub);
 }
 
-string convert(string txt, string sub)
+void convert(string txt, string sub)
 {
-    string s;
+    // string s;
     char result[strlen(txt)];
+    printf("ciphertext: ", s);
     for (int i = 0; i < strlen(txt); i++)
     {
         if(!isalpha(txt[i]))
@@ -46,9 +47,9 @@ string convert(string txt, string sub)
             }
         }
     }
-    s = result;
-    printf("ciphertext: %s\n", s);
-    return s;
+    // s = result;
+    // printf("ciphertext: %s\n", s);
+    printf("ciphertext: ", s);
 }
 
 bool validate_key(string key)
