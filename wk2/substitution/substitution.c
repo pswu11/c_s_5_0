@@ -44,7 +44,7 @@ string convert(string txt, string sub)
         }
     }
     s = result;
-    // printf("Ciphertext: %s\n", s);
+    printf("ciphertext: %s\n", s);
     return s;
 }
 
