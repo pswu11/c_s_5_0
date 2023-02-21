@@ -49,17 +49,20 @@ string convert(string txt, string sub)
 
 bool validate_key(string key)
 {
+    // Check if key contains 26 characters.
     if (strlen(key) == 26)
     {
         for (int i = 0; i < strlen(key); i++)
         {
+            // Check if key contains non-alphabetic characters.
             if (isalpha(key[i]))
             {
+                // Check if key contains repeated characters.
                 for (int j = i + 1; j < strlen(key); j++)
                 {
                     if (key[i] == key[j])
                     {
-                        printf("Key must contain 26 characters.\n");
+                        printf("Key must not contain repeated characters.\n");
                         return false;
                     }
                 }
