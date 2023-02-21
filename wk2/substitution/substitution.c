@@ -15,19 +15,19 @@ int main(int argc, string argv[])
 
 string convert(string txt, string sub)
 {
-    string result;
+    char result[26];
     for (int i = 0; i < strlen(txt); i++)
     {
         if (isupper(txt[i]))
         {
-            strcat(result, (sub[txt[i] - 'A']));
+            result[i] = sub[txt[i] - 'A'];
         }
         else if (islower(txt[i]))
         {
             printf("%i\n", sub[txt[i] - 'a']);
         }
     }
-    return "ANAN";
+    return result;
 }
 
 bool validate_key(string key)
