@@ -25,3 +25,8 @@ string convert(string txt, string sub)
     }
     return string(result);
 }
+
+bool validate_key(string key)
+{
+    if (strlen(key) != 26 || )
+}
