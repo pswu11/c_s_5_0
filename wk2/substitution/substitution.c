@@ -8,7 +8,6 @@ string convert(string txt, string sub);
 
 int main(int argc, string argv[])
 {
-    string sub = argv[1];
     if (argc > 1 || argc == 0)
     {
         return 1;
@@ -17,8 +16,8 @@ int main(int argc, string argv[])
     {
         return 1;
     }
-    string input;
-    input = get_string("plaintext: ");
+    string sub = argv[1];
+    string input = get_string("plaintext: ");
     convert(input, sub);
 }
 
