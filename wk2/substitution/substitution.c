@@ -29,10 +29,22 @@ string convert(string txt, string sub)
 bool validate_key(string key)
 {
     if (strlen(key) == 26)
-
-        for (int = i; i < strlen(key); i++)
+    {
+        for (int i = 0; i < strlen(key); i++)
         {
-
+            for (int j = i + 1; j < strlen(key); j++)
+            {
+                if (key[i] == key[j])
+                {
+                    return false;
+                }
+            }
+            if (!isalpha(key[i]))
+            {
+                return false;
+            }
         }
+    }
+
 
 }
