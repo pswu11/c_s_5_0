@@ -4,12 +4,12 @@
 
 int main(void)
 {
-    int colors[] = {"black", "red", "orange", "pruple", "gold", "blue", "green"};
+    string colors[] = {"black", "red", "orange", "pruple", "gold", "blue", "green"};
 
-    int n = get_string("Color: ");
+    string input = get_string("Color: ");
     for (int i = 0; i < 7; i++)
     {
-        if (strcmp(colors[i], n))
+        if (strcmp(colors[i], input) == 0)
         {
             printf("Found\n");
             return 0;
