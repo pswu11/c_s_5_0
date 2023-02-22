@@ -11,9 +11,11 @@ int main(void)
         if (numbers[i] == n)
         {
             printf("Found\n");
-            return 0;
+            return 0; // program exits successfully.
         }
     }
     printf("Not found\n");
-    return 1;
+    return 1; // program exits with genenral error.
 }
+
+// Note: use "echo$?" to check the exit status in cli.
