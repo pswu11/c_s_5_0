@@ -1,14 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+    int colors[] = {"black", "red", "orange", "pruple", "gold", "blue", "green"};
 
-    int n = get_int("Number: ");
+    int n = get_string("Color: ");
     for (int i = 0; i < 7; i++)
     {
-        if (numbers[i] == n)
+        if (strcmp(colors[i], n))
         {
             printf("Found\n");
             return 0;
