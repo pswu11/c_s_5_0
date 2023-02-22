@@ -18,3 +18,7 @@ int main(void)
     printf("Not found\n");
     return 1;
 }
+
+// Segmentation fault:
+// when the program is trying to access the index out of bound.
+// you touch the segment of memeory that you shouldn't have.
