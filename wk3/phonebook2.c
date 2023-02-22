@@ -13,6 +13,8 @@ person; // This is the name of the customed struct type
 int main(void)
 {
     person contacts[2];
+    // In reality, the below part would be
+    // reading and writing from a database.
     contacts[0].name = "Carter";
     contacts[0].number = "+49-152-38965479";
     contacts[1].name = "David";
