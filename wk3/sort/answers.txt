@@ -2,9 +2,10 @@ sort1 uses: Bubble Sort
 
 How do you know?:
 
-1. Both bubble sort and selection sort have upper bound of
-O(n^2) complexity. However, if you look closely, bubble sort's
-time complexity should be higher. 
+Both bubble sort and selection sort have upper bound of
+O(n^2) complexity. However, if you look closely on the fomulars,
+bubble sort's time complexity should be higher than selection
+sort as the number of comparisons increases.
 
 sort2 uses: Merge Sort
 
@@ -14,9 +15,11 @@ Merge sort is a way more efficient sorting algorithms than selection
 sort and bubble sort that has a complexity of O(n log n), and its
 upper bound and lower bound are the same.
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?:
+
+Selection sort has 
 
 
 NOTES:
