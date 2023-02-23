@@ -170,7 +170,7 @@ void sort_pairs(void)
             }
         }
         // swap the pairs[i] with pairs with the max victory
-        int temp = pairs[i];
+        pair temp = pairs[i];
         pairs[i] = pairs[max_index];
         pairs[max_index] = temp;
     }
