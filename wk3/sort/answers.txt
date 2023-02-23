@@ -23,7 +23,7 @@ random    0m0.255s
 reversed    0m0.297s - worst case
 
 ## 50000
-random 0m7.979s
+random 0m7.429s
 reversed    0m5.547s - worst case
 
 # Sort2
@@ -51,5 +51,5 @@ random    0m0.222s
 reversed    0m0.182s
 
 ## 50000
-random 0m3.507s
+random 0m2.914s
 reversed    0m3.471s - worst case
