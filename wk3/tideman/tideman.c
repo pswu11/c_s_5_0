@@ -161,7 +161,13 @@ void sort_pairs(void)
         int max = vic[i];
         for (int j = i; i < pair_count - 1; j++)
         {
-            
+            if (vic[i] < vic[j])
+            {
+                // swap the pairs
+                int temp = pairs[i];
+                pairs[i] = pairs[j];
+                pairs[j] = temp;
+            }
         }
     }
     return;
