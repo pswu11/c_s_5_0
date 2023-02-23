@@ -7,10 +7,6 @@
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
 
-// preferences[2][2]
-
-
-
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
 
