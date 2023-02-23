@@ -120,7 +120,7 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]] += 1;
-            printf("%s is preferred over %s\n", candi[i], candidates[j]);
+            printf("%s is preferred over %s\n", candidates[i], candidates[j]);
         }
     }
     return;
