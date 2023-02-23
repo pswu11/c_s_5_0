@@ -108,7 +108,6 @@ bool vote(int rank, string name, int ranks[])
             return true;
         }
     }
-    record_preferences(ranks[]);
     return false;
 }
 
