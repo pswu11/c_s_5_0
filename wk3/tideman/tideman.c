@@ -119,6 +119,7 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]] += 1;
+            printf("%s is preferred over %s\n", candidates[i], candidates[j]);
         }
     }
     return;
@@ -137,12 +138,14 @@ void add_pairs(void)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count += 1;
+                printf("Pair %i: %s %s", pair_count, candidates[i], candidates[j]);
             }
             else if (preferences[j][i] > preferences[i][j])
             {
                 pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
                 pair_count += 1;
+                printf("Pair %i: %s %s", pair_count, candidates[j], candidates[i]);
             }
         }
     }
