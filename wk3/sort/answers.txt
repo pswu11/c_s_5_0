@@ -2,9 +2,9 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: 
 
 sort3 uses: TODO
 
@@ -34,8 +34,22 @@ reversed real    0m0.025s
 
 ## 10000
 random    0m0.060s
-reversed    0m0.297s
+reversed    0m0.063s
 
 ## 50000
-random 0m7.979s
-reversed    0m5.907s
+random 0m0.399s
+reversed    0m0.359s
+
+# Sort3
+=======
+## 5000
+randome real    0m0.057s
+reversed real    0m0.054s
+
+## 10000
+random    0m0.222s
+reversed    0m0.182s
+
+## 50000
+random 0m3.507s
+reversed    0m3.471s
