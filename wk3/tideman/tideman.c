@@ -168,8 +168,8 @@ void sort_pairs(void)
         }
         // swap the pairs
         int temp = pairs[i];
-        pairs[i] = pairs[j];
-        pairs[j] = temp;
+        pairs[i] = pairs[max_index];
+        pairs[max_index] = temp;
     }
     return;
 }
