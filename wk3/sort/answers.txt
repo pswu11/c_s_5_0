@@ -2,7 +2,7 @@ sort1 uses: Bubble Sort
 
 How do you know?:
 
-Both bubble sort and selection sort have 
+
 
 sort2 uses: Merge Sort
 
