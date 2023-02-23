@@ -1,33 +1,40 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?:
+
+Both bubble sort and selection sort have 
 
 sort2 uses: Merge Sort
 
 How do you know?:
+
+Merge sort is a way more efficient sorting algorithms than selection
+sort and bubble sort that has a complexity of O(n log n), and its
+upper bound and lower bound are the same.
 
 sort3 uses: TODO
 
 How do you know?: TODO
 
 
-
+NOTES:
+======
 # Sort1
-=======
+-------
 ## 5000
 randome real    0m0.083s
-reversed real    0m0.093s - worst case
+reversed real    0m0.093s
 
 ## 10000
 random    0m0.255s
-reversed    0m0.297s - worst case
+reversed    0m0.297s
 
 ## 50000
 random 0m7.429s
-reversed    0m5.547s - worst case
+reversed    0m5.547s
 
 # Sort2
-=======
+-------
 ## 5000
 randome real    0m0.024s
 reversed real    0m0.025s
@@ -41,7 +48,7 @@ random 0m0.399s
 reversed    0m0.359s
 
 # Sort3
-=======
+-------
 ## 5000
 randome real    0m0.057s
 reversed real    0m0.054s
@@ -52,4 +59,4 @@ reversed    0m0.182s
 
 ## 50000
 random 0m2.914s
-reversed    0m3.471s - worst case
+reversed    0m3.471s
