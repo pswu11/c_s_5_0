@@ -24,7 +24,7 @@ reversed    0m0.297s - worst case
 
 ## 50000
 random 0m7.979s
-reversed    0m5.907s - worst case
+reversed    0m5.547s - worst case
 
 # Sort2
 =======
