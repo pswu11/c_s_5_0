@@ -1,5 +1,12 @@
 sort1 uses: TODO
 
+# random5000
+real    0m0.083s
+
+# random10000
+real    0m0.255s
+
+
 How do you know?: TODO
 
 sort2 uses: TODO
