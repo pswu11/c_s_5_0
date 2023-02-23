@@ -58,5 +58,5 @@ random    0m0.222s
 reversed    0m0.182s
 
 ## 50000
-random 0m2.914s
-reversed    0m3.471s
+random 0m2.968s
+reversed    0m3.091s
