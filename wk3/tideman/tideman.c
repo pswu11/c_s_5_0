@@ -156,21 +156,6 @@ void sort_pairs(void)
     {
         vic[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]
     }
-    for (int i = 0; i < pair_count; i++)
-    {
-        int max = vic[i];
-        for (int j = i; i < pair_count - 1; j++)
-        {
-            if (vic[i] < vic[j])
-            {
-                max = vic[j];
-            }
-        }
-        // swap the pairs
-        int temp = pairs[i];
-        pairs[i] = pairs[j];
-        pairs[j] = temp;
-    }
     return;
 }
 
