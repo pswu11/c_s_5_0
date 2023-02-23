@@ -25,3 +25,17 @@ reversed    0m0.297s
 ## 50000
 random 0m7.979s
 reversed    0m5.907s
+
+# Sort2
+=======
+## 5000
+randome real    0m0.024s
+reversed real    0m0.025s
+
+## 10000
+random    0m0.060s
+reversed    0m0.297s
+
+## 50000
+random 0m7.979s
+reversed    0m5.907s
