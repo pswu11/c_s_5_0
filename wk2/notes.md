@@ -1,7 +1,9 @@
 # Queues
-- Enqueue: add a new element to the end of the queue
-- Dequene: remove the oldest element from the beginning of the queue 
+FIFO data structure.
 Arrary based implementation.
+- Enqueue: add a new element to the end of the queue
+- Dequene: remove the oldest element from the beginning of the queue
+Linked list based implementation.
 
 # Array
 
