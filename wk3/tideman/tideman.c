@@ -155,14 +155,14 @@ void sort_pairs(void)
     int vic[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        vic[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]
+        vic[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
     // Sort the array using selectioin sort
     for (int i = 0; i < pair_count; i++)
     {
         // Find max value in pairs
         int max_index = i;
-        for (int j = i + 1; i < pair_count - 1; j++)
+        for (int j = i + 1; j < pair_count; j++)
         {
             if (vic[i] < vic[j])
             {
