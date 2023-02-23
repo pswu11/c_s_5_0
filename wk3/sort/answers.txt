@@ -1,12 +1,5 @@
 sort1 uses: TODO
 
-# random5000
-real    0m0.083s
-
-# random10000
-real    0m0.255s
-
-
 How do you know?: TODO
 
 sort2 uses: TODO
@@ -16,3 +9,19 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+
+
+# Sort1
+=======
+## 5000
+randome real    0m0.083s
+reversed real    0m0.093s
+
+## 10000
+random    0m0.255s
+reversed    0m0.297s
+
+## 50000
+random 0m7.979s
+reversed    0m5.907s
