@@ -7,19 +7,30 @@ O(n^2) complexity. However, if you look closely on the fomulars,
 bubble sort's time complexity should be higher than selection
 sort as the number of comparisons increases.
 
+Based on the execution time we received, while sorting the 5000 numbers
+doesn't show a huge difference between two methods, but the gap became
+very obvious when sorting 50000 numbers. (See NOTES below.)
+
 sort2 uses: Merge Sort
 
 How do you know?:
 
 Merge sort is a way more efficient sorting algorithms than selection
 sort and bubble sort that has a complexity of O(n log n), and its
-upper bound and lower bound are the same.
+upper bound and lower bound are the same. Therefore, it's obvious that
+sort2 program is using merge sort algorithm.
 
 sort3 uses: Selection Sort
 
 How do you know?:
 
-Selection sort has 
+Selection sort's upper bound and lower bound complexity are both O(n^2).
+That means the difference of execution time between the best case and
+worst case should be small.
+
+We could see that for sort3, the execution time between random and reversed
+dataset are quite small and neglectable, especially when comparing to
+sort1.
 
 
 NOTES:
