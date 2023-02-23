@@ -26,8 +26,8 @@ randome real    0m0.083s
 reversed real    0m0.093s
 
 ## 10000
-random    0m0.255s
-reversed    0m0.297s
+random    0m0.301s
+reversed    0m0.258s
 
 ## 50000
 random 0m7.429s
