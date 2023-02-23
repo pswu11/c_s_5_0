@@ -2,7 +2,9 @@ sort1 uses: Bubble Sort
 
 How do you know?:
 
-
+1. Both bubble sort and selection sort have upper bound of
+O(n^2) complexity. However, if you look closely, bubble sort's
+time complexity should be higher. 
 
 sort2 uses: Merge Sort
 
