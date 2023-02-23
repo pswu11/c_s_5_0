@@ -81,6 +81,7 @@ bool vote(string name)
 void print_winner(void)
 {
     int winner_votes = 0;
+    // Find out the maximal number of votes
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > winner_votes)
@@ -88,6 +89,7 @@ void print_winner(void)
             winner_votes = candidates[i].votes;
         }
     }
+    // Print out all the candidates that receive the maximal votes 
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == winner_votes)
