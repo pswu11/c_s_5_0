@@ -1,9 +1,9 @@
 # Queues
-- Enqueue:
-- Dequene: 
+- Enqueue: add a new element to the end of the queue
+- Dequene: remove the oldest element from the beginning of the queue 
 Arrary based implementation.
 
-# Array section
+# Array
 
 ## passed by value
 Which means it makes a copy when assigning, most of the variables do this.
