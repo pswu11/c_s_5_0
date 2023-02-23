@@ -4,7 +4,7 @@ How do you know?: TODO
 
 sort2 uses: Merge Sort
 
-How do you know?: 
+How do you know?:
 
 sort3 uses: TODO
 
@@ -16,15 +16,15 @@ How do you know?: TODO
 =======
 ## 5000
 randome real    0m0.083s
-reversed real    0m0.093s
+reversed real    0m0.093s - worst case
 
 ## 10000
 random    0m0.255s
-reversed    0m0.297s
+reversed    0m0.297s - worst case
 
 ## 50000
 random 0m7.979s
-reversed    0m5.907s
+reversed    0m5.907s - worst case
 
 # Sort2
 =======
@@ -52,4 +52,4 @@ reversed    0m0.182s
 
 ## 50000
 random 0m3.507s
-reversed    0m3.471s
+reversed    0m3.471s - worst case
