@@ -163,12 +163,13 @@ void sort_pairs(void)
         {
             if (vic[i] < vic[j])
             {
-                // swap the pairs
-                int temp = pairs[i];
-                pairs[i] = pairs[j];
-                pairs[j] = temp;
+                max = vic[j];
             }
         }
+        // swap the pairs
+        int temp = pairs[i];
+        pairs[i] = pairs[j];
+        pairs[j] = temp;
     }
     return;
 }
