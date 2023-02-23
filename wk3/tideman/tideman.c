@@ -159,7 +159,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         int max_index = i;
-        for (int j = i; i < pair_count - 1; j++)
+        for (int j = i + 1; i < pair_count - 1; j++)
         {
             if (vic[i] < vic[j])
             {
