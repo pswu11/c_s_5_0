@@ -1,6 +1,7 @@
 # Queues
-- Enqueue
-- Dequene
+- Enqueue:
+- Dequene: 
+Arrary based implementation.
 
 # Array section
 
