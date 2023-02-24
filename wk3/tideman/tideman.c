@@ -194,16 +194,6 @@ void lock_pairs(void)
             {
 
             }
-                    if (j == pairs[i].winner)
-                    {
-                        locked[pairs[i].winner][pairs[i].loser] = false;
-                        printf("cycle found\n");
-                    }
-                    else
-                    {
-                        x = j;
-                        printf("no cycle, x = %i\n", j);
-                    }
             for (b = 0; b < pair_count; b++)
             {
 
