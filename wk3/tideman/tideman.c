@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool check_cycle(int start, int end);
 
 int main(int argc, string argv[])
 {
@@ -187,7 +188,10 @@ void lock_pairs(void)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
         // Check if there is a cycle for this edge.
-        check_cycle(pairs[i].winner, pairs[i].loser);
+        if (check_cycle(pairs[i].winner, pairs[i].loser))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
+        }
     }
     return;
 }
@@ -213,4 +217,5 @@ bool check_cycle(int start, int end)
             check_cycle(start, i);
         }
     }
+    return false;
 }
