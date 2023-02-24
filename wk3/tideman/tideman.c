@@ -208,7 +208,15 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            printf("Locked: %i %i %d\n", i, j, locked[j][i]);
+            int c = 0;
+            if (!locked[j][i])
+            {
+                c += 1;
+            }
+            if (c == candidate_count)
+            {
+                printf("%s", candidates[j]);
+            }
         }
     }
 }
