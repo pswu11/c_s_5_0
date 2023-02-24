@@ -172,7 +172,7 @@ void sort_pairs(void)
     }
     for (int i = 0; i < pair_count; i++)
     {
-        printf("Pair i: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[i][j] - preferences[j][i]);
+        printf("Ranked pair %i: %s %s at %i\n", i, candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[i][j] - preferences[j][i]);
     }
     return;
 }
@@ -182,7 +182,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-
+        locked[pairs[i].winnder][pairs[i].loser] = true;
     }
     return;
 }
