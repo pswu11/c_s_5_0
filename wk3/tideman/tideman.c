@@ -212,11 +212,7 @@ void print_winner(void)
             if (!locked[j][i])
             {
                 count += 1;
-            }
-            if (count == candidate_count)
-            {
-                printf("%s", candidates[j]);
-                return;
+                printf("candidate %s count %i", candidates[j], count);
             }
         }
     }
