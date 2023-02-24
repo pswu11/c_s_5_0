@@ -203,21 +203,25 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
+    for (int i = 0; i < sizeof(locked[0]); i++)
+    {
+        check_cycle()
+    }
     return;
 }
 
 // Check whether there's a cycle
-bool check_cycle(int start, int end)
+bool check_cycle(int edge_start, int edge_end)
 {
-    if (start == end)
+    if (edge_start == edge_end)
     {
         return true;
     }
     for (int i = 0; i < pair_count; i++)
     {
-        if (locked[end][i])
+        if (locked[edge_end][i])
         {
-            check_cycle(start, i);
+            check_cycle(edge_start, i);
         }
     }
     return false;
