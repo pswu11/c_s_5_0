@@ -138,7 +138,7 @@ void add_pairs(void)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count += 1;
-                printf("Pair %i: %s %s\n", pair_count, candidates[i], candidates[j]);
+                printf("Pair %i: %s %s at %i\n", pair_count, candidates[i], candidates[j], preferences[i][j] - preferences[j][i]);
             }
         }
     }
