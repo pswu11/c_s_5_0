@@ -188,9 +188,10 @@ void lock_pairs(void)
         int j = 0;
         do
         {
-            if (locked[[pairs].loser][j] == true || j == )
+            if (locked[[pairs].loser][j] == true)
             {
-                locked[pairs[i].winnder][pairs[i].loser] = false;
+                printf("found\n");
+                
             }
 
         }
