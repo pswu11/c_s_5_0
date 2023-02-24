@@ -208,9 +208,9 @@ bool check_cycle(int start, int end)
     }
     for (int i = 0; i < pair_count; i++)
     {
-        if (locked[end][i] == true)
+        if (locked[end][i])
         {
-
+            if (check_cycle(i, start))
         }
     }
 }
