@@ -192,6 +192,10 @@ void lock_pairs(void)
         {
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
+        else
+        {
+            printf("%i over %i locked", pairs[i].winner, pairs[i].loser);
+        }
     }
     return;
 }
@@ -199,7 +203,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    
     return;
 }
 
