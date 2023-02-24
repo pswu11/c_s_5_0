@@ -200,12 +200,13 @@ void lock_pairs(void)
                 else
                 {
                     x = j;
-                    printf("no cycle\n");
+                    printf("no cycle, x = %i\n", j);
                 }
             }
         }
-        return;
     }
+    return;
+}
 
 // Print the winner of the election
 void print_winner(void)
