@@ -208,9 +208,7 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            int sum = 0;
-            sum += locked[j][i];
-            printf("%i", sum);
+            printf("Locked: %i %i %d\n", i, j, locked[j][i]);
         }
     }
 }
