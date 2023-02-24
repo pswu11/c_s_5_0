@@ -213,9 +213,10 @@ void print_winner(void)
             {
                 count += 1;
             }
-            if (count == candidate_count);
+            if (count == candidate_count)
             {
                 printf("%s", candidates[i]);
+                return;
             }
         }
     }
