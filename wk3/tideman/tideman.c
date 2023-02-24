@@ -206,10 +206,17 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int j;
-        while (locked[i][j])
+        for (int j = 0; j < candidate_count; j++)
         {
-            j++
+            int count = 0;
+            if (!locked[i][j])
+            {
+                count += 1;
+            }
+            if (count == candidate_count);
+            {
+                printf("%s", candidates[i]);
+            }
         }
     }
 }
