@@ -187,14 +187,22 @@ void lock_pairs(void)
     {
         locked[pairs[i].winnder][pairs[i].loser] = true;
         // Check if there is a cycle
+        int x = pairs[i].loser;
         do
         {
-            int a = pairs[i].loser, b = 0;
-            for (b = 0; b < pair_count, b++)
+            for (i = 0; i < pair_count, i++)
             {
-                if (locked[a][b] == true)
+                if (locked[x][i] == true)
                 {
-                    a = b;
+                    if (i == pairs[i].winner)
+                    {
+                        locked[pairs[i].winnder][pairs[i].loser] = false;
+                    }
+                    else
+                    {
+                        x = b;
+                    }
+
                 }
             }
         }
