@@ -200,8 +200,10 @@ void lock_pairs(void)
                 else
                 {
                     x = i;
+                    printf("no cycle\n");
                 }
                 i++;
+                printf("%i", i);
             }
         } while (i < pair_count);
     }
