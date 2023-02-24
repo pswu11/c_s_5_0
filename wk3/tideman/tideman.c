@@ -200,17 +200,16 @@ void lock_pairs(void)
     return;
 }
 
-// Print the winner of the election
+// Print the winner of the election, the winner is the candidate
+// that has no locked edge starting from him/her (aka source of edges).
 void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        int j;
+        while (locked[i][j])
         {
-            if (!locked[i][j])
-            {
-                printf("%s\n", candidates[i]);
-            }
+            j++
         }
     }
 }
