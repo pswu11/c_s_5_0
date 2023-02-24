@@ -185,17 +185,13 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         locked[pairs[i].winnder][pairs[i].loser] = true;
-        int one = pairs[i].loser, two = 0;
-        do
+        for (int j = 0; j < pair_count; j++)
         {
-            if (locked[one][two] == true)
+            if (locked[pairs[i].loser][j] == true)
             {
-                printf("found\n");
-
+                for (int k = 0; k < pair_count; k++)
             }
-
         }
-
     }
     return;
 }
