@@ -192,7 +192,7 @@ void lock_pairs(void)
         {
             if (locked[a][b] == true)
             {
-
+                a = b; 
             }
             for (b = 0; b < pair_count; b++)
             {
