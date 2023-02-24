@@ -209,9 +209,14 @@ void print_winner(void)
         for (int j = 0; j < candidate_count; j++)
         {
             int count = 0;
-            if (!locked[i][j])
+            if (!locked[j][i])
             {
                 count += 1;
+            }
+            if (count == candidate_count)
+            {
+                printf("%s", candidates[j]);
+                return;
             }
         }
     }
