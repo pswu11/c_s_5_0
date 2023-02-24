@@ -138,7 +138,7 @@ void add_pairs(void)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count += 1;
-                printf("Pair %i: %s %s", pair_count, candidates[i], candidates[j]);
+                printf("Pair %i: %s %s\n", pair_count, candidates[i], candidates[j]);
             }
         }
     }
@@ -174,7 +174,7 @@ void sort_pairs(void)
     {
         int win = pairs[i].winner;
         int los = pairs[i].loser;
-        printf("Ranked pair %i: %s %s at %i\n", i, candidates[win], candidates[los], preferences[win][los] - preferences[los][win]);
+        printf("Ranked pair %i: %s %s at %i\n", i + 1, candidates[win], candidates[los], preferences[win][los] - preferences[los][win]);
     }
     return;
 }
@@ -182,17 +182,12 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // for (int i = 0; i < pair_count; i++)
-    // {
-    //     if (i > 2 || pairs[i].loser = pairs[i-2].winner)
-    //     {
-    //         locked[pairs[i].winnder][pairs[i].loser] = false;
-    //     }
-    //     else
-    //     {
-    //         locked[pairs[i].winnder][pairs[i].loser] = true;
-    //     }
-    // }
+    for (int i = 0; i < pair_count; i++)
+    {
+        locked[pairs[i].winnder][pairs[i].loser] = true;
+        
+
+    }
     return;
 }
 
