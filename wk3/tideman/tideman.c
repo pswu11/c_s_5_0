@@ -200,20 +200,13 @@ void print_winner(void)
 }
 
 // Check whether there's a cycle
-bool check_cycle(int end)
+bool check_cycle(int start, int end)
 {
     for (int i = 0; i < pair_count; i++)
     {
         if (locked[end][i])
         {
-            if (i == end)
-            {
-                return true;
-            }
-            else
-            {
-                check_cycle(i);
-            }
+
         }
     }
 }
