@@ -188,27 +188,24 @@ void lock_pairs(void)
         locked[pairs[i].winner][pairs[i].loser] = true;
         // Check if there is a cycle
         int x = pairs[i].loser;
-        do
+        for (int j = 0; j < pair_count; j++)
         {
-            if (locked[x][i] == true)
+            if (locked[x][j] == true)
             {
-                if (i == pairs[i].winner)
+                if (j == pairs[i].winner)
                 {
                     locked[pairs[i].winner][pairs[i].loser] = false;
                     printf("cycle found\n");
                 }
                 else
                 {
-                    x = i;
+                    x = j;
                     printf("no cycle\n");
                 }
-                i++;
-                printf("%i", i);
             }
-        } while (i < pair_count);
+        }
+        return;
     }
-    return;
-}
 
 // Print the winner of the election
 void print_winner(void)
