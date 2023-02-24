@@ -200,7 +200,7 @@ void print_winner(void)
 }
 
 // Check whether there's a cycle
-bool check_cycle(int start, int end)
+bool check_cycle(int end)
 {
     // if (start == end)
     // {
@@ -210,7 +210,14 @@ bool check_cycle(int start, int end)
     {
         if (locked[end][i])
         {
-            if (check_cycle(i))
+            if (i == end)
+            {
+                return true;
+            }
+            else
+            {
+                check_cycle(i);
+            }
         }
     }
 }
