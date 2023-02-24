@@ -200,8 +200,9 @@ void print_winner(void)
 }
 
 // Check whether there's a cycle
-bool check_cycle(point)
+bool check_cycle(int start)
 {
+    int start
     if (start == end)
     {
         return true;
