@@ -172,7 +172,7 @@ void sort_pairs(void)
     }
     for (int i = 0; i < pair_count; i++)
     {
-        printf("Pair 1: %d %d", pairs[i].winner, pairs[i].loser);
+        printf("Pair i: %s %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
     }
     return;
 }
