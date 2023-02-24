@@ -187,7 +187,17 @@ void lock_pairs(void)
     {
         locked[pairs[i].winnder][pairs[i].loser] = true;
         // Check if there is a cycle
-        
+        do
+        {
+            int a = pairs[i].loser, b = 0;
+            for (b = 0; b < pair_count, b++)
+            {
+                if (locked[a][b] == true)
+                {
+                    a = b;
+                }
+            }
+        }
 
     }
     return;
