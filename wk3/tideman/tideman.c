@@ -186,11 +186,14 @@ void lock_pairs(void)
     // Lock the pairs one by one
     for (int i = 0; i < pair_count; i++)
     {
-        locked[pairs[i].winner][pairs[i].loser] = true;
         // Check if there is a cycle for this edge.
         if (check_cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = false;
+        }
+        else
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
     return;
