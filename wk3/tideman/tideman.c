@@ -214,7 +214,7 @@ void print_winner(void)
                 c += 1;
             }
             printf("%i\n", c);
-            if (c == 4)
+            if (c == candidate_count)
             {
                 printf("%s", candidates[i]);
                 return;
