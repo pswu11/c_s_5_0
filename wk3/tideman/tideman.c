@@ -200,8 +200,10 @@ void lock_pairs(void)
 // that has no locked edge starting from him/her (aka source of edges).
 void print_winner(void)
 {
+    // For every column
     for (int i = 0; i < candidate_count; i++)
     {
+        // For every row in this column
         int c = 0;
         for (int j = 0; j < candidate_count; j++)
         {
