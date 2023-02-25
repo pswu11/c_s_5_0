@@ -162,6 +162,11 @@ void sort_pairs(void)
             }
         }
     }
+    // Print sorted pairs
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Sorted pair: %s % s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner])
+    }
     return;
 }
 
