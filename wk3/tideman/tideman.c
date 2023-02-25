@@ -149,34 +149,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int vic[pair_count];
-    for (int i = 0; i < pair_count; i++)
-    {
-        vic[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-    }
-    // Sort the array using selectioin sort
-    for (int i = 0; i < pair_count; i++)
-    {
-        // Find max value in pairs
-        int max_index = i;
-        for (int j = i + 1; j < pair_count; j++)
-        {
-            if (vic[i] < vic[j])
-            {
-                max_index = j;
-            }
-        }
-        // swap the pairs[i] with pairs with the max victory
-        pair temp = pairs[i];
-        pairs[i] = pairs[max_index];
-        pairs[max_index] = temp;
-    }
-    for (int i = 0; i < pair_count; i++)
-    {
-        int win = pairs[i].winner;
-        int los = pairs[i].loser;
-        printf("Ranked pair %i: %s %s at %i\n", i + 1, candidates[win], candidates[los], preferences[win][los] - preferences[los][win]);
-    }
+    for 
     return;
 }
 
