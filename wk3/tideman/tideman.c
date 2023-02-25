@@ -167,6 +167,7 @@ void sort_pairs(void)
     {
         printf("Sorted pair: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
     }
+    printf("\n");
     return;
 }
 
@@ -180,7 +181,7 @@ void lock_pairs(void)
         if (!check_cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("Locked pair: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
+            printf("Locked: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
         }
     }
     return;
