@@ -153,15 +153,14 @@ void sort_pairs(void)
     {
         for (int i = 0; i < n; i++)
         {
-            if (preferences[pairs.winner[i]][pairs[i].loser] - preferences[pairs.loser[i]][pairs[i].winner] < preferences[pairs.winner[i + 1]][pairs[i + 1].loser] - preferences[pairs.loser[i + 1]][pairs[i + 1].winner])
+            if (preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner] < preferences[pairs[i + 1].winner][pairs[i + 1].loser] - preferences[pairs[i + 1].loser][pairs[i + 1].winner])
             {
                 // Swap pair i and i + 1
-                int temp = pairs[i];
+                pair temp = pairs[i];
                 pairs[i] = pairs[i + 1];
                 pairs[i + 1] = temp;
             }
         }
-    }
     }
     return;
 }
@@ -176,7 +175,7 @@ void lock_pairs(void)
         if (!check_cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("Locked pair: %s %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            printf("Locked pair: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
         }
     }
     return;
