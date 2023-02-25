@@ -77,7 +77,7 @@ int main(int argc, string argv[])
         // Query for each rank
         for (int j = 0; j < candidate_count; j++)
         {
-B            string name = get_string("Rank %i: ", j + 1);
+            string name = get_string("Rank %i: ", j + 1);
 
             if (!vote(j, name, ranks))
             {
