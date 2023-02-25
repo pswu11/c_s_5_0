@@ -213,7 +213,7 @@ void print_winner(void)
             }
             if (c == candidate_count)
             {
-                printf("%s\n", candidates[i]);
+                printf("%s\n at %i", candidates[i], c);
                 return;
             }
         }
