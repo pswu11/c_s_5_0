@@ -206,9 +206,9 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        int c = 0;
         for (int j = 0; j < candidate_count; j++)
         {
-            int c = 0;
             if (!locked[j][i])
             {
                 c += 1;
