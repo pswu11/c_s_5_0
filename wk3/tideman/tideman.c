@@ -212,6 +212,7 @@ void print_winner(void)
 }
 
 // Check whether there's a cycle if an edge is added
+// Note: pay attention to the branches. 
 bool check_cycle(int edge_start, int edge_end)
 {
     if (edge_start == edge_end)
