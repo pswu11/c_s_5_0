@@ -218,7 +218,7 @@ void print_winner(void)
     }
 }
 
-// Check whether there's a cycle
+// Check whether there's a cycle if an edge is added
 bool check_cycle(int edge_start, int edge_end)
 {
     if (edge_start == edge_end)
@@ -229,6 +229,7 @@ bool check_cycle(int edge_start, int edge_end)
     {
         if (locked[edge_end][i])
         {
+            // Recursion to go 1 more depth
             return check_cycle(edge_start, i);
         }
     }
