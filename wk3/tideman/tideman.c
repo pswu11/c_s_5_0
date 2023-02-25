@@ -211,9 +211,11 @@ void print_winner(void)
         {
             c += locked[j][i];
         }
+        printf("%i\n", c);
         if (c == 0)
         {
             printf("%s", candidates[i]);
+            return;
         }
     }
 }
