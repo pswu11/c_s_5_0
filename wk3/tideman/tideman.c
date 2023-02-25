@@ -171,12 +171,12 @@ void sort_pairs(void)
         pairs[i] = pairs[max_index];
         pairs[max_index] = temp;
     }
-    // for (int i = 0; i < pair_count; i++)
-    // {
-    //     int win = pairs[i].winner;
-    //     int los = pairs[i].loser;
-    //     printf("Ranked pair %i: %s %s at %i\n", i + 1, candidates[win], candidates[los], preferences[win][los] - preferences[los][win]);
-    // }
+    for (int i = 0; i < pair_count; i++)
+    {
+        int win = pairs[i].winner;
+        int los = pairs[i].loser;
+        printf("Ranked pair %i: %s %s at %i\n", i + 1, candidates[win], candidates[los], preferences[win][los] - preferences[los][win]);
+    }
     return;
 }
 
