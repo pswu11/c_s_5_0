@@ -120,7 +120,6 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]] += 1;
-            // printf("%s is preferred over %s\n", candidates[ranks[i]], candidates[ranks[j]]);
         }
     }
     return;
@@ -139,7 +138,6 @@ void add_pairs(void)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count += 1;
-                // printf("Pair %i: %s %s\n", pair_count, candidates[i], candidates[j]);
             }
         }
     }
@@ -162,12 +160,6 @@ void sort_pairs(void)
             }
         }
     }
-    // Print sorted pairs
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("Sorted pair: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
-    }
-    printf("\n");
     return;
 }
 
@@ -181,7 +173,6 @@ void lock_pairs(void)
         if (!check_cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("Locked: %s %s at %i\n", candidates[pairs[i].winner], candidates[pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner]);
         }
     }
     return;
