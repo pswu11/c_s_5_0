@@ -229,7 +229,10 @@ bool check_cycle(int edge_start, int edge_end)
     {
         if (locked[edge_end][i])
         {
-            check_cycle(edge_start, i);
+            if (check_cycle(edge_start, i))
+            {
+                return true;
+            }
         }
     }
     return false;
