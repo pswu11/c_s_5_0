@@ -190,6 +190,7 @@ void lock_pairs(void)
         if (!check_cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
+            printf("Locked pair: %s %s", candidates[pairs[i].winner], candidates[pairs[i].loser]);
         }
     }
     return;
