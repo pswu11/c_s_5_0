@@ -209,6 +209,7 @@ void print_winner(void)
         {
             if (!locked[j][i])
             {
+                printf("%s\n at %i\n", candidates[i], c);
                 c += 1;
             }
             if (c == candidate_count)
