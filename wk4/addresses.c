@@ -18,6 +18,10 @@ int main(void)
     // the pointer of a string only saves the address of the first charactor
     string s = "Hi!"; // which is actually saved as array like H, i, !, \0
     // string is actually array of char in memory string => char *string
+    // without a CS50 library, you can't use string type directly,
+    // instead:
+    char *s = "Hi!";
+    printf("%p\n", s);
 }
 
 // n is saved somewhere in our memory
