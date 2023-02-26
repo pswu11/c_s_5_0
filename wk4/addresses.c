@@ -1,7 +1,8 @@
- #include <stdio.h>
+#include <stdio.h>
+#include <cs50.h>
 
- int main(void)
- {
+int main(void)
+{
     int n = 50;
     // int *p => means it's a variables (aka "pointer") that contains
     // the address of an integer, it's still an int (usually 8 bytes).
@@ -11,13 +12,13 @@
     int *p = &n;
     // %p => allow us to print an address
     // no need to use *p here
-
-    // String
-    string s = "Hi!" // which is actually saved as array like H, i, !, \0
-    
-
     printf("%p\n", p);
- }
+    // String
+    // the pointer of a string only saves the address of the first charactor
+    string s = "Hi!" // which is actually saved as array like H, i, !, \0
+    int *p2 = &s; // string is actually char*
+    printf("%p\n", p);
+}
 
 // n is saved somewhere in our memory
 // since it's an integer, so it's gonna use 4 bytes
