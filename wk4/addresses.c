@@ -20,8 +20,8 @@ int main(void)
     // string is actually array of char in memory string => char *string
     // without a CS50 library, you can't use string type directly,
     // instead:
-    char *s = "Hi!";
-    printf("%p\n", s);
+    char *s2 = "Hi!";
+    printf("%p\n", s2);
 }
 
 // n is saved somewhere in our memory
