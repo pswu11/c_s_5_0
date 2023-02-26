@@ -12,12 +12,12 @@ int main(void)
     int *p = &n;
     // %p => allow us to print an address
     // no need to use *p here
-    printf("%p\n", p);
+    printf("%p\n", p); //=> print the address of n
+    printf("%i\n", *p); //=> go to the address and find the value of n
     // String
     // the pointer of a string only saves the address of the first charactor
-    string s = "Hi!" // which is actually saved as array like H, i, !, \0
+    string s = "Hi!"; // which is actually saved as array like H, i, !, \0
     // string is actually array of char in memory string => char *string
-    printf("%p\n", p);
 }
 
 // n is saved somewhere in our memory
