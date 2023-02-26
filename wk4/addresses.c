@@ -16,7 +16,7 @@ int main(void)
     // String
     // the pointer of a string only saves the address of the first charactor
     string s = "Hi!" // which is actually saved as array like H, i, !, \0
-    int *p2 = &s; // string is actually char*
+    // string is actually array of char in memory => char *string
     printf("%p\n", p);
 }
 
