@@ -29,5 +29,4 @@
 // programming languages.
 // an integer variable that contains/represents the address of another variable.
 // Why do we use pointers?
-// ! Imagine this address is like the mailbox
-// (p, which contains address) pointing to (n, which contains actual value).
+// It;s like the mailbox (p, which contains address) pointing to (n, which contains actual value).
