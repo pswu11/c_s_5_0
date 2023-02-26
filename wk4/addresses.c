@@ -11,6 +11,11 @@
     int *p = &n;
     // %p => allow us to print an address
     // no need to use *p here
+
+    // String
+    string s = "Hi!" // which is actually saved as array like H, i, !, \0
+    
+
     printf("%p\n", p);
  }
 
