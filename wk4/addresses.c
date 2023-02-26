@@ -3,6 +3,7 @@
  int main(void)
  {
     int n = 50;
+    int *p = n;
     // %p => allow us to print an address
     printf("%p\n", &n);
  }
@@ -20,5 +21,6 @@
 // # Pointers:
 // it's one of the challenging topic to learn and it's not used in high-level
 // programming languages.
+// a variable that contains an address of a variable.
 
 
