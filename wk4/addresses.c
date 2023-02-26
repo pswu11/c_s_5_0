@@ -3,9 +3,10 @@
  int main(void)
  {
     int n = 50;
-    int *p = n;
+    // int 
+    int *p = &n;
     // %p => allow us to print an address
-    printf("%p\n", &n);
+    printf("%p\n", p);
  }
 
 // n is saved somewhere in our memory
