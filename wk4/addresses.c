@@ -27,4 +27,6 @@
 // # Pointers:
 // it's one of the challenging topic to learn and it's not used in high-level
 // programming languages.
-// a variable that contains an address of a variable.
+// an integer variable that contains/represents the address of another variable.
+// Why do we use pointers?
+//
