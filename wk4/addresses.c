@@ -13,7 +13,7 @@ int main(void)
     // %p => allow us to print an address
     // no need to use *p here
     printf("%p\n", p); //=> print the address of n
-    printf("%i\n", *p); //=> go to the address and find the value of n
+    printf("%i\n", *p); //=> go to the address that p stores and find the value of n
     // String
     // the pointer of a string only saves the address of the first charactor
     string s = "Hi!"; // which is actually saved as array like H, i, !, \0
