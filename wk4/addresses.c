@@ -3,7 +3,8 @@
  int main(void)
  {
     int n = 50;
-    // int *p => means it's a variables (aka "pointer") that contains the address of an integer.
+    // int *p => means it's a variables (aka "pointer") that contains
+    // the address of an integer, it's still an int (usually 8 bytes).
     // int p => means it's a variable of integer.
     // &n => it returns the address of variable n.
     // so below we're assigning the address of n to p.
