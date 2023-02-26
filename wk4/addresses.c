@@ -3,9 +3,13 @@
  int main(void)
  {
     int n = 50;
-    // int 
+    // int *p => means it's a variables (aka "pointer") that contains the address of an integer.
+    // int p => means it's a variable of integer.
+    // &n => it returns the address of variable n.
+    // so below we're assigning the address of n to p.
     int *p = &n;
     // %p => allow us to print an address
+    // no need to use *p here
     printf("%p\n", p);
  }
 
@@ -23,5 +27,3 @@
 // it's one of the challenging topic to learn and it's not used in high-level
 // programming languages.
 // a variable that contains an address of a variable.
-
-
