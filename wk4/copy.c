@@ -73,3 +73,8 @@ int main(void)
 // might be accessed by others
 
 // valgrind: special program that detects any memory error.
+
+// garbage values:
+// when you declared a variable but didn't initialize with specific values.
+// then you don't know what might be there (in the memory),
+// you literally created garbage.
