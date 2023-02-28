@@ -20,10 +20,13 @@ int main(void)
     // string is actually array of char in memory string => char *string
     // without a CS50 library, you can't use string type directly,
     // instead:
-    char *s2 = "Hi!"; 
-    printf("%p\n", s2); // this prints the whole string.
+    char *s2 = "Hi!";
+    printf("%p\n", s2); // this prints the whole string (it prints one by one until seeing \0)
     char *s2 = "Hi!";
     printf("%p\n", *s2); // this prints only the first charactor of the string.
+    // You can't compare string using `==`is because string is actually an array of char,
+    // and you would use \*s to initiave. When using using `==`, you literally compares
+    // the memory addresses of two strings hence it's not working.
 }
 
 // n is saved somewhere in our memory
