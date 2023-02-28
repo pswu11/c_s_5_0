@@ -2,21 +2,45 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    string s = get_string("s: ");
+    char *s = get_string("s: ");
 
-    string t = s;
+    char *t = s; // not the right way to make a copy of t
     // above line assigns t with memory address of s;
     // hence both t and s points to the same address.
 
     // avoid segmentation fault in case users give empty values
-    if (str(len) > 0)
+    if (strlen(t) > 0)
     {
             t[0] = toupper(t[0]);
     }
 
     printf("s: %s\n", s);
     printf("t: %s\n", t);
+
+
+    // add one more memory slot longer than s
+    char *t2 = mallc(strlen(s) + 1);
+    // correct way to make a copy of s
+    // +1 for having space for \0
+    for (int i = 0; i < strlen(s) + 1; i++)
+    {
+        t2[i] = s[i];
+    }
+
+    if (strlen(t2) > 0)
+    {
+            t2[0] = toupper(t2[0]);
+    }
+
+    printf("s: %s\n", s);
+    printf("t2: %s\n", t2);
 }
+
+// malloc: ask your OS to allocate free memory
+// malloc could freeze your computer if the program has bug
+// that over allocate the memory.
+// free: free the memory after you're done with it
