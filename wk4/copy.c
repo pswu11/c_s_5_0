@@ -68,3 +68,5 @@ int main(void)
 // malloc could freeze your computer if the program has bug
 // that over allocate the memory.
 // free: free the memory after you're done with it
+
+// valgrind: special program that detects any memory error. 
