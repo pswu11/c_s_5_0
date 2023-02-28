@@ -23,7 +23,7 @@ int main(void)
 
 
     // add one more memory slot longer than s
-    char *t2 = mallc(strlen(s) + 1);
+    char *t2 = malloc(strlen(s) + 1);
     // correct way to make a copy of s
     // +1 for having space for \0
     for (int i = 0; i < strlen(s) + 1; i++)
