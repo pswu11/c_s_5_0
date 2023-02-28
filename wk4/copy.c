@@ -69,4 +69,7 @@ int main(void)
 // that over allocate the memory.
 // free: free the memory after you're done with it
 
-// valgrind: special program that detects any memory error. 
+// memory leak: when you didn't free the memory the memory
+// might be accessed by others
+
+// valgrind: special program that detects any memory error.
