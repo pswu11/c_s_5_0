@@ -67,6 +67,8 @@ int main(void)
 // malloc: ask your OS to allocate free memory (aka heap memory)
 // malloc could freeze your computer if the program has bug
 // that over allocate the memory.
+// your variables and function arguments are usually stored in
+// stack memory temporarily.
 // free: free the memory after you're done with it
 
 // memory leak: when you didn't free the memory the memory
