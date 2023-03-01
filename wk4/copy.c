@@ -64,7 +64,7 @@ int main(void)
 
 }
 
-// malloc: ask your OS to allocate free memory
+// malloc: ask your OS to allocate free memory (aka heap memory)
 // malloc could freeze your computer if the program has bug
 // that over allocate the memory.
 // free: free the memory after you're done with it
