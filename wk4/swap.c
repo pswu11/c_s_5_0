@@ -17,6 +17,6 @@ void swap (int *a, int *b)
 	*b = temp;
 }
 
-// heap overflow
-// stack overflow
-// buffer overflow 
+// heap overflow: when you overflow the heap
+// stack overflow: when you overflow the stack memory
+// => they are specific incarnations of what are generally called buffer overflow
