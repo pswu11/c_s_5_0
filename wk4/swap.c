@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void swap (int *a, int *b);
+
 int main(void)
 {
     int x = 1;
@@ -8,8 +10,13 @@ int main(void)
     swap(&x, &y);
 }
 
-
-void swap (int a, int b)
+void swap (int *a, int *b)
 {
-
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
+
+// heap overflow
+// stack overflow
+// buffer overflow 
