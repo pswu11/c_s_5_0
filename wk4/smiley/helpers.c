@@ -8,7 +8,7 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE pixel = image[i][j];
+            RGBTRIPLE pixel = image[0][0];
             if (pixel.rgbtBlue == 255 && pixel.rgbtGreen == 255 && pixel.rgbtRed == 255)
             {
                 printf("black found.\n");
