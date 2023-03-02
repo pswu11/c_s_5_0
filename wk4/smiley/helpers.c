@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include "stdio.h"
 
 void colorize(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -12,6 +13,10 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
                 pixel.rgbtBlue = 115;
                 pixel.rgbtGreen = 56;
                 pixel.rgbtRed = 138;
+            }
+            else
+            {
+                printf("no black found.\n");
             }
         }
     }
