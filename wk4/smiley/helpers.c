@@ -15,9 +15,6 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = 56;
                 image[i][j].rgbtRed = 138;
             }
-            else
-            {
-            }
         }
     }
 }
