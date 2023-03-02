@@ -11,6 +11,7 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE pixel = image[i][j];
             if (pixel.rgbtBlue == 255 && pixel.rgbtGreen == 255 && pixel.rgbtRed == 255)
             {
+                printf("black found.\n");
                 pixel.rgbtBlue = 115;
                 pixel.rgbtGreen = 56;
                 pixel.rgbtRed = 138;
