@@ -3,6 +3,7 @@
 
 void colorize(int height, int width, RGBTRIPLE image[height][width])
 {
+    printf("height: %i, width: %i\n", height, width);
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
