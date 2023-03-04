@@ -25,11 +25,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE *pixel = &image[i][j];
-            int avg = round((pixel->rgbtBlue + pixel->rgbtRed + pixel->rgbtGreen) / (float) 3);
-            pixel->rgbtBlue = avg;
-            pixel->rgbtRed = avg;
-            pixel->rgbtGreen = avg;
+            RGBTRIPLE *pixel = image[i][width - j];
+            pixel->rgbtBlue = image[i][j];
+            pixel->rgbtRed = image[i][j];
+            pixel->rgbtGreen = image[i][j];
         }
     }
     return;
