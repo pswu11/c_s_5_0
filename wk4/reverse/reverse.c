@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     // Open input file for reading
     FILE input_file = fopen(argv[1]);
 
-    // Read header
+    // Read headerm
     // TODO #3
 
     // Use check_format to ensure WAV format
