@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     FILE *file = fopen(infile, "r");
     if (file == NULL)
     {
-        printf("Could not open %s.\n", infile);
+        printf("File %s not found.\n", infile);
         return 4;
     }
 
@@ -33,7 +33,11 @@ int main(int argc, char *argv[])
     fread(&bf, sizeof(WAVHEADER), 1, file);
 
     // Use check_format to ensure WAV format
-    check_format(bf);
+    if (!check_format(bf))
+    {
+        printf("Unsupported file format.\n");
+        return 4;
+    }
 
     // Open output file for writing
     // TODO #5
