@@ -27,12 +27,12 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    // Read headerm
+    // Read headerm from file
     WAVHEADER bf;
-    fread()
+    fread(&bf, sizeof(WAVHEADER), 1, file);
 
     // Use check_format to ensure WAV format
-    // TODO #4
+    if (bf[])
 
     // Open output file for writing
     // TODO #5
