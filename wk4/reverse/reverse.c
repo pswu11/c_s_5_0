@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     }
 
     // Write header to file
-    fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outfile);
+    fwrite(&bf, sizeof(WAVHEADER), 1, out);
 
     // Use get_block_size to calculate size of block
     // TODO #7
