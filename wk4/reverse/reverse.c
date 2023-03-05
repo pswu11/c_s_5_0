@@ -54,7 +54,8 @@ int main(int argc, char *argv[])
     int block_size = get_block_size(bf);
 
     // Write reversed audio to file
-    long ftell(file);
+    long now = ftell(file); // 44
+    
 
 }
 
