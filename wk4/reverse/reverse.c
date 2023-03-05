@@ -10,10 +10,13 @@ int get_block_size(WAVHEADER header);
 int main(int argc, char *argv[])
 {
     // Ensure proper usage
-    // TODO #1
+    if (argc != 3)
+    {
+        return 1;
+    }
 
     // Open input file for reading
-    // TODO #2
+    FILE input_file = fopen(argv[1]);
 
     // Read header
     // TODO #3
