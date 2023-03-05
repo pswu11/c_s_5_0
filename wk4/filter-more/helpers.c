@@ -1,8 +1,6 @@
 #include "helpers.h"
 #include "math.h"
 
-void copy_image(RGBTRIPLE copy[height][width], RGBTRIPLE image[height][width]);
-
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -54,7 +52,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Calculate each pixel's 3x3 average
             for (int a = -1; a < 2; a++)
             {
-                RGBTRIPLE sum[9];
+                RGBTRIPLE sum;
                 int count = 0;
                 if (i + a >=0 && i + a < height)
                 {
@@ -62,9 +60,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         if (j + b >=0 && j + b < width)
                         {
-                            sum[count].rgbtBlue += temp[i][j].rgbtBlue;
-                            sum[count].rgbtRed += temp[i][j].rgbtRed;
-                            sum[count].rgbtGreen += temp[i][j].rgbtGreen;
+                            sum.rgbtBlue += temp[i][j].rgbtBlue;
+                            sum.rgbtRed += temp[i][j].rgbtRed;
+                            sum.rgbtGreen += temp[i][j].rgbtGreen;
                             count +=1;
                         }
                     }
