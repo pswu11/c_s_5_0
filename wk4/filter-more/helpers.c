@@ -43,8 +43,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE *pixel = &image[height][width];
-    RGBTRIPLE temp[height][width];
-    copy_image(height, width, temp[height][width], image[height][width]);
+    RGBTRIPLE temp = image[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -60,7 +59,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         if (j + b >=0 && j + b < width)
                         {
-                            sum.rgbtBlue += temp[i][j].rgbtBlue;
+                            sum.rgbtBlue += temp[][j].rgbtBlue;
                             sum.rgbtRed += temp[i][j].rgbtRed;
                             sum.rgbtGreen += temp[i][j].rgbtGreen;
                             count +=1;
@@ -83,17 +82,3 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 }
 
 
-// Make a copy of the existing image of image => arg1: destination, arg2: original image
-void copy_image(int height, int width, RGBTRIPLE copy[height][width], RGBTRIPLE image[height][width])
-{
-    RGBTRIPLE *pixel = &copy[height][width];
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            pixel->rgbtBlue = image[i][j].rgbtBlue;
-            pixel->rgbtRed = image[i][j].rgbtRed;
-            pixel->rgbtGreen = image[i][j].rgbtGreen;
-        }
-    }
-}
