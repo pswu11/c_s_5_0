@@ -3,6 +3,7 @@
     "files.associations": {
         "cs50.h": "c",
         "math.h": "c",
-        "functional": "c"
+        "functional": "c",
+        "stdio.h": "c"
     }
 }

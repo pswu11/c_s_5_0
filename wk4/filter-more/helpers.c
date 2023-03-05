@@ -1,6 +1,6 @@
 #include "helpers.h"
 #include "math.h"
-#include "math.h"
+#include "stdio.h"
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -78,8 +78,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            printf("%i", sum.rgbtBlue);
-            printf("%i", count);
+            printf("Sum: %i\n", sum.rgbtBlue);
+            printf("Count: %i\n", count);
         }
     }
     return;
