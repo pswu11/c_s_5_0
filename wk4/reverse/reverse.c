@@ -15,6 +15,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Remember filenames
+    char *infile = argv[optind];
+    char *outfile = argv[optind + 1];
+
     // Open input file for reading
     FILE *inptr = fopen(infile, "r");
     if (inptr == NULL)
