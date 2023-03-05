@@ -113,7 +113,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     if (i + a >=0 && i + a < height && j + b >= 0 && j + b < width)
                     {
                         // Calculate Gx, Gy
-                        gx_red += temp[i + a][j + b] * Gx[a][b]
+                        gx_red += temp[i + a][j + b].rgbtRed * Gx[a + 1][b + 1];
+                        gx_green += temp[i + a][j + b].rgbtGreen * Gx[a + 1][b + 1];
+                        gx_blue += temp[i + a][j + b].rgbtBlue * Gx[a + 1][b + 1];
+                        gy_red += temp[i + a][j + b].rgbtRed * Gy[a + 1][b + 1];
+                        gy_green += temp[i + a][j + b].rgbtGreen * Gy[a + 1][b + 1];
+                        gy_blue += temp[i + a][j + b].rgbtBlue * Gy[a + 1][b + 1];
                     }
                 }
             }
