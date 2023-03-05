@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     fseek(file, 44, SEEK_SET); // seek the start with +44 offset
     long neg1 = ftell(file);
 
-    for (int i = 0; i < size - 44; i++)
+    for (int i = 0; i < (size - 44) / block_size; i++)
     {
         uint8_t block[block_size];
         fread(&block, block_size, 1, file);
