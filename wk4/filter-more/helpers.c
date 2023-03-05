@@ -1,6 +1,8 @@
 #include "helpers.h"
 #include "math.h"
 
+void copy_image(RGBTRIPLE copy[height][width], RGBTRIPLE image[height][width]);
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -44,7 +46,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE *pixel = &image[height][width];
     RGBTRIPLE temp[height][width];
-    copy_image(temp[height][width], image[height][width]);
+    copy_image(height, width, temp[height][width], image[height][width]);
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -84,9 +86,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 
 // Make a copy of the existing image of image => arg1: destination, arg2: original image
-void copy_image(RGBTRIPLE copy[height][width], RGBTRIPLE image[height][width])
+void copy_image(int height, int width, RGBTRIPLE copy[height][width], RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE *pixel = &copy[height][width]
+    RGBTRIPLE *pixel = &copy[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
