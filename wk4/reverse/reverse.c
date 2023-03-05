@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     }
 
     // Remember filenames
-    char *infile = argv[optind];
-    char *outfile = argv[optind + 1];
+    char *infile = argv[1];
+    char *outfile = argv[2];
 
     // Open input file for reading
     FILE *inptr = fopen(infile, "r");
