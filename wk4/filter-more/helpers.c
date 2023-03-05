@@ -1,6 +1,5 @@
 #include "helpers.h"
 #include "math.h"
-#include "stdio.h"
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -59,7 +58,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE *pixel = &image[i][j];
             // Calculate each pixel's 3x3 average
-            int sum_red = 0, sum_green = 0,sum_blue = 0;
+            float sum_red = 0, sum_green = 0,sum_blue = 0;
             int counter = 0;
             for (int a = -1; a < 2; a++)
             {
@@ -76,9 +75,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            pixel->rgbtRed = sum_red / counter;
-            pixel->rgbtGreen = sum_green / counter;
-            pixel->rgbtBlue = sum_blue / counter;
+            pixel->rgbtRed = round(sum_red / counter);
+            pixel->rgbtGreen = round(sum_green / counter);
+            pixel->rgbtBlue = round(sum_blue / counter);
         }
     }
     return;
