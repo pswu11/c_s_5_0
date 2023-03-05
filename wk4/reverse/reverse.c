@@ -16,7 +16,12 @@ int main(int argc, char *argv[])
     }
 
     // Open input file for reading
-    FILE input_file = fopen(argv[1], "r");
+    FILE *inptr = fopen(infile, "r");
+    if (inptr == NULL)
+    {
+        printf("Could not open %s.\n", infile);
+        return 4;
+    }
 
     // Read headerm
     // TODO #3
