@@ -29,13 +29,11 @@ int main(int argc, char *argv[])
     }
 
     // Read headerm from file
-    // WAVHEADER bf;
-    // fread(&bf, sizeof(WAVHEADER), 1, file);
-    uint8_t format[4];
+    WAVHEADER bf;
+    fread(&bf, sizeof(WAVHEADER), 1, file);
 
     // Use check_format to ensure WAV format
-    uint8_t format[4];
-
+    check_format(bf);
 
     // Open output file for writing
     // TODO #5
@@ -52,7 +50,8 @@ int main(int argc, char *argv[])
 
 int check_format(WAVHEADER header)
 {
-    // TODO #4
+    
+
     return 0;
 }
 
