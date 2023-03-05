@@ -42,7 +42,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Make a copy
+    // Make a copy of existing image
     RGBTRIPLE temp[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -66,6 +66,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     int x = i + a;
                     int y = j + b;
+                    // Ignore when the pixel doesn't exist
                     if (x >= 0 && x < height && y >= 0 && y < width)
                     {
                         sum_red += temp[x][y].rgbtRed;
