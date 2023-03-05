@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     int block_size = get_block_size(bf);
 
     // Write reversed audio to file
-    // TODO #8
+    
 }
 
 int check_format(WAVHEADER header)
