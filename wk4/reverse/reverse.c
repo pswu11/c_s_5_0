@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
 
     // Use get_block_size to calculate size of block
     int block_size = get_block_size(bf);
-    printf("block size: %i\n", block_size);
 
     // Write reversed audio to file:
     // Get total size of audio data
@@ -73,10 +72,8 @@ int main(int argc, char *argv[])
 
 int check_format(WAVHEADER header)
 {
-
     if (header.format[0] == 'W' && header.format[1] == 'A' && header.format[2] == 'V' && header.format[3] == 'E')
     {
-        printf("Yes\n");
         return 1;
     }
     return 0;
