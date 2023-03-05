@@ -54,11 +54,11 @@ int main(int argc, char *argv[])
     int block_size = get_block_size(bf);
     printf("block size: %i\n", block_size);
 
-    // Write reversed audio to file
+    // Write reversed audio to file:
     // Get total size of audio data
     fseek(file, 0, SEEK_END);
     int size = ftell(file); // Total size: 352844
-    // seek backward 1 from current position
+    // Seek 1 block backward from current position as stating point
     fseek(file, -1 * block_size, SEEK_END);
 
     for (int i = 0; i < (size - 44) / block_size; i++)
