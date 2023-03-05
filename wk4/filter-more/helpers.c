@@ -106,6 +106,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE *pixel = &image[i][j];
             float gx_red = 0, gx_green = 0, gx_blue = 0;
             float gy_red = 0, gy_green = 0, gy_blue = 0;
+            // Iterate over each pixel's 3x3 neibors 
             for (int a = -1; a < 2; a++)
             {
                 for (int b = -1; b < 2; b++)
@@ -122,8 +123,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                         // Apply Sobel algorithm
                         int red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
-                        int green = round((float) sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
-                        int blue = round((float) sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
+                        int green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
+                        int blue = round(sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
 
                         // Cap the values at 255
                         if (red >= 255)
