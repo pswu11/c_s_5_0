@@ -50,7 +50,12 @@ int main(int argc, char *argv[])
 
 int check_format(WAVHEADER header)
 {
-    uint8_t format = header.format;
+
+    if (header.format[0] == 'W')
+    {
+        printf("Yes\n");
+        return 1;
+    }
     return 0;
 }
 
