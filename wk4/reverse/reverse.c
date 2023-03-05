@@ -20,15 +20,15 @@ int main(int argc, char *argv[])
     char *outfile = argv[2];
 
     // Open input file for reading
-    FILE *inptr = fopen(infile, "r");
-    if (inptr == NULL)
+    FILE *file = fopen(infile, "r");
+    if (file == NULL)
     {
         printf("Could not open %s.\n", infile);
         return 4;
     }
 
     // Read headerm
-    // TODO #3
+    uint
 
     // Use check_format to ensure WAV format
     // TODO #4
