@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     // Ensure proper usage
     if (argc != 3)
     {
+        printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
 
@@ -35,7 +36,7 @@ int main(int argc, char *argv[])
     // Use check_format to ensure WAV format
     if (!check_format(bf))
     {
-        printf("Unsupported file format.\n");
+        printf("Input is not a WAV file.\n");
         return 4;
     }
 
