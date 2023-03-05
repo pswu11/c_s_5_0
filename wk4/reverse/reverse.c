@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     long now = ftell(file); // 44
+    long now1 = ftell(out);
+    printf("Out: %li\n", now1);
 
     fseek(file, 0, SEEK_END); // Total size: 352844
     long size = ftell(file);
@@ -67,7 +69,7 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < size - 44; i++)
     {
-
+        fwrite(&buffer, 1, 1, out);
     }
 }
 
