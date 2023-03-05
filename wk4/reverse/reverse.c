@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
     fseek(file, 5, SEEK_END);
     printf("%li\n", now); // 44
     long offset = ftell(file);
-    printf("%li\n", offset);
-    rewind(file); // end (total length)
+    printf("%li\n", offset); // end (total length)
+    rewind(file);
     fseek(file, 0, SEEK_END);
     long size = ftell(file);
     printf("%li\n", size);
