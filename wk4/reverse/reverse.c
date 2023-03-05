@@ -40,7 +40,12 @@ int main(int argc, char *argv[])
     }
 
     // Open output file for writing
-    // TODO #5
+    FILE *out = fopen(outfile, "w");
+    if (out == NULL)
+    {
+        printf("File %s not found.\n", outfile);
+        return 4;
+    }
 
     // Write header to file
     // TODO #6
