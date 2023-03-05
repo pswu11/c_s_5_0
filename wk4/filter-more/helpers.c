@@ -70,11 +70,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int y = j + b;
                     if (x >= 0 && x < height && y >= 0 && y < width)
                     {
-                        sum.rgbtRed += temp[x][y].rgbtRed;
-                        sum.rgbtGreen += temp[x][y].rgbtGreen;
-                        sum.rgbtBlue += temp[x][y].rgbtBlue;
-                        counter++;
                     }
+                    sum.rgbtRed += temp[x][y].rgbtRed;
+                    sum.rgbtGreen += temp[x][y].rgbtGreen;
+                    sum.rgbtBlue += temp[x][y].rgbtBlue;
+                    counter++;
                 }
             }
             pixel->rgbtRed = sum.rgbtRed / counter;
