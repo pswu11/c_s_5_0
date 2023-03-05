@@ -54,21 +54,21 @@ int main(int argc, char *argv[])
     int block_size = get_block_size(bf);
 
     // Write reversed audio to file
-    long now = ftell(file);
-    printf("%li\n", now); // 44
+    long now = ftell(file); // 44
 
-    fseek(file, -5, SEEK_END);
-    long offset = ftell(file);
-    printf("%li\n", offset); // end (total length)
-
+    fseek(file, 0, SEEK_END); // Total size: 352844
     long size = ftell(file);
-    printf("%li\n", size);
 
-    rewind(file);
-    fseek(file, -3, SEEK_END);
+    fseek(file, -1, SEEK_CUR); // seek backward 1 from current position
     long neg = ftell(file);
-    printf("%li\n", neg);
 
+    fseek(file, 44, SEEK_SET); // seek the start with +44 offset
+    long neg1 = ftell(file);
+
+    for (int i = 0; i < size - 44; i++)
+    {
+
+    }
 }
 
 int check_format(WAVHEADER header)
