@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
     long now = ftell(file); // 44
     long now1 = ftell(out); // 44
 
-    fseek(file, 0, SEEK_END); // Total size: 352844
-    int size = ftell(file);
-    int no_blocks = (size - 44) / block_size;
+    fseek(file, 0, SEEK_END);
+    int size = ftell(file); // Total size: 352844
+    int no_blocks = (size - 44) / block_size; // 88200
     printf("no of blocks: %i\n", no_blocks);
 
     for (int i = 0; i < no_blocks; i++)
