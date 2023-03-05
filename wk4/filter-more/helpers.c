@@ -61,17 +61,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             // Calculate each pixel's 3x3 average
             RGBTRIPLE sum;
+            sum.rgbtRed = 0;
+            sum.rgbtGreen = 0;
             sum.rgbtBlue = 0;
             for (int a = -1; a < 2; a++)
             {
                 for (int b = -1; b < 2; b++)
                 {
-                    if (i + a >= 0 && i + a < height && j + b >= 0 && j + b < width)
+                    int x = i + a;
+                    int y = j + b;
+                    if (x >= 0 && x < height && y >= 0 && y < width)
                     {
-                        printf("(%i, %i, %i)\n", temp[i + a][j + b].rgbtRed, temp[i + a][j + b].rgbtGreen, temp[i + a][j + b].rgbtBlue);
+                        sum.rgbtRed += temp[x][y].rgbtRed;
+                        sum.rgbtGreen += temp[x][y].rgbtGreen;
+                        sum.rgbtBlue += temp[x][y].rgbtBlue;
                     }
                 }
             }
+            pixel->rgbtRed = sum.rgbtRed / 9;
+            pixel->rgbtGreen = sum.rgbtGreen / 9;
+            pixel->rgbtBlue = sum.rgbtBlue / 9;
         }
     }
     return;
