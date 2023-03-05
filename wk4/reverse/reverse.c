@@ -52,15 +52,18 @@ int main(int argc, char *argv[])
 
     // Use get_block_size to calculate size of block
     int block_size = get_block_size(bf);
+    printf("block size: %i\n", block_size);
 
     // Write reversed audio to file
     long now = ftell(file); // 44
     long now1 = ftell(out); // 44
 
     fseek(file, 0, SEEK_END); // Total size: 352844
-    long size = ftell(file);
+    int size = ftell(file);
+    int no_blocks = (size - 44) / block_size;
+    printf("no of blocks: %i\n", no_blocks);
 
-    for (int i = 0; i < (size - 44) / block_size; i++)
+    for (int i = 0; i < no_blocks; i++)
     {
         uint8_t block[block_size];
         fseek(file, -1 * block_size, SEEK_CUR); // seek backward 1 from current position
