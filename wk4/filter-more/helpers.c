@@ -106,13 +106,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE *pixel = &image[i][j];
             int gx_red = 0, gx_green = 0, gx_blue = 0;
             int gy_red = 0, gy_green = 0, gy_blue = 0;
-            for (int a = 0; a < 3; a++)
+            for (int a = -1; a < 2; a++)
             {
-                for (int b = 0; b < 3; b++)
+                for (int b = -1; b < 2; b++)
                 {
-                    // Calculate Gx, Gy
-                    gx_red += temp[i][j].rgbtRed * Gx[a][b]
-
+                    if (i + a >=0 && i + a < height && j + b >= 0 && j + b < width)
+                    {
+                        // Calculate Gx, Gy
+                        gx_red += temp[i + a][j + b] * Gx[a][b]
+                    }
                 }
             }
         }
