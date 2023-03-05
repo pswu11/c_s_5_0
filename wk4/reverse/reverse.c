@@ -34,10 +34,7 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     printf("%s\n", bf.format);
-    if (strcmp("WAVE", bf.format) == 0)
-    {
-        printf("yes\n");
-    }
+
 
     // Open output file for writing
     // TODO #5
