@@ -69,7 +69,9 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < size - 44; i++)
     {
+        fread(&buffer, 1, 1, file);
         fwrite(&buffer, 1, 1, out);
+        fseek(file, -2, SEEK_CUR); // seek backward 1 from current position
     }
 }
 
