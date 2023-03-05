@@ -54,12 +54,12 @@ int main(int argc, char *argv[])
     int block_size = get_block_size(bf);
 
     // Write reversed audio to file
-    long now = ftell(file); // 44
+    long now = ftell(file);
     fseek(file, 5, SEEK_END);
-    printf("%li\n", now);
+    printf("%li\n", now); // 44
     long offset = ftell(file);
     printf("%li\n", offset);
-    rewind(file);
+    rewind(file); // end (total length)
     fseek(file, 0, SEEK_END);
     long size = ftell(file);
     printf("%li\n", size);
