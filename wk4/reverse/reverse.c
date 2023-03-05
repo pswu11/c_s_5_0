@@ -50,7 +50,8 @@ int main(int argc, char *argv[])
 
 int check_format(WAVHEADER header)
 {
-    
+    uint8_t format;
+
 
     return 0;
 }
