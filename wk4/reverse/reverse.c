@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     fread(&bf, sizeof(WAVHEADER), 1, file);
 
     // Use check_format to ensure WAV format
-    printf("%s\n", bf.format);
+    uint8_t format[4] = bf.format;
 
 
     // Open output file for writing
