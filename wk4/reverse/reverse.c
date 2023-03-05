@@ -64,15 +64,16 @@ int main(int argc, char *argv[])
     // fseek(file, -1, SEEK_CUR); seek backward 1 from current position
     // long neg = ftell(file);
 
-    // fseek(file, 44, SEEK_SET); seek the start with +44 offset
+    // fseek(file, 44, SEEK_SET); // seek the start with +44 offset
     // long neg1 = ftell(file);
 
     for (int i = 0; i < (size - 44) / block_size; i++)
     {
         uint8_t block[block_size];
-        fread(&block, block_size, 1, file);
-        fwrite(&block, block_size, 1, out);
-        fseek(file, -1, SEEK_CUR); // seek backward 1 from current position
+        fseek(file, -1 * block_size, SEEK_CUR); // seek backward 1 from current position
+        fread(block, block_size, 1, file);
+        fwrite(block, block_size, 1, out);
+        fseek(file, -2 * block_size, SEEK_CUR);
     }
 }
 
@@ -89,5 +90,5 @@ int check_format(WAVHEADER header)
 
 int get_block_size(WAVHEADER header)
 {
-    return header.numChannels * (header.bitsPerSample) / 4;
+    return header.numChannels * (header.bitsPerSample) / 8;
 }
