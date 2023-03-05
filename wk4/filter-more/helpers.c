@@ -53,6 +53,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j] = image[i][j];
         }
     }
+    printf("first pixel: (%i, %i, %i)", temp[0][0].rgbtRed, temp[0][0].rgbtGreen, temp[0][0].rgbtBlue);
     // Iterate over each pixel
     for (int i = 0; i < height; i++)
     {
