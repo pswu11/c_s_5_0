@@ -29,11 +29,12 @@ int main(int argc, char *argv[])
     }
 
     // Read headerm from file
-    WAVHEADER bf;
-    fread(&bf, sizeof(WAVHEADER), 1, file);
+    // WAVHEADER bf;
+    // fread(&bf, sizeof(WAVHEADER), 1, file);
+    uint8_t format[4];
 
     // Use check_format to ensure WAV format
-    uint8_t format[4] = bf.format;
+    uint8_t format[4];
 
 
     // Open output file for writing
