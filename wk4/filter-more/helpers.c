@@ -119,9 +119,29 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         gy_red += temp[i + a][j + b].rgbtRed * Gy[a + 1][b + 1];
                         gy_green += temp[i + a][j + b].rgbtGreen * Gy[a + 1][b + 1];
                         gy_blue += temp[i + a][j + b].rgbtBlue * Gy[a + 1][b + 1];
-                        sqrt(pow(gx_red, 2) + pow(gy_red, 2))
-                        sqrt(pow(gx_green, 2) + pow(gy_green, 2))
-                        sqrt(pow(gx_blue, 2) + pow(gy_blue, 2))
+
+                        // Apply Sobel algorithm
+                        int red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
+                        int green = round((float) sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
+                        int blue = round((float) sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
+
+                        // Cap the values at 255
+                        if (red >= 255)
+                        {
+                            red = 255;
+                        }
+                        if (green >= 255)
+                        {
+                            green = 255;
+                        }
+                        if (blue >= 255)
+                        {
+                            blue = 255;
+                        }
+                        // Apply new values to the pixel
+                        pixel->rgbtRed = red;
+                        pixel->rgbtGreen = green;
+                        pixel->rgbtBlue = blue;
                     }
                 }
             }
