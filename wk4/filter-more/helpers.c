@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include "math.h"
+#include "math.h"
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -72,16 +73,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         if (j + b >=0 && j + b < width)
                         {
                             sum.rgbtBlue += temp[i + a][j + b].rgbtBlue;
-                            sum.rgbtRed += temp[i + a][j + b].rgbtRed;
-                            sum.rgbtGreen += temp[i + a][j + b].rgbtGreen;
                             count +=1;
                         }
                     }
                 }
             }
-            pixel->rgbtBlue = sum.rgbtBlue / count;
-            pixel->rgbtRed = sum.rgbtRed / count;
-            pixel->rgbtGreen = sum.rgbtGreen / count;
+            printf("%i", sum.rgbtBlue);
+            printf("%i", count);
         }
     }
     return;
