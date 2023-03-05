@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     fread(&bf, sizeof(WAVHEADER), 1, file);
 
     // Use check_format to ensure WAV format
-    if (bf[])
+    if (bf[8])
 
     // Open output file for writing
     // TODO #5
