@@ -58,10 +58,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // Calculate each pixel's 3x3 average
+            RGBTRIPLE sum;
+            int count = 0;
             for (int a = -1; a < 2; a++)
             {
-                RGBTRIPLE sum;
-                int count = 1;
                 if (i + a >=0 && i + a < height)
                 {
                     for (int b = -1; b < 2; b++)
@@ -75,10 +75,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         }
                     }
                 }
-                pixel->rgbtBlue = sum.rgbtBlue / count;
-                pixel->rgbtRed = sum.rgbtRed / count;
-                pixel->rgbtGreen = sum.rgbtGreen / count;
             }
+            pixel->rgbtBlue = sum.rgbtBlue / count;
+            pixel->rgbtRed = sum.rgbtRed / count;
+            pixel->rgbtGreen = sum.rgbtGreen / count;
         }
     }
     return;
