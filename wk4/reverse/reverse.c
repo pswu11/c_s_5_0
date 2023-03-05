@@ -55,17 +55,10 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     long now = ftell(file); // 44
-    long now1 = ftell(out);
-    printf("Out: %li\n", now1);
+    long now1 = ftell(out); // 44
 
     fseek(file, 0, SEEK_END); // Total size: 352844
     long size = ftell(file);
-
-    // fseek(file, -1, SEEK_CUR); seek backward 1 from current position
-    // long neg = ftell(file);
-
-    // fseek(file, 44, SEEK_SET); // seek the start with +44 offset
-    // long neg1 = ftell(file);
 
     for (int i = 0; i < (size - 44) / block_size; i++)
     {
