@@ -55,7 +55,18 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     long now = ftell(file); // 44
-    
+    fseek(file, 5, SEEK_END);
+    printf("%li\n", now);
+    long offset = ftell(file);
+    printf("%li\n", offset);
+    rewind(file);
+    fseek(file, 0, SEEK_END);
+    long size = ftell(file);
+    printf("%li\n", size);
+    rewind(file);
+    fseek(file, -3, SEEK_END);
+    long neg = ftell(file);
+    printf("%li\n", neg);
 
 }
 
