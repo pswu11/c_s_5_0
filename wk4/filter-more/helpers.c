@@ -66,20 +66,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int count = 0;
             for (int a = -1; a < 2; a++)
             {
-                if (i + a >=0 && i + a < height)
+                for (int b = -1; b < 2; b++)
                 {
-                    for (int b = -1; b < 2; b++)
+                    if (j + b >=0 && j + b < width)
                     {
-                        if (j + b >=0 && j + b < width)
-                        {
-                            sum.rgbtBlue += temp[i + a][j + b].rgbtBlue;
-                            count +=1;
-                        }
+                        sum.rgbtBlue += temp[i + a][j + b].rgbtBlue;
+                        count +=1;
                     }
                 }
             }
-            printf("Sum: %i\n", sum.rgbtBlue);
-            printf("Count: %i\n", count);
         }
     }
     return;
