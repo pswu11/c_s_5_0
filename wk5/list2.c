@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
     while (ptr != NULL)
     {
         printf("%i\n", ptr->number);
-        ptr = ptr->next; // borrow the next of the current node and follow through
+        ptr = ptr->next; // follow through and point to the next node
     }
 }
