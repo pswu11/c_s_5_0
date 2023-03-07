@@ -24,27 +24,25 @@ int main(void)
     // what if I want to increase the length of array without copying
     // the whole array to somewhere else for the extra slot?
 
-    int *tmp = malloc(4 * sizeof(int));
+    // int *tmp = malloc(4 * sizeof(int));
+    int *tmp = realloc(list2, 4 * sizeof(int));
     if (list2 == NULL)
     {
         free(list2);
         return 1;
     }
-    for (int i = 0; i < 3; i++)
-    {
-        tmp[i] = list2[i];
-    }
-    tmp[-1] = 4;
-    free(list2);
+    tmp[3] = 4;
     list2 = tmp;
     // list was a pointer, now it's pointing to tmp pointer
     // that points to the new chunk of memory
     // basically two variables point to the same memory address
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         printf("%i\n", list2[i]);
     }
-
-    free(list2);
     return 0;
+    
+    // method # 3
+
+
 }
