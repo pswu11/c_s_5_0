@@ -8,7 +8,12 @@ typedef struct
 }
 node;
 
-int main(void)
+int main(int argc, char *argv[])
 {
     node *list = NULL;
+
+    for (int = 1; i < argc; i++)
+    {
+        int number = argv[i];
+    }
 }
