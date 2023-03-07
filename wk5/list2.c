@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
         // convert string to int
-        int number = atoi(argv[i]); // ideally you need to do error checking 
+        int number = atoi(argv[i]); // ideally you need to do error checking
 
         node *n = malloc(sizeof(node));
         if (n == NULL)
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
             return 1;
         }
         n->number = number;
-        n->next = NULL;
+        n->next = NULL; // get rid of garbage
 
         n->next = list;
         list = n;
