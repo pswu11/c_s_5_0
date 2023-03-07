@@ -14,4 +14,4 @@ list = n;
 // allocate another node
 node *n = malloc(sizeof(node));
 n->number = 2;
-list = n;
+// list = n;  this will cause memory leak.
