@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
         // convert string to int
-        int number = atoi(argv[i]);
+        int number = atoi(argv[i]); // ideally you need to do error checking 
 
         node *n = malloc(sizeof(node));
         if (n == NULL)
