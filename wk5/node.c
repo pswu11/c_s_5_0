@@ -8,6 +8,10 @@ node *n = malloc(sizeof(node));
 n->number = 1;
 n->next = NULL; // to signify this is the end of the list
 
-list = n; // this allows list to point to first node directly
+// this allows list to point to first node directly without caring about n
+list = n;
 
+// allocate another node
 node *n = malloc(sizeof(node));
+n->number = 2;
+list = n;
