@@ -44,4 +44,7 @@ int main(void)
     {
         printf("%i\n", list2[i]);
     }
+
+    free(list2);
+    return 0;
 }
