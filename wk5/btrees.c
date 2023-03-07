@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
 // Search for a value in a binary tree using recursion
 // Downside:
 // - memory consumption (a lot more)
-// - 
+// - more work to implement when adding numbers to the collection one by one
+// - more work to maintain a "balanced" binary tree
 bool search(node *tree, int number)
 {
     if (tree == NULL)
