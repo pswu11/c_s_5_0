@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     node *list = NULL;
 
-    for (int = 1; i < argc; i++)
+    for (int i = 1; i < argc; i++)
     {
         // convert string to int
         int number = atoi(argv[i]);
@@ -29,5 +29,11 @@ int main(int argc, char *argv[])
         list = n;
     }
 
-    for (int)
+    // declare a temp node that will point to a node in the list
+    node *ptr = list;
+    while (ptr != NULL)
+    {
+        printf("%i\n", ptr->number);
+        ptr = ptr->next; // borrow the next of the current node and follow through
+    }
 }
