@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// implement single linked lists
 typedef struct node
 {
     int number;
