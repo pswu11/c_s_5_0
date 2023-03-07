@@ -41,8 +41,10 @@ int main(void)
         printf("%i\n", list2[i]);
     }
     return 0;
-    
+
     // method # 3
+    // what if I want to increase the length of array without copying
+    // the whole array to somewhere else for the extra slot?
 
 
 }
