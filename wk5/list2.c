@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
         list = n;
     }
 
-    // declare a temp node that will point to a node in the list
+/*     // declare a temp node that will point to a node in the list
     node *ptr = list;
     while (ptr != NULL)
     {
         printf("%i\n", ptr->number);
         ptr = ptr->next; // borrow the next of the current node and follow through
-    }
+    } */
 }
