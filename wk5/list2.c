@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
+            // you should also free all the previous allocated nodes
             return 1;
         }
         n->number = number;
