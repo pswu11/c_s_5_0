@@ -26,6 +26,10 @@ int main(void)
 
     // int *tmp = malloc(4 * sizeof(int));
     int *tmp = realloc(list2, 4 * sizeof(int));
+    // why do we need tmp instead of using the original list2?
+    // cuz the original list migh not have enough memory
+    // realloc frees the original list2 memory for you
+
     if (list2 == NULL)
     {
         free(list2);
