@@ -55,7 +55,7 @@ bool load(const char *dictionary)
         {
             return 1;
         }
-        strcpy(n->word, tmp_word);
+        strcpy(n->word, tmp_word); // here occurs a SIGSEG (segmentation fault)
         add_word(n);
     }
     return true;
