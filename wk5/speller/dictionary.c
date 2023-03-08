@@ -87,7 +87,8 @@ bool unload(void)
     node *word = table[h].next;
     while (table[h].next != NULL)
     {
-        node *word = table[h].next;
+
+        word = word->next;
 
     }
 
