@@ -42,7 +42,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    while (fscanf(file, "%s", word) != EOF)
+    do
     {
         node word* = malloc(sizeof(node));
         // Catch in case the memory is not enough
@@ -53,6 +53,7 @@ bool load(const char *dictionary)
         fscanf(file, "%s", word);
         i++;
     }
+    while ();
     printf("%i", i);
     return true;
 }
