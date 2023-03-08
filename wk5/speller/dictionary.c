@@ -84,11 +84,11 @@ bool unload(void)
         table[h].next = NULL;
         return 1;
     }
-    node *word = table[h].next;
-    while (word->next != NULL)
+    node *new = table[h].next;
+    while (new->next != NULL)
     {
-        word = word->next;
-
+        new = new->next;
     }
-
+    strcpy (new->word, n->word);
+    new->next = NULL;
  }
