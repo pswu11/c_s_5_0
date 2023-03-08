@@ -79,6 +79,12 @@ bool unload(void)
  {
     if (table[hash(n->word)] != NULL)
     {
+        table[hash(n->word)] = n->word;
+        n->next = NULL;
+        return 1;
+    }
+    else
+    {
         
     }
  }
