@@ -83,8 +83,8 @@ bool unload(void)
         n->next = NULL;
         return 1;
     }
-    else
+    else if (table[hash(n->word)].next != NULL)
     {
-        
+
     }
  }
