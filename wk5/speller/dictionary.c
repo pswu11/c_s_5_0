@@ -22,6 +22,8 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+void add_word(node *n);
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -54,7 +56,7 @@ bool load(const char *dictionary)
             return 1;
         }
         strcpy(n->word, tmp_word);
-        add_to_table(n);
+        add_word(n);
     }
     return true;
 }
@@ -75,14 +77,14 @@ bool unload(void)
 
 
 // Add the node to hash table
-bool add_word(node *n)
+void add_word(node *n)
  {
     int h = hash(n->word);
     if (table[h] == NULL)
     {
         strcpy(table[h]->word, n->word);
         table[h]->next = NULL;
-        return 1;
+        return;
     }
     node *new = table[h]->next;
     while (new->next != NULL)
