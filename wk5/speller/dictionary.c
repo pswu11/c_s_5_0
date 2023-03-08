@@ -77,13 +77,13 @@ bool unload(void)
 // Add the node to hash table
  bool add_word(node *n)
  {
-    if (table[hash(n->word)] != NULL)
+    if (table[hash(n->word)] == NULL)
     {
         table[hash(n->word)] = n->word;
         n->next = NULL;
         return 1;
     }
-    while (table[hash(n->word)].next != NULL)
+    else
     {
 
     }
