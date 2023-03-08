@@ -42,9 +42,14 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    char *word[];
-    while (fscanf(file, %s, word) )
-    fscanf(file, %s, word);
+    char *word = NULL;
+    int i = 0;
+    while (fscanf(file, "%s", word) != -1)
+    {
+            fscanf(file, "%s", word);
+            i++;
+    }
+    printf("%i", i);
     return true;
 }
 
