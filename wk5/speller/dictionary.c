@@ -43,7 +43,7 @@ bool load(const char *dictionary)
         return false;
     }
     char *buffer;
-    fread(&buffer, sizeof(char), 1, file);
+    fscanf()
     return true;
 }
 
