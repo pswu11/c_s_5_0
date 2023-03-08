@@ -42,7 +42,8 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    char *input[] = fread(file);
+    char *bf[];
+    fread(&bf, sizeof(WAVHEADER), 1, file);
     return true;
 }
 
