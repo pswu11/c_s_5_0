@@ -53,7 +53,7 @@ bool load(const char *dictionary)
         {
             return 1;
         }
-        n->word = tmp_word;
+        strcpy(n->word, tmp_word);
         add_to_table(n);
     }
     return true;
@@ -75,16 +75,16 @@ bool unload(void)
 
 
 // Add the node to hash table
- bool add_word(node *n)
+bool add_word(node *n)
  {
     int h = hash(n->word);
     if (table[h] == NULL)
     {
-        table[h].word = n->word;
-        table[h].next = NULL;
+        strcpy(table[h]->word, n->word);
+        table[h]->next = NULL;
         return 1;
     }
-    node *new = table[h].next;
+    node *new = table[h]->next;
     while (new->next != NULL)
     {
         new = new->next;
