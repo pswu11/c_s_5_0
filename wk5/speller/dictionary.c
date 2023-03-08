@@ -2,7 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -42,16 +44,16 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    char *tmp_word;
+    char *tmp_word = NULL;
     while (fscanf(file, "%s", tmp_word) != EOF)
     {
-        node n* = malloc(sizeof(node));
+        node *n = malloc(sizeof(node));
         // Catch in case the memory is not enough
         if (n == NULL)
         {
             return 1;
         }
-        fscanf(file, "%s", n.word);
+        strcpy(n->word, tmp_word);
     }
     return true;
 }
