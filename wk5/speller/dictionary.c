@@ -52,8 +52,7 @@ bool load(const char *dictionary)
         }
         fscanf(file, "%s", n.word);
     }
-    while ();
-    printf("%i", i);
+    while (fscanf(file, "%s", n.word) == 1);
     return true;
 }
 
