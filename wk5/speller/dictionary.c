@@ -83,8 +83,5 @@ bool unload(void)
         n->next = NULL;
         return 1;
     }
-    else
-    {
-
-    }
+    
  }
