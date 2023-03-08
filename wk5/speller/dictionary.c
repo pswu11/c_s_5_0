@@ -53,9 +53,8 @@ bool load(const char *dictionary)
         {
             return 1;
         }
-        strcpy(n->word, tmp_word);
-        n->next = NULL:
-        table[hash(tmp_word)]
+        n->word = tmp_word;
+        add_to_table(n);
     }
     return true;
 }
@@ -73,3 +72,13 @@ bool unload(void)
     // TODO
     return false;
 }
+
+
+// Add the node to hash table
+ bool add_to_table(node *n)
+ {
+    if (table[hash(n->word)] != NULL)
+    {
+        
+    }
+ }
