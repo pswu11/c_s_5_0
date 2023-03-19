@@ -22,8 +22,6 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
-void add_word(node *n);
-
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -55,8 +53,9 @@ bool load(const char *dictionary)
         {
             return 1;
         }
-        strcpy(n->word, tmp_word); // here occurs a SIGSEG (segmentation fault)
-        add_word(n);
+        // add word to the node n
+        strcpy(n->word, tmp_word);
+        
     }
     return true;
 }
@@ -74,23 +73,3 @@ bool unload(void)
     // TODO
     return false;
 }
-
-
-// Add the node to hash table
-void add_word(node *n)
- {
-    int h = hash(n->word);
-    if (table[h] == NULL)
-    {
-        strcpy(table[h]->word, n->word);
-        table[h]->next = NULL;
-        return;
-    }
-    node *new = table[h]->next;
-    while (new->next != NULL)
-    {
-        new = new->next;
-    }
-    strcpy (new->word, n->word);
-    new->next = NULL;
- }
