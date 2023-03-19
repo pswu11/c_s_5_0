@@ -56,15 +56,15 @@ bool load(const char *dictionary)
         // add word to the node n
         strcpy(n->word, tmp_word);
         // obtain the index for hashed table
-        int hash = hash(n->word);
-        if (table[h] == NULL)
+        int index = hash(n->word);
+        if (table[index] == NULL)
         {
-            table[h] = n;
+            table[index] = n;
         }
         else
         {
-            n->next = table[h];
-            table[h] = n;
+            n->next = table[index];
+            table[index] = n;
         }
     }
     return true;
