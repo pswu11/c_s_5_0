@@ -32,7 +32,6 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    printf("%c: %i\n", word[0], toupper(word[0]) - 'A');
     return toupper(word[0]) - 'A';
 }
 
