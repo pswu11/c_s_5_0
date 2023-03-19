@@ -57,7 +57,15 @@ bool load(const char *dictionary)
         strcpy(n->word, tmp_word);
         // obtain the index for hashed table
         int hash = hash(n->word);
-        
+        if (table[h] == NULL)
+        {
+            table[h] = n;
+        }
+        else
+        {
+            n->next = table[h];
+            table[h] = n;
+        }
     }
     return true;
 }
