@@ -1,3 +1,7 @@
+"""
+This is basically a mockup how we'd solve problem set 5 from last week in Python. 
+"""
+
 words = set()
 """
 dict() this will give you a hash table.
