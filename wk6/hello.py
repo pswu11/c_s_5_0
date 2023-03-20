@@ -7,6 +7,7 @@ print(f"Hello, {answer}!") # format string in Python
 
 # data types: bool, float, int, str,
 # no double or long as int and float already use larger range for them by default.
+# Python doesn't have array, but list using []
 
 # conditionals in Python
 
@@ -17,5 +18,19 @@ elif x < y:
 else:
     print("x is equal to y")
 
-# variables in Python
+# variables, no need to specify the data type
 
+counter = 0
+counter = counter + 1
+counter += 1
+# counter++ doesn't exist in Python
+
+# loops in Python
+
+i = 0
+while i < 3:
+    print("meow")
+    i += i
+
+for i in range(50):
+    print(i)
