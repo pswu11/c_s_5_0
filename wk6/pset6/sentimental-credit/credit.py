@@ -15,7 +15,15 @@ def validate(number):
     n_list = []
     for char in str(number):
         n_list.append(int(char))
-    print(n_list)
+    if luhn_algo(n_list):
+        print("T")
+    else:
+        print("Invalid credit card number.")
+
+
+def luhn_algo(li):
+    for i in range(len(li)):
+        if li[i * -2]
 
 
 main()
