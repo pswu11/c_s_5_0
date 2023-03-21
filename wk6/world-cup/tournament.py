@@ -16,10 +16,13 @@ def main():
 
     teams = []
     # Read teams into memory from file
-    file = open(sys.argv[1], "r")
-    for line in file:
-        teams.append(line.rstrip())
-    file.close()
+    try:
+        file = open(sys.argv[1], "r")
+        for line in file:
+            teams.append(line.rstrip())
+        file.close()
+    except ValueError:
+        print("Invalid file name")
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
