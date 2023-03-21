@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000
+N = 1000000
 
 
 def main():
@@ -21,7 +21,6 @@ def main():
             reader = csv.DictReader(file)
             for item in reader:
                 teams.append({"team": item["team"], "rating": int(item["rating"])})
-        print(type(teams[0]))
         file.close()
     except FileNotFoundError:
         print("File not found.")
