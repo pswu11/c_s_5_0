@@ -18,10 +18,8 @@ def main():
     # Read teams into memory from file
     with open(sys.argv[1]) as file:
         reader = csv.DictReader(file)
-
-    reader = csv.DictReader(file)
-    for item in reader:
-        teams.append(item['team'], item['rating'])
+        for item in reader:
+            teams.append([item['team'], item['rating']])
     file.close()
     print(type(teams[0]))
 
