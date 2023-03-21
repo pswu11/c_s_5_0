@@ -2,14 +2,16 @@
 
 from cs50 import get_int
 
+
 def main():
-    h = get_int("Height: ")
-    if h >= 1 and h <= 8:
-        print_pyramid(h)
-    else:
+    while True:
+        h = get_int("Height: ")
+        if h >= 1 and h <= 8:
+            print_pyramid(h)
+            break
 
 
-
+# print double-pyramid based on height as input
 def print_pyramid(height):
     for i in range(height):
         i += 1
@@ -18,5 +20,6 @@ def print_pyramid(height):
         print(" ", end="")
         print("#" * i, end="")
         print(" " * (height - i))
+
 
 main()
