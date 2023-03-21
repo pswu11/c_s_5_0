@@ -10,8 +10,8 @@ def main():
 def print_pyramid(height):
     for i in range(height):
         for j in range(height-1):
-            print("" * j, end="")
-            print("#" * (height - j))
+            print(" " * (height - j), end="")
+            print("#" * j)
             j += 1
         print()
         i += 1
