@@ -21,10 +21,11 @@ def main():
             reader = csv.DictReader(file)
             for item in reader:
                 teams.append(item)
+                print(item)
+        print(type(teams[0]))
         file.close()
     except FileNotFoundError:
-        print("Invalid file")
-    print(type(teams[0]))
+        print("File not found.")
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
