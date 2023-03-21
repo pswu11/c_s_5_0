@@ -1,5 +1,5 @@
 """
-This is basically a mockup how we'd solve problem set 5 from last week in Python. 
+This is basically a mockup how we'd solve problem set 5 from last week in Python.
 """
 
 words = set()
@@ -20,7 +20,7 @@ def load(dictionary):
         word = line.rstrip()
         # this adds word to our set
         words.add(word)
-    close(file)
+    file.close()
     return True
 
 
