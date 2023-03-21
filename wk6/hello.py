@@ -35,3 +35,11 @@ while i < 3:
 for i in range(50):
     print(i)
 
+# conditionals using list
+
+s = input("Do you agree? [Y/N]")
+
+if s in ["Y", "y"]:
+    print("Agreed.")
+elif s in ["N", "n"]:
+    print("Not agreed.")
