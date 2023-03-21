@@ -12,3 +12,10 @@ def main():
             break
 
 def validate(number):
+    n_list = []
+    for char in str(number):
+        n_list.append(int(char))
+    print(n_list)
+
+
+main()
