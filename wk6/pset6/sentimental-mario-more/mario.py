@@ -3,8 +3,12 @@
 from cs50 import get_int
 
 def main():
-    height = get_int("Height: ")
-    print_pyramid(height)
+    try:
+        h = get_int("Height: ")
+        if h >= 1 and h <= 8:
+            print_pyramid(h)
+        else: 
+
 
 
 def print_pyramid(height):
