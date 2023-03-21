@@ -23,7 +23,7 @@ def validate(number):
 
 def luhn_algo(li):
     for i in range(len(li)):
-        if li[i * -2]
+
 
 
 main()
