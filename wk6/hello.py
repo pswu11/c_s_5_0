@@ -1,5 +1,20 @@
 from cs50 import get_string
 
+# Program structure:
+# you don't need prototype function.
+# It's conventional to create a main function for your precedures.
+
+def main():
+    for i in range(3):
+        meow()
+
+def meow():
+    print("meow")
+
+main()
+
+# Hello world
+
 print("Hello, world!")
 
 answer = get_string("What's your name? ")
@@ -46,3 +61,9 @@ if s in ["Y", "y"]:
     print("Agreed.")
 elif s in ["N", "n"]:
     print("Not agreed.")
+
+# functions with argument(s)
+
+def whack(n):
+    for i in range(n):
+        print("whack!")
