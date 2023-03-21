@@ -16,12 +16,14 @@ def main():
 
     teams = []
     # Read teams into memory from file
-    try: 
-    with open(sys.argv[1]) as file:
-        reader = csv.DictReader(file)
-        for item in reader:
-            teams.append(item)
-    file.close()
+    try:
+        with open(sys.argv[1]) as file:
+            reader = csv.DictReader(file)
+            for item in reader:
+                teams.append(item)
+        file.close()
+    except FileNotFoundError:
+        print("Invalid file")
     print(type(teams[0]))
 
     counts = {}
