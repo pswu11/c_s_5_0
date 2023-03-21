@@ -38,6 +38,9 @@ for i in range(50):
 # conditionals using list
 
 s = input("Do you agree? [Y/N]")
+# this returns a copy of s in lower case
+# string is immutable in Python
+s = s.lower()
 
 if s in ["Y", "y"]:
     print("Agreed.")
