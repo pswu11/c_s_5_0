@@ -9,7 +9,13 @@ Times:
 
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?: TODO
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
+The prediction of March 2019 Women’s FIFA seems incorrect. Based on the ratings, United States should have the highest chance of winning.
+Instead, once you increase the number of simulations, Germany and England often have top two highest % of winning than United States.
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?: TODO
+After how many simulations would you call the predictions "good enough"?:
+
+When reaching 100000 simulations, the results are quite stablized while the execution time still stays within 1 second.
+So 100000 simulations is good enough.
