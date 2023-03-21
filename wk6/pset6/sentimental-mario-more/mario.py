@@ -9,11 +9,9 @@ def main():
 
 def print_pyramid(height):
     for i in range(height):
-        for j in range(height-1):
-            j += 1
-            print(" " * (height - j), end="")
-            print("#" * j)
         i += 1
+        print(" " * (height - i), end="")
+        print("#" * i)
 
 
 main()
