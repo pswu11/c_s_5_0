@@ -18,11 +18,12 @@ def main():
     # Read teams into memory from file
     try:
         file = open(sys.argv[1], "r")
-        for line in file:
-            teams.append(line.rstrip())
-        file.close()
     except ValueError:
         print("Invalid file name")
+    input = csv.DictReader(file)
+    for line in input:
+    teams.append(line.rstrip())
+    file.close()
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
