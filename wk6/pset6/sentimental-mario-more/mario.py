@@ -20,7 +20,7 @@ def print_pyramid(height):
         """print the left pyramid"""
         print(" " * (height - i), end="")
         print("#" * i, end="")
-        print(" ", end="")
+        print(" " * 2, end="")
         """print the right pyramid"""
         print("#" * i, end="")
         print(" " * (height - i))
