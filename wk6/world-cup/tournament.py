@@ -16,12 +16,11 @@ def main():
 
     teams = []
     # Read teams into memory from file
-    try:
-        file = open(sys.argv[1], "r")
-    except ValueError:
-        print("Invalid file name")
-    input = csv.DictReader(file)
-    for item in input:
+    with open(sys.argv[1]) as file:
+        reader = csv.DictReader(file)
+
+    reader = csv.DictReader(file)
+    for item in reader:
         teams.append({item['team'], item['rating']})
     file.close()
 
