@@ -28,7 +28,9 @@ def main():
         print("File not found.")
 
     counts = {}
-    # TODO: Simulate N tournaments and keep track of win counts
+    # Simulate N tournaments and keep track of win counts
+    while N > 0:
+        simulate_tournament(teams)
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -59,10 +61,10 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    winners = simulate_round(teams)
-    if len(winners) == 1:
-        return winners
-    elif len(winners) > 1:
+    winner = simulate_round(teams)
+    if len(winner) == 1:
+        return winner
+    elif len(winner) > 1:
         return simulate_tournament(teams)
 
 
