@@ -31,8 +31,8 @@ def main():
     # Simulate N tournaments and keep track of win counts
     while N > 0:
         winner = simulate_tournament(teams)[0]
-        team_name = winner["name"]
         print(winner)
+        team_name = winner['name']
         print(team_name)
         if winner in counts:
             counts[winner] += 1
