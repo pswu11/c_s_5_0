@@ -21,8 +21,8 @@ def main():
     except ValueError:
         print("Invalid file name")
     input = csv.DictReader(file)
-    for line in input:
-    teams.append(line.rstrip())
+    for item in input:
+        item
     file.close()
 
     counts = {}
