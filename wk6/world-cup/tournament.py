@@ -16,10 +16,11 @@ def main():
 
     teams = []
     # Read teams into memory from file
+    try: 
     with open(sys.argv[1]) as file:
         reader = csv.DictReader(file)
         for item in reader:
-            teams.append([item['team'], item['rating']])
+            teams.append(item)
     file.close()
     print(type(teams[0]))
 
