@@ -22,7 +22,7 @@ def main():
         print("Invalid file name")
     input = csv.DictReader(file)
     for item in input:
-        teams.append(item)
+        teams.append({item['team'], item['rating']})
     file.close()
 
     counts = {}
