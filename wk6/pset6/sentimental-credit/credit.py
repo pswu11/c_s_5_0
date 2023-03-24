@@ -41,6 +41,7 @@ def luhn_algo(l):
 def which_credit(credit_list):
     length = len(credit_list)
     first_two = credit_list[0] * 10 + credit_list[1]
+    print(first_two)
     if length == 15:
         if first_two in [34, 37]:
             print("AMEX")
