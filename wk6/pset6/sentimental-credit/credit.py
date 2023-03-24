@@ -3,6 +3,7 @@
 from cs50 import get_int
 
 
+
 def main():
     while True:
         n = get_int("Number: ")
