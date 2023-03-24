@@ -20,10 +20,11 @@ def validate(number):
 
 
 def luhn_algo(li):
-    for i in range(li):
+    sum = 0
+    for i in range(len(li)):
         if i % 2 == 0:
-            
-
+            sum += li[-i] * 2
+            print(sum)
 
 
 main()
