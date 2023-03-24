@@ -65,6 +65,8 @@ def which_credit(credit_list):
             print("VISA")
         else:
             print("INVALID")
+    elif length == 13 and credit[0] ==4:
+        print("VISA")
     else:
         print("INVALID")
 
