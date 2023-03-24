@@ -1,7 +1,7 @@
 # implement credit card number validator
 
 from cs50 import get_int
-
+import math
 
 
 def main():
@@ -33,10 +33,11 @@ def luhn_algo(li):
             double = li[index] * 2
             print(double)
             if double > 10:
-                sum += (double / 10).floor + double % 10
+                sum += math.floor(double / 10) + double % 10
             else:
                 sum += double
             print(sum)
+    
 
     print(sum)
 
