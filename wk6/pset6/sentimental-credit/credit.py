@@ -30,10 +30,13 @@ def luhn_algo(li):
         else:
             print(li[index])
             double = li[index] * 2
+            print(double)
             if double > 10:
                 sum += floor(double / 10) + double % 10
+            else:
+                sum += double
             print(sum)
-            
+
     print(sum)
 
 
