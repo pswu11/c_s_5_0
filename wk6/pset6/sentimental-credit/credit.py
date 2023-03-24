@@ -24,10 +24,10 @@ def luhn_algo(li):
     for i in range(len(li)):
         if i % 2 == 0:
             print(li[-1-i])
-            sum += li[-1-i] * 2
+            sum += li[-1-i]
             print(sum)
         else:
             print(li[-1-i])
-            sum += li[-1-i]
+            sum += li[-1-i] * 2
 
 main()
