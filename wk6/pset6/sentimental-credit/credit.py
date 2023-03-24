@@ -43,7 +43,7 @@ def which_credit(credit_list):
     first_two = credit_list[0] * 10 + credit_list[1]
     if length == 15:
         if first_two in [34, 37]:
-            print("VISA")
+            print("AMEX")
         else:
             print("INVALID")
     elif length == 16:
