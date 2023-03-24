@@ -23,20 +23,22 @@ def validate(number):
 
 
 def luhn_algo(l):
-    sum = 0
+    sum1 = 0
+    sum2 = 0
     for i in range(len(l)):
         index = -1-i
         if i % 2 == 0:
             print(l[index])
-            sum += l[index]
+            sum1 += l[index]
         else:
             double = l[index] * 2
             print(double)
             if double > 10:
-                sum += math.floor(double / 10) + double % 10
+                sum2 += math.floor(double / 10) + double % 10
             else:
-                sum += double
-    print(sum)
+                sum2 += double
+    print(sum1)
+    print(sum2)
     if sum % 10 == 0:
         return True
     return False
