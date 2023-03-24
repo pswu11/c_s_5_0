@@ -23,16 +23,14 @@ def luhn_algo(li):
     sum1 = 0
     sum2 = 0
     for i in range(len(li)):
+        index = -1-i
         if i % 2 == 0:
-            print(li[-1-i])
-            sum1 += li[-1-i]
+            print(li[index])
+            sum1 += li[index]
             print(sum1)
         else:
-            print(li[-1-i])
-            sum2 += li[-1-i] * 2
-    sum1_list = []
-    for char in sum1:
-        sum1_list.append(char)
-    print(sum1_list)
-
+            print(li[index])
+            double = li[index] * 2
+            if double > 10:
+                sum2 += double / 10 + double % 10
 main()
