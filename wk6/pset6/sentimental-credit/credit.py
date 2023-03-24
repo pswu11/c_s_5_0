@@ -28,18 +28,18 @@ def luhn_algo(l):
     for i in range(len(l)):
         index = -1-i
         if i % 2 == 0:
-            print(l[index])
+            #print(l[index])
             sum1 += l[index]
         else:
             double = l[index] * 2
-            print(double)
+            #print(double)
             if double >= 10:
                 sum2 += math.floor(double / 10) + double % 10
             else:
                 sum2 += double
-    print(sum1)
-    print(sum2)
-    print(sum1 + sum2)
+    #print(sum1)
+    #print(sum2)
+    #print(sum1 + sum2)
     if (sum1 + sum2) % 10 == 0:
         return True
     return False
@@ -47,7 +47,7 @@ def luhn_algo(l):
 def which_credit(credit_list):
     length = len(credit_list)
     first_two = credit_list[0] * 10 + credit_list[1]
-    print(first_two)
+    #print(first_two)
     if length == 15:
         if first_two in [34, 37]:
             print("AMEX")
