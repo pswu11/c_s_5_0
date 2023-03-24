@@ -27,9 +27,11 @@ def luhn_algo(l):
     for i in range(len(l)):
         index = -1-i
         if i % 2 == 0:
+            print(l[index])
             sum += l[index]
         else:
             double = l[index] * 2
+            print(double)
             if double > 10:
                 sum += math.floor(double / 10) + double % 10
             else:
