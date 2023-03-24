@@ -39,7 +39,8 @@ def luhn_algo(l):
                 sum2 += double
     print(sum1)
     print(sum2)
-    if sum % 10 == 0:
+    print(sum1 + sum2)
+    if sum1 + sum2 % 10 == 0:
         return True
     return False
 
