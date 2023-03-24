@@ -32,6 +32,8 @@ def luhn_algo(li):
             double = li[index] * 2
             if double > 10:
                 sum += floor(double / 10) + double % 10
+            print(sum)
+            
     print(sum)
 
 
