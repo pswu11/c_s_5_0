@@ -16,30 +16,50 @@ def validate(number):
     n_list = []
     for char in str(number):
         n_list.append(int(char))
-    luhn_algo(n_list)
+    if luhn_algo(n_list):
+        which_credit(n_list)
+    else:
+        print("INVALID")
 
 
-
-def luhn_algo(li):
+def luhn_algo(l):
     sum = 0
-    for i in range(len(li)):
+    for i in range(len(l)):
         index = -1-i
         if i % 2 == 0:
-            print(li[index])
-            sum += li[index]
-            print(sum)
+            sum += l[index]
         else:
-            print(li[index])
-            double = li[index] * 2
-            print(double)
+            double = l[index] * 2
             if double > 10:
                 sum += math.floor(double / 10) + double % 10
             else:
                 sum += double
-            print(sum)
-    
+    if sum % 10 == 0:
+        return True
+    return False
 
-    print(sum)
+def which_credit(credit_list):
+    length = len(credit_list)
+    first_two = credit_list[0] * 10 + credit_list[1]
+    if length == 15:
+        if first_two in [34, 37]:
+            print("VISA")
+        else:
+            print("INVALID")
+    elif length == 16:
+        if first_two in [51, 52, 53, 54, 55]:
+            print("MASTERCARD")
+        elif credit_list[0] == 4:
+            print("VISA")
+        else:
+            print("INVALID")
+    elif length == 14:
+        if credit_list[0] == 4:
+            print("VISA")
+        else:
+            print("INVALID")
+    else:
+        print("INVALID")
 
 
 main()
