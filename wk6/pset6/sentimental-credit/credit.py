@@ -36,6 +36,7 @@ def luhn_algo(l):
                 sum += math.floor(double / 10) + double % 10
             else:
                 sum += double
+    print(sum)
     if sum % 10 == 0:
         return True
     return False
