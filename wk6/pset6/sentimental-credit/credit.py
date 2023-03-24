@@ -33,14 +33,14 @@ def luhn_algo(l):
         else:
             double = l[index] * 2
             print(double)
-            if double > 10:
+            if double >= 10:
                 sum2 += math.floor(double / 10) + double % 10
             else:
                 sum2 += double
     print(sum1)
     print(sum2)
     print(sum1 + sum2)
-    if sum1 + sum2 % 10 == 0:
+    if (sum1 + sum2) % 10 == 0:
         return True
     return False
 
