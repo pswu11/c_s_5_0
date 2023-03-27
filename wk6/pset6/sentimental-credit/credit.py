@@ -48,11 +48,13 @@ def which_credit(credit_list):
     length = len(credit_list)
     first_one = credit_list[0]
     first_two = credit_list[0] * 10 + credit_list[1]
+    # credit card number with 15 digits
     if length == 15:
         if first_two in [34, 37]:
             print("AMEX")
         else:
             print("INVALID")
+    # credit card number with 16 digits
     elif length == 16:
         if first_two in [51, 52, 53, 54, 55]:
             print("MASTERCARD")
@@ -60,11 +62,13 @@ def which_credit(credit_list):
             print("VISA")
         else:
             print("INVALID")
+    # credit card number with 14 digits
     elif length == 14:
         if first_one == 4:
             print("VISA")
         else:
             print("INVALID")
+    # credit card number with 13 digits
     elif length == 13 and first_one == 4:
         print("VISA")
     else:
