@@ -12,6 +12,8 @@ def main():
             validate(n)
             break
 
+
+# validate input credit card number
 def validate(number):
     n_list = []
     for char in str(number):
@@ -22,32 +24,30 @@ def validate(number):
         print("INVALID")
 
 
+# validate input using luhn algorithm
 def luhn_algo(l):
     sum1 = 0
     sum2 = 0
     for i in range(len(l)):
         index = -1-i
         if i % 2 == 0:
-            #print(l[index])
             sum1 += l[index]
         else:
             double = l[index] * 2
-            #print(double)
             if double >= 10:
                 sum2 += math.floor(double / 10) + double % 10
             else:
                 sum2 += double
-    #print(sum1)
-    #print(sum2)
-    #print(sum1 + sum2)
     if (sum1 + sum2) % 10 == 0:
         return True
     return False
 
+
+# validate credit card provider
 def which_credit(credit_list):
     length = len(credit_list)
+    first_one = credit_list[0]
     first_two = credit_list[0] * 10 + credit_list[1]
-    #print(first_two)
     if length == 15:
         if first_two in [34, 37]:
             print("AMEX")
@@ -56,16 +56,16 @@ def which_credit(credit_list):
     elif length == 16:
         if first_two in [51, 52, 53, 54, 55]:
             print("MASTERCARD")
-        elif credit_list[0] == 4:
+        elif first_one == 4:
             print("VISA")
         else:
             print("INVALID")
     elif length == 14:
-        if credit_list[0] == 4:
+        if first_one == 4:
             print("VISA")
         else:
             print("INVALID")
-    elif length == 13 and credit_list[0] == 4:
+    elif length == 13 and first_one == 4:
         print("VISA")
     else:
         print("INVALID")
