@@ -2,6 +2,7 @@ import csv
 from cs50 import SQL
 
 with open("favorites.csv") as file:
+    # reader = csv(file) only returns row as list, but doesn't consider the headers
     reader = csv.DictReader(file)
     counts = {}
     for row in reader:
@@ -20,7 +21,11 @@ db = SQL("sqlite:///favorites.db")
 
 favorite = input("Favorite: ")
 
-# SQL execute function here returns a dictionary of your SELECT query
-rows = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = 'Mario';")
+# CS50's SQL execute function returns a dictionary of your SELECT query
+# And this is how to utilize SQL results in the Python program
+rows = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = 'Mario'")
 print(row[0]["n"])
+
+# The right way of plugging user input:
+rows_better = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = ?", favorite)
 
