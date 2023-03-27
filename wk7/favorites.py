@@ -27,5 +27,6 @@ rows = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = 'Mario'")
 print(row[0]["n"])
 
 # The right way of plugging user input:
+# Note: it's dangerous to use f-string here as it allows certain insertion attack
 rows_better = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = ?", favorite)
 
