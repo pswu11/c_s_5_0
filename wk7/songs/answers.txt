@@ -8,3 +8,6 @@ this user's audio aura focuses more on high danceability (0.72) and energy (0.66
 2. Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
 What better ways of calculating this aura would you propose?
 
+Perhaps energy, danceability and valence don't represent the songs comprehensively.
+Other characters like tempo, genre, or even the actual content of lyrics gives other information about user's
+audio aura. So it might be useful to consider these factors 
