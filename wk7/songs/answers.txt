@@ -10,4 +10,4 @@ What better ways of calculating this aura would you propose?
 
 Perhaps energy, danceability and valence don't represent the songs comprehensively.
 Other characters like tempo, genre, or even the actual content of lyrics gives other information about user's
-audio aura. So it might be useful to consider these factors 
+audio aura. So it might be useful to consider these factors when doing the calculation.
