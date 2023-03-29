@@ -2,7 +2,7 @@
 how would you characterize their audio aura?
 
 Taking the average of energy, valence, and danceability of top 100 songs this user has, the results shows that
-this user's audio aura focus a lot on danceability and 
+this user's audio aura focuses more on danceability and energy, and less about valence.
 
 
 
