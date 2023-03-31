@@ -168,89 +168,22 @@ SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_numb
 -- In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket.
 
-SELECT caller, receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28;
+SELECT caller, receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration <= 60;
 
 /*
 +----------------+----------------+
 |     caller     |    receiver    |
 +----------------+----------------+
-| (336) 555-0077 | (098) 555-1164 |
-| (918) 555-5327 | (060) 555-2489 |
-| (491) 555-2505 | (478) 555-1565 |
-| (996) 555-8899 | (059) 555-4698 |
-| (704) 555-5790 | (772) 555-5770 |
-| (984) 555-5921 | (618) 555-9856 |
-| (579) 555-5030 | (971) 555-6468 |
-| (233) 555-0473 | (831) 555-0973 |
-| (293) 555-1469 | (749) 555-4874 |
-| (450) 555-8297 | (771) 555-7880 |
 | (130) 555-0289 | (996) 555-8899 |
-| (209) 555-7806 | (693) 555-7986 |
-| (918) 555-2946 | (006) 555-0505 |
 | (499) 555-9472 | (892) 555-8872 |
-| (669) 555-6918 | (914) 555-5994 |
-| (547) 555-8781 | (398) 555-1013 |
-| (544) 555-8087 | (389) 555-5198 |
-| (666) 555-5774 | (125) 555-8030 |
-| (047) 555-0577 | (059) 555-4698 |
-| (301) 555-4174 | (711) 555-3007 |
-| (801) 555-9266 | (984) 555-5921 |
-| (971) 555-6468 | (267) 555-2761 |
 | (367) 555-5533 | (375) 555-8161 |
 | (609) 555-5876 | (389) 555-5198 |
-| (357) 555-0246 | (502) 555-6712 |
-| (367) 555-5533 | (344) 555-9601 |
-| (394) 555-3247 | (035) 555-2997 |
-| (839) 555-1757 | (487) 555-5865 |
-| (770) 555-1196 | (324) 555-0416 |
-| (636) 555-4198 | (670) 555-8598 |
-| (068) 555-0183 | (770) 555-1861 |
-| (711) 555-3007 | (113) 555-7544 |
-| (060) 555-2489 | (204) 555-4136 |
-| (704) 555-2131 | (891) 555-5672 |
-| (367) 555-5533 | (022) 555-4052 |
-| (873) 555-3868 | (047) 555-0577 |
-| (867) 555-9103 | (068) 555-0183 |
-| (608) 555-9302 | (725) 555-3243 |
-| (901) 555-8732 | (491) 555-2505 |
-| (478) 555-1565 | (717) 555-1342 |
 | (499) 555-9472 | (717) 555-1342 |
-| (695) 555-0348 | (338) 555-6650 |
-| (696) 555-9195 | (258) 555-5627 |
 | (286) 555-6063 | (676) 555-6554 |
 | (770) 555-1861 | (725) 555-3243 |
-| (711) 555-3007 | (147) 555-6818 |
-| (725) 555-4692 | (821) 555-5262 |
-| (324) 555-0416 | (452) 555-8550 |
-| (234) 555-1294 | (772) 555-5770 |
-| (669) 555-6918 | (971) 555-6468 |
 | (031) 555-6622 | (910) 555-3251 |
-| (342) 555-9260 | (219) 555-0139 |
-| (342) 555-9260 | (487) 555-5865 |
-| (801) 555-9266 | (608) 555-9302 |
-| (398) 555-1013 | (329) 555-5870 |
-| (016) 555-9166 | (336) 555-0077 |
-| (594) 555-2863 | (491) 555-2505 |
-| (122) 555-4581 | (831) 555-0973 |
-| (914) 555-5994 | (973) 555-3809 |
-| (258) 555-5627 | (695) 555-0348 |
-| (751) 555-6567 | (594) 555-6254 |
-| (771) 555-7880 | (711) 555-3007 |
-| (219) 555-0139 | (867) 555-9103 |
-| (676) 555-6554 | (328) 555-9658 |
-| (749) 555-4874 | (492) 555-5484 |
-| (328) 555-9658 | (775) 555-7584 |
-| (219) 555-0139 | (910) 555-3251 |
-| (380) 555-4380 | (680) 555-4935 |
 | (826) 555-1652 | (066) 555-9701 |
-| (594) 555-6254 | (123) 555-5144 |
 | (338) 555-6650 | (704) 555-2131 |
-| (971) 555-6468 | (258) 555-5627 |
-| (730) 555-5115 | (343) 555-0167 |
-| (286) 555-6063 | (310) 555-8568 |
-| (367) 555-5533 | (704) 555-5790 |
-| (041) 555-4011 | (609) 555-5876 |
-| (478) 555-1565 | (031) 555-6622 |
 +----------------+----------------+
 */
 
@@ -281,7 +214,7 @@ SELECT DISTINCT p1.name
 FROM people p1
 INNER JOIN (SELECT license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25 AND activity = 'exit') t1 ON p1.license_plate = t1.license_plate
 INNER JOIN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw')) t2 ON p1.id = t2.person_id
-INNER JOIN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28) t3 ON t3.caller = p1.phone_number
+INNER JOIN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration <= 60) t3 ON t3.caller = p1.phone_number
 INNER JOIN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE month = 7 AND day = 29 AND hour < 12)) t4 ON t4.passport_number = p1.passport_number;
 
 /*
@@ -292,15 +225,12 @@ INNER JOIN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id
 +-------+
 */
 
-SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND caller IN (SELECT phone_number FROM people WHERE name = 'Bruce');
+SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration <= 60 AND caller IN (SELECT phone_number FROM people WHERE name = 'Bruce');
 
 /*
 +----------------+
 |    receiver    |
 +----------------+
 | (375) 555-8161 |
-| (344) 555-9601 |
-| (022) 555-4052 |
-| (704) 555-5790 |
 +----------------+
 */
