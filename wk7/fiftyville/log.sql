@@ -245,4 +245,19 @@ SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls 
 +-------+
 */
 
-SELECT destination_airport_id FROM flights IN (SELECT phone_number FROM people WHERE name = 'Bruce');
+
+SELECT city FROM airports WHERE id IN (
+    SELECT destination_airport_id FROM flights WHERE id IN (
+        SELECT flight_id FROM passengers WHERE passport_number IN (
+            SELECT passport_number FROM people WHERE name = 'Bruce'
+        )
+    )
+);
+
+/*
++---------------+
+|     city      |
++---------------+
+| New York City |
++---------------+
+*/
