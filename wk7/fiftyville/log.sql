@@ -291,3 +291,4 @@ INNER JOIN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id
 | Bruce |
 +-------+
 */
+
