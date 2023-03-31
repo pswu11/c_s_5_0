@@ -264,5 +264,4 @@ SELECT DISTINCT p1.name
 FROM people p1
 INNER JOIN (SELECT license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25 AND activity = 'exit';) t1 ON p1.license_plate = t1.license_plate
 INNER JOIN stars s2 ON s2.movie_id = s1.movie_id
-INNER JOIN people p2 ON p2.id = s2.person_id
-WHERE p2.name = 'Kevin Bacon' AND p1.name != 'Kevin Bacon';
+INNER JOIN people p2 ON p2.id = s2.person_id;
