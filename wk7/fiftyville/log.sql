@@ -237,3 +237,25 @@ SELECT caller, receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day
 +----------------+----------------+
 */
 
+SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE month = 7 AND day = 29 AND hour < 12);
+
+/*
++-----------------+
+| passport_number |
++-----------------+
+| 7214083635      |
+| 1695452385      |
+| 5773159633      |
+| 1540955065      |
+| 8294398571      |
+| 1988161715      |
+| 9878712108      |
+| 8496433585      |
+| 7597790505      |
+| 6128131458      |
+| 6264773605      |
+| 3642612721      |
+| 4356447308      |
+| 7441135547      |
++-----------------+
+*/
