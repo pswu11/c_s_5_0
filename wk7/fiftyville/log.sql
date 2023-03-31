@@ -151,3 +151,4 @@ SELECT account_number, atm_location, transaction_type, amount FROM atm_transacti
 -- In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket.
 
+SELECT caller, receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28;
