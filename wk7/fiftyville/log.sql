@@ -292,3 +292,15 @@ INNER JOIN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id
 +-------+
 */
 
+SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND caller IN (SELECT phone_number FROM people WHERE name = 'Bruce');
+
+/*
++----------------+
+|    receiver    |
++----------------+
+| (375) 555-8161 |
+| (344) 555-9601 |
+| (022) 555-4052 |
+| (704) 555-5790 |
++----------------+
+*/
