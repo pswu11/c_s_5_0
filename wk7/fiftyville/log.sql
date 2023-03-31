@@ -128,7 +128,7 @@ SELECT hour, minute, activity, license_plate FROM bakery_security_logs WHERE mon
 -- I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 -- I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 
-SELECT account_number, atm_location, transaction_type, amount FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw');
 
 /*
 +----------------+----------------+------------------+--------+
@@ -143,6 +143,23 @@ SELECT account_number, atm_location, transaction_type, amount FROM atm_transacti
 | 81061156       | Leggett Street | withdraw         | 30     |
 | 26013199       | Leggett Street | withdraw         | 35     |
 +----------------+----------------+------------------+--------+
+*/
+
+SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw');
+
+/*
++-----------+
+| person_id |
++-----------+
+| 686048    |
+| 514354    |
+| 458378    |
+| 395717    |
+| 396669    |
+| 467400    |
+| 449774    |
+| 438727    |
++-----------+
 */
 
 
@@ -262,6 +279,15 @@ SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flight
 
 SELECT DISTINCT p1.name
 FROM people p1
-INNER JOIN (SELECT license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25 AND activity = 'exit';) t1 ON p1.license_plate = t1.license_plate
-INNER JOIN stars s2 ON s2.movie_id = s1.movie_id
-INNER JOIN people p2 ON p2.id = s2.person_id;
+INNER JOIN (SELECT license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25 AND activity = 'exit') t1 ON p1.license_plate = t1.license_plate
+INNER JOIN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw')) t2 ON p1.id = t2.person_id
+INNER JOIN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28) t3 ON t3.caller = p1.phone_number
+INNER JOIN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE month = 7 AND day = 29 AND hour < 12)) t4 ON t4.passport_number = p1.passport_number;
+
+/*
++-------+
+| name  |
++-------+
+| Bruce |
++-------+
+*/
