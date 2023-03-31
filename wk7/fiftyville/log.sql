@@ -107,7 +107,22 @@ SELECT * FROM interviews WHERE transcript LIKE '%bakery%' AND month = 7;
 -- Sometime within ten minutes of the theft, I saw the thief get into a car in the bakery parking lot and drive away.
 -- If you have security footage from the bakery parking lot, you might want to look for cars that left the parking lot in that time frame.
 
-SELECT hour, minute, activity, license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25;
+SELECT hour, minute, activity, license_plate FROM bakery_security_logs WHERE month = 7 AND day = 28 AND hour = 10 AND minute BETWEEN 5 AND 25 AND activity = 'exit';
+
+```
++------+--------+----------+---------------+
+| hour | minute | activity | license_plate |
++------+--------+----------+---------------+
+| 10   | 16     | exit     | 5P2BI95       |
+| 10   | 18     | exit     | 94KL13X       |
+| 10   | 18     | exit     | 6P58WS2       |
+| 10   | 19     | exit     | 4328GD8       |
+| 10   | 20     | exit     | G412CB7       |
+| 10   | 21     | exit     | L93JTIZ       |
+| 10   | 23     | exit     | 322W7JE       |
+| 10   | 23     | exit     | 0NTHK55       |
++------+--------+----------+---------------+
+```
 
 -- Eugene
 -- I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
