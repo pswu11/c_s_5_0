@@ -245,4 +245,4 @@ SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls 
 +-------+
 */
 
-SELECT destination_airport_id IN (SELECT phone_number FROM people WHERE name = 'Bruce');
+SELECT destination_airport_id FROM flights IN (SELECT phone_number FROM people WHERE name = 'Bruce');
