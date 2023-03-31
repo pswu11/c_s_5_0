@@ -236,3 +236,4 @@ SELECT caller, receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day
 | (478) 555-1565 | (031) 555-6622 |
 +----------------+----------------+
 */
+
