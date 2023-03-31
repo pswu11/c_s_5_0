@@ -128,6 +128,22 @@ SELECT hour, minute, activity, license_plate FROM bakery_security_logs WHERE mon
 -- I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 -- I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 
+SELECT account_number, atm_location, transaction_type, amount FROM atm_transactions WHERE month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+
+/*
++----------------+----------------+------------------+--------+
+| account_number |  atm_location  | transaction_type | amount |
++----------------+----------------+------------------+--------+
+| 28500762       | Leggett Street | withdraw         | 48     |
+| 28296815       | Leggett Street | withdraw         | 20     |
+| 76054385       | Leggett Street | withdraw         | 60     |
+| 49610011       | Leggett Street | withdraw         | 50     |
+| 16153065       | Leggett Street | withdraw         | 80     |
+| 25506511       | Leggett Street | withdraw         | 20     |
+| 81061156       | Leggett Street | withdraw         | 30     |
+| 26013199       | Leggett Street | withdraw         | 35     |
++----------------+----------------+------------------+--------+
+*/
 
 
 -- Raymond
