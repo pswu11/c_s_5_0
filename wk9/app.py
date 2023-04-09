@@ -8,5 +8,6 @@ app = Flask(__name__)
 # @ is a decorator in Python, the fuction below is what server execute whenever a user visits
 @app.route("/")
 def index():
-    return "hello, world"
+    # return "hello, world"
+    return render_template("index.html")
 
