@@ -10,7 +10,7 @@
         // TODO: Add code to check answers to questions
         // Run script once DOM is loaded
         document.addEventListener("DOMContentLoaded", function () {
-            // Toggle color to green when the correct answers are clicked
+            // Toggle color to green when the correct buttons are clicked
             let rights = document.querySelectorAll(".right");
             for (let i = 0; i < rights.length; i++) {
                 rights[i].addEventListener("click", function () {
@@ -19,7 +19,7 @@
                 });
             }
 
-            // Toggle color to red when the wrong answer is clicked
+            // Toggle color to red when the wrong button is clicked
             let wrong = document.querySelector(".wrong");
             wrong.addEventListener("click", function () {
                 wrong.style.backgroundColor = "red";
@@ -56,17 +56,34 @@
             <h2>Part 1: Multiple Choice </h2>
             <hr>
             <!-- TODO: Add multiple choice question here -->
-            <button>A</button>
-            <button>B</button>
-            <button>C</button>
-            <button>D</button>
-            <button>E</button>
+            <h3>Which country doesn't have English as their official language?</h3>
+            <button id="multichoice" name="button" class="right" value="united-states">
+                United States
+            </button>
+            <button id="multichoice" name="button" class="right" value="united-kingdom">
+                United Kingdom
+            </button>
+            <button id="multichoice" name="button" class="wrong" value="south-korea">
+                South Korea
+            </button>
+            <button id="multichoice" name="button" class="right" value="south-africa">
+                South Africa
+            </button>
+            <button id="multichoice" name="button" class="right" value="canada">
+                Canada
+            </button>
+            <p id="answer1"></p>
         </div>
 
         <div class="section">
             <h2>Part 2: Free Response</h2>
             <hr>
             <!-- TODO: Add free response question here -->
+            <h3>Which country is famous for its beer?</h3>
+            <label for="freeform">
+                <input id="freeform" name="answer2" type="text" />
+                <button id="freebutton" type="submit">Submit</button>
+                <p id="answer2"></p>
         </div>
     </div>
 </body>
