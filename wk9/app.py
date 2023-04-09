@@ -11,6 +11,8 @@ def index():
     # return "hello, world"
     # Use /URL/?name=David to dynamically change the name shown on the page
     if "name" in request.args:
-        name = request
+        name = request.args["names"]
+    else:
+        name = "world"
     return render_template("index.html")
 
