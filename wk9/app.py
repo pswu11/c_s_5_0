@@ -9,8 +9,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # return "hello, world"
+    # Use /URL/?name=David to dynamically change the name shown on the page
     if "name" in request.args:
-        name = request()
+        name = request
     return render_template("index.html")
 
-# Use /URL/?name=David to dynamically change the name shown on the page
