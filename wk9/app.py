@@ -11,8 +11,9 @@ def index():
     # return "hello, world"
     # Use /URL/?name=David to dynamically change the name shown on the page
     if "name" in request.args:
-        name = request.args["names"]
+        name = request.args["name"]
     else:
+        # request.args returns dictionary (Flask version)
         name = "world"
     return render_template("index.html")
 
