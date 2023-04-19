@@ -8,10 +8,40 @@
     <title>Trivia!</title>
     <script>
         // TODO: Add code to check answers to questions
-        // Run script once DOM is loaded
+        // Run this script after DOM is loaded
         document.addEventListener("DOMContentLoaded", function () {
             // Toggle color to green when the correct buttons are clicked
+            let rights = document.querySelectorAll(".right");
+            for (let i = 0; i < rights.length; i++) {
+                rights[i].addEventListener("click", function () {
+                    rights[i].style.backgroundColor = "green";
+                    document.querySelector("#answer1").innerHTML = "Correct!";
+                });
+            }
 
+            // Toggle color to red when the wrong button is clicked
+            let wrong = document.querySelector(".wrong");
+            wrong.addEventListener("click", function () {
+                wrong.style.backgroundColor = "red";
+                document.querySelector("#answer1").innerHTML = "Incorrect.";
+            });
+
+            // Check free response submission
+            document
+                .querySelector("#freebutton")
+                .addEventListener("click", function () {
+                    let input = document.querySelector("input");
+                    if (
+                        input.value.toLowerCase() == "germany" ||
+                        input.value.toLowerCase() == "czechia"
+                    ) {
+                        input.style.backgroundColor = "green";
+                        document.querySelector("#answer2").innerHTML = "Correct!";
+                    } else {
+                        input.style.backgroundColor = "red";
+                        document.querySelector("#answer2").innerHTML = "Incorrect.";
+                    }
+                });
         });
     </script>
 </head>
@@ -57,37 +87,7 @@
         </div>
     </div>
     <script>
-        let rights = document.querySelectorAll(".right");
-            for (let i = 0; i < rights.length; i++) {
-                rights[i].addEventListener("click", function () {
-                    rights[i].style.backgroundColor = "green";
-                    document.querySelector("#answer1").innerHTML = "Correct!";
-                });
-            }
 
-            // Toggle color to red when the wrong button is clicked
-            let wrong = document.querySelector(".wrong");
-            wrong.addEventListener("click", function () {
-                wrong.style.backgroundColor = "red";
-                document.querySelector("#answer1").innerHTML = "Incorrect.";
-            });
-
-            // Check free response submission
-            document
-                .querySelector("#freebutton")
-                .addEventListener("click", function () {
-                    let input = document.querySelector("input");
-                    if (
-                        input.value.toLowerCase() == "germany" ||
-                        input.value.toLowerCase() == "czechia"
-                    ) {
-                        input.style.backgroundColor = "green";
-                        document.querySelector("#answer2").innerHTML = "Correct!";
-                    } else {
-                        input.style.backgroundColor = "red";
-                        document.querySelector("#answer2").innerHTML = "Incorrect.";
-                    }
-                });
     </script>
 </body>
 
