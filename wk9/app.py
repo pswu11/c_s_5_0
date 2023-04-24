@@ -19,5 +19,9 @@ def index():
         # request.args returns dictionary (Flask version)
         name = "world"
     # find that file for me and i'll render it
-    return render_template("index.html")
+    return render_template("index.html", name=name)
 
+# Option 2
+def index2():
+    name = request.args.get("name", "world")
+    return render_template("index.html", name=name)
