@@ -2,12 +2,10 @@
 
 {% block body }
 
-<body>
     <!-- /greet is URL/greet, means this form sends you to greet.html -->
     <form action="/greet" method="get">
         <input name="name" type="text" autocomplete="off" autofocus placeholder="name">
         <button type="submit">Greet</button>
     </form>
-</body>
 
 {% endblock %}
