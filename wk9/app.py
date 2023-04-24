@@ -9,6 +9,7 @@ app = Flask(__name__)
 # @ is a decorator in Python, the fuction below is
 # what server execute whenever a user visits
 @app.route("/")
+# index as function name is just a convention
 def index():
     # return "hello, world"
     # Use /URL/?name=David to dynamically change the name shown on the page
