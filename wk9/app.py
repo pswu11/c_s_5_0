@@ -18,5 +18,6 @@ def index():
     else:
         # request.args returns dictionary (Flask version)
         name = "world"
+    # find that file for me and i'll render it out
     return render_template("index.html")
 
