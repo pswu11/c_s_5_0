@@ -1,20 +1,14 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <title>hello</title>
-    </head>
-    <body>
-        <form actio="/register" method="post">
-            <input autocomplate="off" autofocus name="name" placeholder="your name" type="text">
-            <select>
-                <option disabled selected>Choose Sport</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Soccer">Soccer</option>
-                <option value="Ultimate Frisbee">Ultimate Frisbee</option>
-            </select>
-            <button type="submit">Register</button>
-        </form>
-    </body>
-</html>
+{% block body %}
+    <form actio="/register" method="post">
+        <input autocomplate="off" autofocus name="name" placeholder="your name" type="text">
+        <select>
+            <option disabled selected>Choose Sport</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Ultimate Frisbee">Ultimate Frisbee</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+{% endblock%}

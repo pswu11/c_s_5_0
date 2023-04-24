@@ -9,4 +9,4 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    return render_template("")
+    return render_template("success.html")
