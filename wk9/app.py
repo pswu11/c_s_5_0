@@ -9,20 +9,6 @@ app = Flask(__name__)
 # @ is a decorator in Python, the fuction below is
 # what server execute whenever a user visits
 @app.route("/")
-# index as function name is just a convention
-
-def index():
-    # return "hello, world"
-    # Use /URL/?name=David to dynamically change the name shown on the page
-    if "name" in request.args:
-        name = request.args["name"]
-    else:
-        # request.args returns dictionary (Flask version)
-        name = "world"
-    # find that file for me and i'll render it
-    return render_template("index.html", name=name)
-
-
 # Option 2
 def index():
     # get function of request.args does the exactly same thing as above
