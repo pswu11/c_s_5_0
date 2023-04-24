@@ -6,6 +6,10 @@
         <title>hello</title>
     </head>
     <body>
-        hello, {{ name }}
+        <!-- /greet is URL/greet, means this form sends you to greet.html -->
+        <form action="/greet" method="get">
+            <input name="name" type="text" autocomplete="off" autofocus placeholder="name">
+            <button type="submit">Greet</button>
+        </form>
     </body>
 </html>
