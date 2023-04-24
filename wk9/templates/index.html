@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <title>hello</title>
-    </head>
-    <body>
-        <!-- /greet is URL/greet, means this form sends you to greet.html -->
-        <form action="/greet" method="get">
-            <input name="name" type="text" autocomplete="off" autofocus placeholder="name">
-            <button type="submit">Greet</button>
-        </form>
-    </body>
-</html>
+{% block body }
+
+<body>
+    <!-- /greet is URL/greet, means this form sends you to greet.html -->
+    <form action="/greet" method="get">
+        <input name="name" type="text" autocomplete="off" autofocus placeholder="name">
+        <button type="submit">Greet</button>
+    </form>
+</body>
+
+{% endblock %}
