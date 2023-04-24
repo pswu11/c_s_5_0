@@ -10,6 +10,7 @@ app = Flask(__name__)
 # what server execute whenever a user visits
 @app.route("/")
 # index as function name is just a convention
+
 def index():
     # return "hello, world"
     # Use /URL/?name=David to dynamically change the name shown on the page
@@ -21,7 +22,10 @@ def index():
     # find that file for me and i'll render it
     return render_template("index.html", name=name)
 
+
 # Option 2
-def index2():
+def index():
+    # get function of request.args does the exactly same thing as above
+    # with a default value as 2nd arg
     name = request.args.get("name", "world")
     return render_template("index.html", name=name)
