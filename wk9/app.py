@@ -21,7 +21,8 @@ def greet():
 
 # This allows our Flask app to support POST method, instead of just GET.
 # This helps you to hide the information instead of showing it on URL.
-# POST is like a virtual envolope so it's not visible in browser. 
+# POST is like a virtual envolope, but it doesn't make it safe.
+# It's still visible in Network tab > Payload in the browser!!
 @app.route("/greet", methods=["POST"])
 def greet():
     return render_template("greet.html", name=request.args.get("name", "world"))
