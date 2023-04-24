@@ -13,7 +13,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
+"""
 @app.route("/greet")
 def greet():
     return render_template("greet.html", name=request.args.get("name", "world"))
-
+ """
+# This allows our Flask app to support POST method, instead of just GET.
+# This helps you to hide the information instead of showing it on URL.
+@app.route("/greet", methods=["POST"])
+def greet():
+    return render_template("greet.html", name=request.args.get("name", "world"))
