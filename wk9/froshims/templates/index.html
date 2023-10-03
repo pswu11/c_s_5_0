@@ -5,7 +5,7 @@
     <form action="/register" method="post">
         <input autocomplate="off" autofocus name="name" placeholder="your name" type="text" required>
         <select name="sport" required>
-            <option disabled selected>Choose a sport</option>
+            <option disabled selected value="">Choose a sport</option>
             {% for sport in sports %}
                 <option value={{sport}}>{{ sport }}</option>
             {% endfor %}
