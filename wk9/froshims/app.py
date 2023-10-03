@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
+from cs50 import SQL
 
 app = Flask(__name__)
+
+
+db = SQL("sqlite:///forshims.db")
 
 # empty dictionary
 REGISTRANTS = {}
@@ -23,7 +27,8 @@ def register():
         return render_template("error.html")
     REGISTRANTS[name] = sport
     # make data persistent
-    
+    db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
+
     return render_template("success.html", name=name, sport=sport)
 
 @app.route("/registrants")
