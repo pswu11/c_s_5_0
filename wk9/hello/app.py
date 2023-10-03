@@ -41,8 +41,8 @@ def greet():
 # This helps you to hide the information instead of showing it on URL.
 # POST is like a virtual envolope, but it doesn't make it safe.
 # It's still visible in Network tab > Payload in the browser!!
-# methods=["GET", "POST"] supports both method.
-@app.route("/greet", methods=["GET"])
+# methods=["GET", "POST"] means it supports both method.
+@app.route("/greet", methods=["POST"])
 def greet():
     # get arg "name", if not existing then name = "world"
     return render_template("greet.html", name=request.args.get("name", "world"))
