@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="/static/styles.css" rel="stylesheet">
         <title>Birthdays</title>
     </head>
+
     <body>
         <div class="header">
             <h1>Birthdays</h1>
         </div>
         <div class="container">
             <div class="section">
-
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form id="form">
+                    <label>
+                        Name
+                        <input type="text"/>
+                    </label>
+                    <label>Month
+                        <select>
+                            <option>Jan</option>
+                            <option>Feb</option>
+                            <option>Mar</option>
+                            <option>Apr</option>
+                            <option>May</option>
+                            <option>Jun</option>
+                            <option>Jul</option>
+                            <option>Aug</option>
+                            <option>Sep</option>
+                            <option>Oct</option>
+                            <option>Nov</option>
+                            <option>Dec</option>
+                        </select>
+                    </label>
+                    <label>
+                        Day
+                        <input type="number" max="31" min="1"/>
+                    </label>
+                    <input id="btn-submit" type="submit" value="Submit"/>
+                </form>
             </div>
-
             <div class="section">
-
                 <h2>All Birthdays</h2>
                 <table>
                     <thead>
@@ -34,4 +60,5 @@
             </div>
         </div>
     </body>
+
 </html>
