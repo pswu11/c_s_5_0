@@ -9,13 +9,19 @@ app = Flask(__name__)
 # @ is a decorator in Python, the fuction below is
 # what server execute whenever a user visits
 # / here means home (index.html)
+
+# @app.route("/")
+# def index():
+#     if "name" in request.args:
+#         name = request.args["name"]
+#     else:
+#         name = "world"
+#     # name (on the left) is the value of the name arg, this is required to display name variable
+#     return render_template("index.html", name=name)
+
 @app.route("/")
 def index():
-    if "name" in request.args:
-        name = request.args["name"]
-    else:
-        name = "world"
-    return render_template("index.html", name=name) # name is the value of the name arg, this is required to display name variable
+    return render_template("index.html", name=request.args.get("name", "world"))
 
 """
 @app.route("/greet")
