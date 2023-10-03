@@ -2,6 +2,10 @@
 
 {% block body %}
 
-    {{ registrants }}
+    <ul>
+        {% for name in registrants %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
