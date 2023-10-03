@@ -3,8 +3,8 @@
 {% block body %}
 
     <ul>
-        {% for name in registrants %}
-            <li>{{ name }}</li>
+        {% for key, value in registrants %}
+            <li>{{ key }}</li>
         {% endfor %}
     </ul>
 
