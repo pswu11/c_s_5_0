@@ -30,4 +30,5 @@ def greet():
 # methods=["GET", "POST"] supports both method.
 @app.route("/greet", methods=["POST"])
 def greet():
+    # get arg "name", if not existing then name = "world"
     return render_template("greet.html", name=request.args.get("name", "world"))
