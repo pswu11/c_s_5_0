@@ -27,6 +27,8 @@ app = Flask(__name__)
 # def index():
 #     return render_template("index.html", name=request.args.get("name", "world"))
 
+# Option 3: combine "/" and "/greet" so no url change is needed
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
