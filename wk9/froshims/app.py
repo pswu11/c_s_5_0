@@ -22,6 +22,8 @@ def register():
         print("sport not there")
         return render_template("error.html")
     REGISTRANTS[name] = sport
+    # make data persistent
+    
     return render_template("success.html", name=name, sport=sport)
 
 @app.route("/registrants")
