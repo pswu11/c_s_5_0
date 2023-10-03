@@ -4,8 +4,13 @@
 
     <ul>
         {% for name in registrants %}
-            <li>{{ name }}</li>
+            <li>{{ name }}: {{ registrants[name] }}</li>
         {% endfor %}
     </ul>
+
+    <form action="/">
+        <input type="submit" value="Return" />
+    </form>
+
 
 {% endblock %}

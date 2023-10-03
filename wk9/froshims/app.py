@@ -17,6 +17,6 @@ def register():
     return render_template("success.html", name=name, sport=sport)
 
 @app.route("/registrants")
-    # function and variable should not use the same name
-def result():
-    return render_template("registrants.html", registrants=registrants)
+    # function and variable should not use the same name!!!
+def registrants():
+    return render_template("registrants.html", registrants=REGISTRANTS)
