@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # empty dictionary
-registrants = {}
+REGISTRANTS = {}
 
 @app.route("/")
 def index():
@@ -13,9 +13,10 @@ def index():
 def register():
     name = request.form.get("name")
     sport = request.form.get("sport")
-    registrants[name] = sport
+    REGISTRANTS[name] = sport
     return render_template("success.html", name=name, sport=sport)
 
 @app.route("/registrants")
-def registrants():
+    # function and variable should not use the same name
+def result():
     return render_template("registrants.html", registrants=registrants)
