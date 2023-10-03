@@ -16,6 +16,6 @@ def register():
     registrants[name] = sport
     return render_template("success.html", name=name, sport=sport)
 
-@app.route("/registrants")
-def registrants():
-    return render_template("registrants.html", registrants=registrants)
+# @app.route("/registrants")
+# def registrants():
+#     return render_template("registrants.html", registrants=registrants)
