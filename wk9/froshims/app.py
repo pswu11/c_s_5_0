@@ -19,6 +19,7 @@ def register():
     if not name:
         return render_template("error.html")
     if sport not in SPORTS:
+        print("not therw")
         return render_template("error.html")
     REGISTRANTS[name] = sport
     return render_template("success.html", name=name, sport=sport)
