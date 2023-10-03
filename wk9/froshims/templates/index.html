@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <form action="/register" method="post">
-        <input autocomplate="off" autofocus name="name" placeholder="your name" type="text">
+    <form action="/" method="post">
+        <input autocomplate="off" autofocus name="name" placeholder="your name" type="text" required>
         <select>
             <option disabled selected>Choose Sport</option>
             <option value="Basketball">Basketball</option>
