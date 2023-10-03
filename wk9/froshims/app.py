@@ -3,7 +3,7 @@ from cs50 import SQL
 
 app = Flask(__name__)
 
-
+# read db
 db = SQL("sqlite:///forshims.db")
 
 # empty dictionary
