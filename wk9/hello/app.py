@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 # flask library has all these functions above
 
-# __name__ is used to check if the name of the file was itself (??)
+# __name__ is used to check if the name of the file was itself (current file)
 # Basically, turns this turns this file into a flask application.
 app = Flask(__name__)
 
