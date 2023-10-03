@@ -2,6 +2,10 @@
 
 {% block body %}
 
-    {{ name }}, you are registered!
+    {{ name }}, you are registered with {{ sport }}!
+
+    <form action="/registrants">
+        <input type="submit" value="Show all registrants" />
+    </form>
 
 {% endblock %}
