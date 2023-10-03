@@ -29,7 +29,8 @@ def register():
     # make data persistent
     db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
 
-    return render_template("success.html", name=name, sport=sport)
+    # return render_template("success.html", name=name, sport=sport)
+    return redirect("/registrants")
 
 @app.route("/registrants")
     # function and variable should not use the same name!!!
