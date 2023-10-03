@@ -11,6 +11,10 @@ app = Flask(__name__)
 # / here means home (index.html)
 @app.route("/")
 def index():
+    if "name" in request.args:
+        name = request.args["name"]
+    else:
+        name = "world"
     return render_template("index.html")
 
 """
