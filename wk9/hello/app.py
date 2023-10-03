@@ -10,6 +10,8 @@ app = Flask(__name__)
 # what server execute whenever a user visits
 # / here means home (index.html)
 
+# Option 1
+
 # @app.route("/")
 # def index():
 #     if "name" in request.args:
@@ -19,9 +21,15 @@ app = Flask(__name__)
 #     # name (on the left) is the value of the name arg, this is required to display name variable
 #     return render_template("index.html", name=name)
 
+# Option 2
+
+# @app.route("/")
+# def index():
+#     return render_template("index.html", name=request.args.get("name", "world"))
+
 @app.route("/")
 def index():
-    return render_template("index.html", name=request.args.get("name", "world"))
+    return render_template("index.html")
 
 """
 @app.route("/greet")
