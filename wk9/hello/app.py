@@ -15,7 +15,7 @@ def index():
         name = request.args["name"]
     else:
         name = "world"
-    return render_template("index.html")
+    return render_template("index.html", name=name) # name is the value of the name arg, this is required to display name variable
 
 """
 @app.route("/greet")
