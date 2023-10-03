@@ -20,10 +20,7 @@ def index():
 def register():
     name = request.form.get("name")
     sport = request.form.get("sport")
-    if not name:
-        return render_template("error.html")
-    if sport not in SPORTS:
-        print("sport not there")
+    if not name or sport not in SPORTS:
         return render_template("error.html")
     REGISTRANTS[name] = sport
     # make data persistent
