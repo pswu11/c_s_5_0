@@ -7,6 +7,7 @@ def main():
     word_count = count_words(t)
     sentence_count = count_sentences(t)
     print(t, letter_count, word_count, sentence_count)
+
     # calculate
     L = letter_count / word_count * 100
     S = sentence_count / word_count * 100
