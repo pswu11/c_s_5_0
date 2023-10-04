@@ -22,7 +22,7 @@ def after_request(response):
     return response
 
 
-@app.route("/", methods=["GET", "POST", "DELETE"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         name = request.form.get("name")
@@ -32,15 +32,14 @@ def index():
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         return redirect("/")
 
-    if request.method == "DELETE":
-        id = request.form.get("id")
-        print(id)
-        db.execute("DELETE FROM birthdays WHERE id = ?", id)
-        return redirect("/")
-
     else:
         # TODO: Display the entries in the database on index.html
         entries = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", entries=entries)
 
 
+@app.route("/remove", methods=["POST"])
+def remove():
+    id = request.form.get("id")
+    db.execute("DELETE FROM birthdays WHERE id = ?", id)
+    return redirect("/")

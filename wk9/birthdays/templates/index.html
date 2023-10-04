@@ -65,7 +65,7 @@
                                     {{ entry.month }} / {{ entry.day }}
                                 </td>
                                 <td>
-                                    <form action="/" method="delete">
+                                    <form action="/remove" method="post">
                                         <input type="text" value="{{ entry.id }}" name="id" style="display: none;"/>
                                         <input class="btn-submit" type="submit" value="Remove"/>
                                     </form>
