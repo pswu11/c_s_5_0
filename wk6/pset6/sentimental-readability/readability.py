@@ -1,4 +1,5 @@
 import cs50
+import re
 
 def main():
     t = cs50.get_string("Text: ").strip()
@@ -20,7 +21,7 @@ def count_words(text):
     return len(arr)
 
 def count_sentences(text):
-    arr = text.split('[?!.]')
+    arr = re.split('[?!.]', text)
     return len(arr) - 1
 
 main()
