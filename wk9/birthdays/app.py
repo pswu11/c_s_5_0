@@ -22,7 +22,7 @@ def after_request(response):
     return response
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST", "DELETE"])
 def index():
     if request.method == "POST":
         name = request.form.get("name")
@@ -31,6 +31,9 @@ def index():
         # TODO: Add the user's entry into the database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         return redirect("/")
+
+    if request.method == "DELETE":
+        print("delete is clicked")
 
     else:
         # TODO: Display the entries in the database on index.html
