@@ -17,7 +17,7 @@ def count_letters(text):
 
 def count_words(text):
     count = 0
-    arr = text.split(" ")
+    arr = text.trim().split(" ")
     for i in arr:
         print(i)
     return len(arr)
