@@ -18,7 +18,7 @@ def main():
     elif index >= 16:
         print("Grade 16+")
     else:
-        print("Grade %i\n", index)
+        print("Grade: {0}".format(index))
 
 
 def count_letters(text):
