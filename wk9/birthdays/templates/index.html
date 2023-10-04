@@ -56,9 +56,17 @@
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for entry in entries %}
-                            <td>
-                                {{ entry.name }}
-                            </td>
+                            <tr>
+                                <td>
+                                    {{ entry.name }}
+                                </td>
+                                <td>
+                                    {{ entry.month }}
+                                </td>
+                                <td>
+                                    {{ entry.day }}
+                                </td>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>
