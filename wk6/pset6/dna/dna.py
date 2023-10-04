@@ -17,8 +17,7 @@ def main():
         body = []
         print("header: ", header)
         for line in data:
-            
-            print(line)
+            body.append(line)
 
 
     # TODO: Read DNA sequence file into a variable
@@ -27,7 +26,12 @@ def main():
         print(dnatext)
 
     # TODO: Find longest match of each STR in DNA sequence
+    dna_match = {}
+    for str in header:
+        length = longest_match(dnatext, str)
+        dna_match[str] = length
 
+    print(dna_m)
     # TODO: Check database for matching profiles
 
     return
