@@ -11,6 +11,9 @@ def count_letters(text):
     return len(text)
 
 def count_words(text):
+    count = 0
+    for char in text:
+        if 
     print(text)
     return 3
 
