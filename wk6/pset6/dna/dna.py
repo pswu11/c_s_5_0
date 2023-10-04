@@ -10,6 +10,8 @@ def main():
         print("You must provide a path to your database file.")
 
     # TODO: Read database file into a variable
+    with open('eggs.csv', newline='') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
 
 
     # TODO: Read DNA sequence file into a variable
