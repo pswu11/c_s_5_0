@@ -23,7 +23,7 @@ def main():
         print(dnatext)
 
     # TODO: Find longest match of each STR in DNA sequence
-
+    header = data[0]
 
     # TODO: Check database for matching profiles
 
