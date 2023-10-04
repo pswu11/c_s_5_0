@@ -13,8 +13,8 @@ def main():
     # TODO: Read database file into a variable
     with open(args[1], newline='') as csvfile:
         data = csv.reader(csvfile)
-        for point in data:
-            print(point)
+        for line in data:
+            print(line)
 
 
     # TODO: Read DNA sequence file into a variable
