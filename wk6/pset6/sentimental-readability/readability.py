@@ -1,6 +1,7 @@
 import cs50
 import re
 
+
 def main():
     t = cs50.get_string("Text: ").strip()
     letter_count = count_letters(t)
@@ -8,7 +9,7 @@ def main():
     sentence_count = count_sentences(t)
     print(t, letter_count, word_count, sentence_count)
 
-    # calculate
+    # calculate index
     L = letter_count / word_count * 100
     S = sentence_count / word_count * 100
     index = round(0.0588 * L - 0.296 * S - 15.8)
@@ -29,12 +30,15 @@ def count_letters(text):
     print(count)
     return count
 
+
 def count_words(text):
     arr = text.split(" ")
     return len(arr)
 
+
 def count_sentences(text):
-    arr = re.split('[?!.]', text)
+    arr = re.split("[?!.]", text)
     return len(arr) - 1
+
 
 main()
