@@ -6,8 +6,8 @@ def main():
 
     # TODO: Check for command-line usage
     args = sys.argv
-    if (len(args) != 2):
-        print("You must provide a path to your database file.")
+    if (len(args) != 3):
+        print("You must provide a path to your database file and path to dna text to identify.")
         return
 
     # TODO: Read database file into a variable
@@ -18,6 +18,9 @@ def main():
 
 
     # TODO: Read DNA sequence file into a variable
+    with open(args[2], newline='') as dnafile:
+        dnatext = csv.reader(dnafile)
+        print(dnatext)
 
     # TODO: Find longest match of each STR in DNA sequence
 
