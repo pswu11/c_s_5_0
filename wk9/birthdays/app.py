@@ -34,7 +34,8 @@ def index():
 
     if request.method == "DELETE":
         id = request.form.get("id")
-        print("delete is clicked", id)
+        db.execute("DELETE FROM birthdays WHERE id = ?", id)
+        return redirect("/")
 
     else:
         # TODO: Display the entries in the database on index.html
