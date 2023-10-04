@@ -50,7 +50,7 @@ body {
     justify-content: space-between;
 }
 
-#form #btn-submit:hover {
+.btn-submit:hover {
     cursor: pointer;
     box-shadow: 3px 3px 1px 0.5px rgba(100, 100, 100, .6);
 }
