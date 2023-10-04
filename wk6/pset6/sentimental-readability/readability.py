@@ -7,6 +7,10 @@ def main():
     word_count = count_words(t)
     sentence_count = count_sentences(t)
     print(t, letter_count, word_count, sentence_count)
+    # calculate
+    L = letter_count / word_count * 100
+    S = sentence_count / word_count * 100
+    index = round(0.0588 * L - 0.296 * S - 15.8)
 
 def count_letters(text):
     count = 0
