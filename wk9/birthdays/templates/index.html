@@ -55,6 +55,11 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for entry in entries %}
+                            <td>
+                                {{ entry.name }}
+                            </td>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
