@@ -43,7 +43,7 @@ void validate(long card_num)
     else if (length == 16)
     {
         // get the first two digits of card number
-        int first_two = card_num / 100000000000000;
+        int first_two = card_num / pow(10, 14);
         if (first_two >= 51 && first_two <= 55)
         {
             printf("MASTERCARD\n");
@@ -61,7 +61,7 @@ void validate(long card_num)
     else if (length == 13)
     {
         // get the first digit of card number
-        int first_one = card_num / 1000000000000;
+        int first_one = card_num / pow(10, 12);
         if (first_one == 4)
         {
             printf("VISA\n");
