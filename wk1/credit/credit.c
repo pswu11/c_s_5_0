@@ -1,5 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
+
 
 long get_card(void);
 int count_digit(long card_num);
@@ -27,7 +29,7 @@ void validate(long card_num)
     if (length == 15)
     {
         // get the first two digits of card number
-        int first_two = card_num / 10000000000000;
+        int first_two = card_num / pow(10, 13);
         if (first_two == 34 || first_two == 37)
         {
             printf("AMEX\n");
