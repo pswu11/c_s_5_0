@@ -20,7 +20,7 @@ def count_words(text):
     return len(arr)
 
 def count_sentences(text):
-    arr = text.split(".")
+    arr = text.split('[?!.]')
     return len(arr) - 1
 
 main()
