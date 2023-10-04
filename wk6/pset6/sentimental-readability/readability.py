@@ -1,11 +1,11 @@
 import cs50
 
 def main():
-    t = cs50.get_string("Text: ")
+    t = cs50.get_string("Text: ").strip()
     letter_count = count_letters(t)
     word_count = count_words(t)
-    # sentence_count = count_sentences(t)
-    print(t, letter_count, word_count)
+    sentence_count = count_sentences(t)
+    print(t, letter_count, word_count, sentence_count)
 
 def count_letters(text):
     count = 0
@@ -16,10 +16,11 @@ def count_letters(text):
     return count
 
 def count_words(text):
-    count = 0
-    arr = text.trim().split(" ")
-    for i in arr:
-        print(i)
+    arr = text.split(" ")
     return len(arr)
+
+def count_sentences(text):
+    arr = text.split(".")
+    return len(arr) - 1
 
 main()
