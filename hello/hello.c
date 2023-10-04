@@ -7,6 +7,9 @@ int main(void)
     printf("hello, %s\n", name);
 }
 
-// execution:
+// compile in codespace:
 // make hello
 // ./hello
+
+// compile locally:
+// clang hello.c -o hello -lcs50
