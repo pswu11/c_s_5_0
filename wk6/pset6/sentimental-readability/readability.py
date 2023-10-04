@@ -13,8 +13,9 @@ def count_letters(text):
 def count_words(text):
     count = 0
     for char in text:
-        if 
-    print(text)
-    return 3
+        if str.isalpha(char):
+            count += 1
+    print(count)
+    return count
 
 main()
