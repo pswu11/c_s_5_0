@@ -8,10 +8,13 @@ def main():
     args = sys.argv
     if (len(args) != 2):
         print("You must provide a path to your database file.")
+        return
 
     # TODO: Read database file into a variable
-    with open('eggs.csv', newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    with open(args[2], newline='') as csvfile:
+        data = csv.reader(csvfile)
+        for point in data:
+            print(point)
 
 
     # TODO: Read DNA sequence file into a variable
