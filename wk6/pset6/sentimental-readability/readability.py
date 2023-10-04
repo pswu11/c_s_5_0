@@ -8,14 +8,16 @@ def main():
     print(t, letter_count, word_count)
 
 def count_letters(text):
-    return len(text)
-
-def count_words(text):
     count = 0
     for char in text:
         if str.isalpha(char):
             count += 1
     print(count)
     return count
+
+def count_words(text):
+    count = 0
+    arr = text.split(" ")
+    return len(arr)
 
 main()
