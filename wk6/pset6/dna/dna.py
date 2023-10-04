@@ -13,7 +13,11 @@ def main():
     # TODO: Read database file into a variable
     with open(args[1], newline='') as csvfile:
         data = csv.reader(csvfile)
+        header = next(data)
+        body = []
+        print("header: ", header)
         for line in data:
+            
             print(line)
 
 
@@ -23,7 +27,6 @@ def main():
         print(dnatext)
 
     # TODO: Find longest match of each STR in DNA sequence
-    header = data[0]
 
     # TODO: Check database for matching profiles
 
