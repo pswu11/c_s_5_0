@@ -33,7 +33,8 @@ def index():
         return redirect("/")
 
     if request.method == "DELETE":
-        print("delete is clicked")
+        id = request.form.get("id")
+        print("delete is clicked", id)
 
     else:
         # TODO: Display the entries in the database on index.html
