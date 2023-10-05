@@ -45,7 +45,15 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
+        if not symbol or not shares:
+            return apology("Symbol and shares must not be blank.", 403)
+        # print("Buy: ", symbol, shares)
+        if not lookup(symbol):
+            return apology("Symbol doesn't exist.", 404)
+    return render_template("buy.html")
 
 
 @app.route("/history")
@@ -108,10 +116,11 @@ def quote():
     """Get stock quote."""
     if request.method == "GET":
         return render_template("quote.html")
-    else:
-        symbol = request.form.get("symbol")
-        results = lookup(symbol)
-        return render_template("quoted.html", results=results)
+    symbol = request.form.get("symbol")
+    results = lookup(symbol)
+    if not results:
+        return apology("Symbol doesn't exist.", 404)
+    return render_template("quoted.html", results=results)
 
 
 
@@ -120,20 +129,17 @@ def register():
     """Register user"""
     if request.method == 'GET':
         return render_template("register.html")
-    else:
-        username = request.form.get("username")
-        password = request.form.get("password")
-        if not username or not password:
-            return apology("must provide username and password", 403)
-        else:
-            is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
-            if not is_user_existing:
-                hash = generate_password_hash(password)
-                id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
-                print("user created with id: ", id)
-                return redirect("/login")
-            else:
-                return apology("username already exists", 403)
+    username = request.form.get("username")
+    password = request.form.get("password")
+    if not username or not password:
+        return apology("must provide username and password", 403)
+    is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
+    if not is_user_existing:
+        hash = generate_password_hash(password)
+        id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
+        print("user created with id: ", id)
+        return redirect("/login")
+    return apology("username already exists", 403)
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
