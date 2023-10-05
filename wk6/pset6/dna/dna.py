@@ -15,25 +15,35 @@ def main():
         data = csv.reader(csvfile)
         header = next(data)
         body = []
-        print("header: ", header)
+        # print("header: ", header)
         for line in data:
             body.append(line)
+        # print("body: ", body)
 
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], newline='') as dnafile:
         dnatext = dnafile.read()
-        print(dnatext)
+        # print(dnatext)
 
     # TODO: Find longest match of each STR in DNA sequence
     dna_match = {}
     for str in header[1:]:
         length = longest_match(dnatext, str)
         dna_match[str] = length
+    # print(dna_match)
 
-    print(dna_match)
     # TODO: Check database for matching profiles
-
+    for row in body:
+        count = 0
+        for idx, dna in enumerate(dna_match):
+            # print("Matching: ", dna_match[dna], row[1:][idx])
+            if int(dna_match[dna]) == int(row[1:][idx]):
+                count += 1
+        if count == len(row) - 1:
+            print(row[0])
+            return
+    print('No match')
     return
 
 
