@@ -120,6 +120,7 @@ def register():
             hash = generate_password_hash(passowrd)
             id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
             print("user created with id: ", id)
+            return
         else:
             return apology("TODO")
 
