@@ -117,7 +117,8 @@ def register():
         if not username or not password:
             return apology("TODO")
         elif:
-            db.execute()
+            hash = generate_password_hash(passowrd)
+            db.execute("INSERT INTO users")
 
 
 @app.route("/sell", methods=["GET", "POST"])
