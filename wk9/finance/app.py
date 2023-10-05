@@ -116,14 +116,11 @@ def register():
         password = request.form.get("password")
         if not username or not password:
             return apology("TODO")
-        elif:
+        else:
             hash = generate_password_hash(passowrd)
             id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
             print("user created with id: ", id)
             return
-        else:
-            return apology("TODO")
-
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
