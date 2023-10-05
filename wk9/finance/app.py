@@ -118,7 +118,10 @@ def register():
             return apology("TODO")
         elif:
             hash = generate_password_hash(passowrd)
-            db.execute("INSERT INTO users")
+            id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
+            print("user created with id: ", id)
+        else:
+            return apology("TODO")
 
 
 @app.route("/sell", methods=["GET", "POST"])
