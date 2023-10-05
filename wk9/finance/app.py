@@ -63,13 +63,13 @@ def buy():
         print(unit_price)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 403)
-        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, unit_price * shares)
+        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, round(unit_price * shares, 2))
         current_balance = db.execute("SELECT balance FROM user_balance WHERE user = ? AND symbol = ?", uid, symbol)
         if not current_balance:
             db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, shares)
         else:
-            new_balance = current_balance[0]['balance'] + shares
-            new_cash = cash - unit_price * shares
+            new_balance = round(current_balance[0]['balance'] + shares, 2)
+            new_cash = round(cash - unit_price * shares, 2)
             db.execute("UPDATE user_balance SET balance = ROUND(?, 2) WHERE user = ? AND symbol = ?", new_balance, uid, symbol)
         db.execute("UPDATE users SET cash = ROUND(?, 2) WHERE id = ?", new_cash, uid)
         return redirect("/history")
