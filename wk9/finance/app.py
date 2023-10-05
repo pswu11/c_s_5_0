@@ -48,6 +48,9 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
+        uid = session['user_id']
+        rows = db.execute("SELECT username FROM users WHERE id = ?", uid)
+        cash = rows[0]['cash']
         if not symbol or not shares:
             return apology("Symbol and shares must not be blank.", 403)
         # print("Buy: ", symbol, shares, type((shares)))
