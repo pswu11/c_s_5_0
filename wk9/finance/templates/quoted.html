@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block main %}
-    {{ results }}
+    <table class="table">
+        {% for item in results %}
+        <tr>
+          <th>{{ item }}</th>
+          <td>{{ results[item] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
 {% endblock %}
