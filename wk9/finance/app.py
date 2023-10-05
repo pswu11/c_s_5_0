@@ -49,7 +49,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         uid = session['user_id']
-        rows = db.execute("SELECT cash FROM users WHERE id = ?", uid)
+        rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
         cash = rows[0]['cash']
 
         if not symbol or not shares:
@@ -63,6 +63,8 @@ def buy():
         print(unit_price)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 403)
+        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, unit_price * shares)
+        return redirect("/history")
     return render_template("buy.html")
 
 
@@ -70,7 +72,9 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    uid = session['user_id']
+    rows = db.execute("SELECT * FROM transactions WHERE user = ?", uid)
+    return render_template("history.html", rows=rows)
 
 
 @app.route("/login", methods=["GET", "POST"])
