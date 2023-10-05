@@ -49,15 +49,20 @@ def buy():
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         uid = session['user_id']
-        rows = db.execute("SELECT username FROM users WHERE id = ?", uid)
+        rows = db.execute("SELECT cash FROM users WHERE id = ?", uid)
         cash = rows[0]['cash']
+
         if not symbol or not shares:
             return apology("Symbol and shares must not be blank.", 403)
-        # print("Buy: ", symbol, shares, type((shares)))
         if not lookup(symbol):
             return apology("Symbol doesn't exist.", 404)
         if shares <= 0:
             return apology("Shares must be greater than 0.", 403)
+
+        unit_price = lookup(symbol)['price']
+        print(unit_price)
+        if shares * unit_price > cash:
+            return apology("You don't have enough cash", 403)
     return render_template("buy.html")
 
 
