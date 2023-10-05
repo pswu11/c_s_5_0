@@ -118,12 +118,16 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         if not username or not password:
-            return apology("TODO")
+            return apology("must provide username and password", 403)
         else:
-            hash = generate_password_hash(password)
-            id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
-            print("user created with id: ", id)
-            return redirect("/login")
+            is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
+            if not is_user_existing:
+                hash = generate_password_hash(password)
+                id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
+                print("user created with id: ", id)
+                return redirect("/login")
+            else:
+                return apology("username already exists", 403)
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
