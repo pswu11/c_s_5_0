@@ -64,6 +64,10 @@ def buy():
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 403)
         db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, unit_price * shares)
+        if not db.execute("SELECT shares FROM user_balance WHERE user = ? AND symbol = ?", uid, symbol):
+            db.execute("INSERT INTO user_balance (user, symbol, balance) VAVLUES(?, ?, ?)", uid, symbol, shares)
+        else:
+            db.execute("UPDATE")
         return redirect("/history")
     return render_template("buy.html")
 
