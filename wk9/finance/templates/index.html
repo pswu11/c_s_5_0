@@ -19,22 +19,22 @@
                     <tr>
                         <td>{{ asset.symbol }}</td>
                         <td>{{ asset.balance }}</td>
-                        <td>{{ asset.current_value }}</td>
+                        <td>$ {{ asset.current_value }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
             <thead>
                 <tr>
                     <th colspan="2">Total stock value:</th>
-                    <td>{{ total_stock_value }}</d>
+                    <td>$ {{ total_stock_value }}</d>
                 </tr>
                 <tr>
                     <th colspan="2">Total cash:</th>
-                    <td>{{ userinfo.cash }}</d>
+                    <td>$ {{ userinfo.cash }}</d>
                 </tr>
                 <tr>
                     <th colspan="2">Total asset value:</th>
-                    <td>{{ total_asset }}</d>
+                    <td>$ {{ total_asset }}</d>
                 </tr>
             </thead>
         </table>
