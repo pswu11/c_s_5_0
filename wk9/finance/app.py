@@ -171,25 +171,25 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
         # Check if the symbol exists first
         symbol_exists = next(filter(lambda item: item['symbol'] == symbol, balance))
 
         if symbol_exists:
             # If the symbol exists, check if the balance (shares) is enough
-            if symbol_exists['balance'] < shares"
+            new_balance = symbol_exists['balance'] - shares
+            if new_balance < 0:
                 return apology("You don't have enough shares.", 403)
             else:
                 # make a transaction to sell
                 unit_price = lookup(symbol)['price']
-                db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, round(unit_price * shares, 2))
-                db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, symbol_exists['balance'] - shares)
-                db.execute("UPDATE users SET cash = ROUND(?, 2) WHERE id = ?", new_cash, uid)
-
+                profit = round(unit_price * shares, 2)
+                db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, profit)
+                db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, new_balance)
+                db.execute("UPDATE users SET cash = ROUND(cash + ?, 2) WHERE id = ?", profit, uid)
         else:
             print("Symbol does not exist in the list.")
-
         print("sell something")
         return redirect("/")
     return render_template("sell.html", balance=balance)
