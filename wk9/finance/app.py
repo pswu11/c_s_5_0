@@ -157,7 +157,7 @@ def register():
     username = request.form.get("username")
     password = request.form.get("password")
     password_confirm = request.form.get("confirmation")
-    if not username or not password or not password_confirmation:
+    if not username or not password or not password_confirm:
         return apology("must provide username and password", 400)
     if username and password != password_confirm:
         return apology("Passwords given are not matched.", 400)
