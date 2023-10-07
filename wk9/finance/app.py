@@ -62,10 +62,10 @@ def buy():
         if isinstance(shares, str):
             if not float(shares):
                 return apology("Shares must be integer.", 400)
-            return apology("Shares must be integer.", 400)
-        if float(shares) <= 0:
-            return apology("Shares must be greater than 0 and not fractional.", 400)
-
+            elif float(shares) <= 0:
+                return apology("Shares must be greater than 0 and not fractional.", 400)
+            elif not float(shares).is_integer():
+                return apology("Shares must be greater than 0 and not fractional.", 400)
         unit_price = lookup(symbol)['price']
         shares = int(shares)
         print(unit_price)
