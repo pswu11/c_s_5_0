@@ -60,8 +60,8 @@ def buy():
         if not lookup(symbol):
             return apology("Symbol doesn't exist.", 400)
         if isinstance(shares, str):
-            return apology("Shares must be integer.", 400)
-        if isinstance(shares, str) and not float(shares):
+            if not float(shares):
+                return apology("Shares must be integer.", 400)
             return apology("Shares must be integer.", 400)
         if float(shares).is_integer() and float(shares) <= 0:
             return apology("Shares must be greater than 0 and not fractional.", 400)
