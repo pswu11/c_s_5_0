@@ -39,7 +39,6 @@ def index():
     rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
     userinfo = rows[0]
     balance = db.execute("SELECT symbol, balance FROM user_balance WHERE user = ?", uid)
-    balance_with_current_value = 
     return render_template("index.html", userinfo=userinfo, balance=balance)
 
 
