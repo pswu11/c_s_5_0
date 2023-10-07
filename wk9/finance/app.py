@@ -166,10 +166,12 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
-    if request.method == "POST":
-        print("sell something")
-        return redirect("/")
     uid = session['user_id']
     balance = db.execute("SELECT * FROM user_balance WHERE user = ?", uid)
+    """Sell shares of stock"""
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+        print("sell something")
+        return redirect("/")
     return render_template("sell.html", balance=balance)
