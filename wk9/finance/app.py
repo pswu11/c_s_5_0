@@ -184,6 +184,8 @@ def sell():
                 # make a transaction to sell
                 unit_price = lookup(symbol)['price']
                 db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, round(unit_price * shares, 2))
+                db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, symbol_exists['balance'] - shares)
+                db.execute("UPDATE users SET cash = ROUND(?, 2) WHERE id = ?", new_cash, uid)
 
         else:
             print("Symbol does not exist in the list.")
