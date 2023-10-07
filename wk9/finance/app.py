@@ -38,7 +38,9 @@ def index():
     uid = session['user_id']
     rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
     userinfo = rows[0]
-    return render_template("index.html", userinfo=userinfo)
+    balance = db.execute("SELECT symbol, balance FROM user_balance WHERE user = ?", uid)
+    balance_with_current_value = 
+    return render_template("index.html", userinfo=userinfo, balance=balance)
 
 
 @app.route("/buy", methods=["GET", "POST"])

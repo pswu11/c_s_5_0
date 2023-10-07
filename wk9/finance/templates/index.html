@@ -7,7 +7,24 @@
 {% block main %}
     <h4>You're loged in as {{ userinfo.username }}</h4>
     <div>
-        Balance:
+        Your assets:
+        <table class="table table-bordered" style="width: 40%; margin: auto;">
+            <thead>
+                <th>Symbo</th>
+                <th>Shares</th>
+            </thead>
+            <tbody>
+                {% for asset in balance %}
+                    <tr>
+                        <td>{{ asset.symbol }}</td>
+                        <td>{{ asset.balance }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        Cash:
         <p>{{ userinfo.cash }}</p>
     </div>
 {% endblock %}
