@@ -174,15 +174,14 @@ def sell():
         shares = request.form.get("shares")
 
         # Check if the symbol exists first
-        symbol_exists = filter(lambda item: item['symbol'] == symbol, balance)
+        symbol_exists = next(filter(lambda item: item['symbol'] == symbol, balance))
 
         if symbol_exists:
             # If the symbol exists, check if the balance (shares) is enough
-            print(symbol_exists.symbol)
-            # if has_enough_shares:
-            #     print("Symbol exists, and you have enough shares.")
-            # else:
-            #     print("Symbol exists, but you do not have enough shares.")
+            if symbol_exists['balance'] < shares"
+                return apology("You don't have enough shares.", 403)
+            else:
+                # make a transaction to sell
         else:
             print("Symbol does not exist in the list.")
 
