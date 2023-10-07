@@ -5,5 +5,22 @@
 {% endblock %}
 
 {% block main %}
-    {{ rows }}
+    <table class="table">
+        <th>
+            <td>Symbol</td>
+            <td>Buy / Sell</td>
+            <td>Unit price</td>
+            <td>Cashflow</td>
+            <td>Date</td>
+        </th>
+        {% for row in rows%}
+        <tr>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.shares }}</td>
+            <td>{{ row.unit_price }}</td>
+            <td>{{ row.total_price }}</td>
+            <td>{{ row.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
