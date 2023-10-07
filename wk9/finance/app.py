@@ -172,7 +172,20 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        balance.filter()
+
+        # Check if the symbol exists first
+        symbol_exists = filter(lambda item: item['symbol'] == symbol, balance)
+
+        if symbol_exists:
+            # If the symbol exists, check if the balance (shares) is enough
+            print(symbol_exists.symbol)
+            # if has_enough_shares:
+            #     print("Symbol exists, and you have enough shares.")
+            # else:
+            #     print("Symbol exists, but you do not have enough shares.")
+        else:
+            print("Symbol does not exist in the list.")
+
         print("sell something")
         return redirect("/")
     return render_template("sell.html", balance=balance)
