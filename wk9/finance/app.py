@@ -159,9 +159,9 @@ def register():
     password_confirm = request.form.get("confirmation")
     if not username or not password or not password_confirmation:
         return apology("must provide username and password", 400)
-    is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
-    if password != password_confirm:
+    if username and password != password_confirm:
         return apology("Passwords given are not matched.", 400)
+    is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
     if not is_user_existing:
         hash = generate_password_hash(password)
         id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
