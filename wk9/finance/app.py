@@ -144,7 +144,7 @@ def quote():
     symbol = request.form.get("symbol")
     results = lookup(symbol)
     if not results:
-        return apology("Symbol doesn't exist.", 404)
+        return apology("Symbol doesn't exist.", 400)
     return render_template("quoted.html", results=results)
 
 
@@ -157,14 +157,14 @@ def register():
     username = request.form.get("username")
     password = request.form.get("password")
     if not username or not password:
-        return apology("must provide username and password", 403)
+        return apology("must provide username and password", 400)
     is_user_existing = db.execute("SELECT id FROM users WHERE username = ?", username)
     if not is_user_existing:
         hash = generate_password_hash(password)
         id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)
         print("user created with id: ", id)
         return redirect("/login")
-    return apology("username already exists", 403)
+    return apology("username already exists", 400)
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
