@@ -59,12 +59,10 @@ def buy():
             return apology("Symbol and shares must not be blank.", 400)
         if not lookup(symbol):
             return apology("Symbol doesn't exist.", 400)
-        if isinstance(shares, str):
-            return apology("Shares must be integer.", 400)
-        if isinstance(shares, str) and not float(shares):
-            return apology("Shares must be integer.", 400)
-        if float(shares).is_integer() and float(shares) <= 0:
-            return apology("Shares must be greater than 0 and not fractional.", 400)
+        if not str.isdigit(shares):
+            return apology("invalid shares")
+        if int(shares) <= 0:
+            return apology("invalid shares")
 
         unit_price = lookup(symbol)['price']
         shares = int(shares)
