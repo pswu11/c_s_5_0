@@ -5,9 +5,14 @@
 {% endblock %}
 
 {% block main %}
+    {{ balance }}
     <form action="/sell" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+            <select class="form-control mx-auto w-auto">
+                {% for entry in balance %}
+                    <option>{{ entry.symbol }}</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
             <input class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">

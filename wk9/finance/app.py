@@ -170,5 +170,6 @@ def sell():
     if request.method == "POST":
         print("sell something")
         return redirect("/")
-    db.execute("")
-    return render_template("sell.html")
+    uid = session['user_id']
+    balance = db.execute("SELECT * FROM user_balance WHERE user = ?", uid)
+    return render_template("sell.html", balance=balance)
