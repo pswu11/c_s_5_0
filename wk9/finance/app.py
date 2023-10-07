@@ -168,13 +168,11 @@ def register():
 def sell():
     uid = session['user_id']
     balance = db.execute("SELECT * FROM user_balance WHERE user = ?", uid)
-    print(balance)
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        if symbol not in symbol_arr:
-            return apology("You don't have this stock.", 403)
+        balance.filter()
         print("sell something")
         return redirect("/")
     return render_template("sell.html", balance=balance)
