@@ -11,7 +11,7 @@
                 <th>Symbol</th>
                 <th>Buy / Sell</th>
                 <th>Unit price</th>
-                <th>Cashflow</th>
+                <th>Cash changes</th>
                 <th>Date</th>
             </tr>
         </thead>
@@ -21,7 +21,13 @@
                 <td>{{ row.symbol }}</td>
                 <td>{{ row.shares }}</td>
                 <td>$ {{ row.unit_price }}</td>
-                <td>$ {{ row.total_price }}</td>
+                <td>
+                    {% if row.total_price < 0 %}
+                    - ${{ -row.total_price }}
+                    {% else %}
+                    + ${{ row.total_price }}
+                    {% endif %}
+                </td>
                 <td>{{ row.created_at }}</td>
             </tr>
             {% endfor %}
