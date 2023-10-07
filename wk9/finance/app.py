@@ -56,17 +56,16 @@ def buy():
         cash = rows[0]['cash']
 
         if not symbol or not shares:
-            return apology("Symbol and shares must not be blank.", 400)
+            return apology("Symbol and shares must not be blank.")
         if not lookup(symbol):
-            return apology("Symbol doesn't exist.", 400)
+            return apology("Symbol doesn't exist.")
         if not str.isdigit(shares):
-            return apology("invalid shares")
+            return apology("Shares must be numeric.")
         if int(shares) <= 0:
-            return apology("invalid shares")
+            return apology("Shares must be a positive integer.")
 
         unit_price = lookup(symbol)['price']
         shares = int(shares)
-        print(unit_price)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 400)
         db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, -round(unit_price * shares, 2))
