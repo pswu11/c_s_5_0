@@ -182,6 +182,9 @@ def sell():
                 return apology("You don't have enough shares.", 403)
             else:
                 # make a transaction to sell
+                unit_price = lookup(symbol)['price']
+                db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, round(unit_price * shares, 2))
+
         else:
             print("Symbol does not exist in the list.")
 
