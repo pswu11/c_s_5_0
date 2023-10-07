@@ -69,8 +69,8 @@ def buy():
             db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, shares)
         else:
             new_balance = round(current_balance[0]['balance'] + shares, 2)
-            new_cash = round(cash - unit_price * shares, 2)
             db.execute("UPDATE user_balance SET balance = ROUND(?, 2) WHERE user = ? AND symbol = ?", new_balance, uid, symbol)
+        new_cash = round(cash - unit_price * shares, 2)
         db.execute("UPDATE users SET cash = ROUND(?, 2) WHERE id = ?", new_cash, uid)
         return redirect("/history")
     return render_template("buy.html")
