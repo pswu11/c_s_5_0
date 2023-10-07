@@ -143,7 +143,7 @@ def quote():
         return render_template("quote.html")
     symbol = request.form.get("symbol")
     results = lookup(symbol)
-    if not results:
+    if not results or not symbol:
         return apology("Symbol doesn't exist.", 400)
     return render_template("quoted.html", results=results)
 
