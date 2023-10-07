@@ -56,16 +56,16 @@ def buy():
         cash = rows[0]['cash']
 
         if not symbol or not shares:
-            return apology("Symbol and shares must not be blank.", 403)
+            return apology("Symbol and shares must not be blank.", 400)
         if not lookup(symbol):
-            return apology("Symbol doesn't exist.", 404)
+            return apology("Symbol doesn't exist.", 400)
         if shares <= 0:
-            return apology("Shares must be greater than 0.", 403)
+            return apology("Shares must be greater than 0.", 400)
 
         unit_price = lookup(symbol)['price']
         print(unit_price)
         if shares * unit_price > cash:
-            return apology("You don't have enough cash", 403)
+            return apology("You don't have enough cash", 400)
         db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, -round(unit_price * shares, 2))
         current_balance = db.execute("SELECT balance FROM user_balance WHERE user = ? AND symbol = ?", uid, symbol)
         if not current_balance:
