@@ -23,10 +23,16 @@
                     </tr>
                 {% endfor %}
             </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">Total stock value:</th>
+                    <td>{{ userinfo.cash }}</d>
+                </tr>
+                <tr>
+                    <th colspan="2">Cash:</th>
+                    <td>{{ userinfo.cash }}</d>
+                </tr>
+            </thead>
         </table>
-    </div>
-    <div>
-        Cash:
-        <p>{{ userinfo.cash }}</p>
     </div>
 {% endblock %}
