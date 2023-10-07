@@ -50,7 +50,7 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        shares = request.form.get("shares")
         uid = session['user_id']
         rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
         cash = rows[0]['cash']
@@ -59,10 +59,11 @@ def buy():
             return apology("Symbol and shares must not be blank.", 400)
         if not lookup(symbol):
             return apology("Symbol doesn't exist.", 400)
-        if shares <= 0:
+        if not int(shares) or int(shares) <= 0:
             return apology("Shares must be greater than 0.", 400)
 
         unit_price = lookup(symbol)['price']
+        shares = int(shares)
         print(unit_price)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 400)
