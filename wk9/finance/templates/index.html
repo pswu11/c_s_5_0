@@ -12,12 +12,14 @@
             <thead>
                 <th>Symbo</th>
                 <th>Shares</th>
+                <th>Value</th>
             </thead>
             <tbody>
                 {% for asset in balance %}
                     <tr>
                         <td>{{ asset.symbol }}</td>
                         <td>{{ asset.balance }}</td>
+                        <td>{{ asset.current_value }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
