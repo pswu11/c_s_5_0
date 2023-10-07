@@ -39,9 +39,10 @@ def index():
     rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
     userinfo = rows[0]
     balance = db.execute("SELECT symbol, balance FROM user_balance WHERE user = ?", uid)
-    balance_with_current_values = [{**item, "current_value": lookup(item["symbol"])["price"]} for item in balance]
-    print(balance_with_current_values)
-    return render_template("index.html", userinfo=userinfo, balance=balance_with_current_values)
+    balance_with_current_values = [{**item, "current_value": round(lookup(item["symbol"])["price"] * item["balance"], 2)} for item in balance]
+    total_stock_value = sum([item["current_value"] for item in balance_with_current_values])
+    total_asset = round(total_stock_value + userinfo["cash"], 2)
+    return render_template("index.html", userinfo=userinfo, balance=balance_with_current_values, total_stock_value=total_stock_value, total_asset=total_asset)
 
 
 @app.route("/buy", methods=["GET", "POST"])
