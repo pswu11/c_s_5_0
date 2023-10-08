@@ -170,8 +170,8 @@ def quote():
     #         return render_template("quoted.html", symbol=stock_quote)
 
     # User reached route via GET
-    else:
-        return render_template("quote.html")
+    # else:
+    #     return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
