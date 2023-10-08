@@ -5,8 +5,8 @@ Log In
 {% endblock %}
 
 {% block main %}
-    <p>Hello, {{ userinfo.username }}:
-        {% if transaction == None %}
+    <p>Hello, you're logged in as {{ userinfo.username }}.
+        <!-- {% if transaction == None %}
             You don't have any recent transactions.
         {% else %}
             You just
@@ -26,10 +26,10 @@ Log In
             {{ transaction.symbol }}
             for
             {{ transaction.total_price | usd }}.
-        {% endif %}
+        {% endif %} -->
     </p>
     <div>
-        Your assets:
+        <h4>Your assets:</h4>
         <table class="table table-bordered" style="width: 40%; margin: auto;">
             <thead>
                 <th>Symbo</th>
