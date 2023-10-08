@@ -5,21 +5,20 @@
 {% endblock %}
 
 {% block main %}
-    <h4>You're loged in as {{ userinfo.username }}</h4>
     <div>
-        Your latest transaction:
+        <h4>Your latest transaction:</h4>
         <div>You
             {% if transaction.buy_or_sell == 'buy' %}
                 bought
                 {% else %}
                 sold
             {% endif %}
-            {% if %}
+
             {{ transaction.symbol }}
             for
             {{ transaction.total_price}}
         </div>
-        Your assets:
+        <h4>Your assets:</h4>
         <table class="table table-bordered" style="width: 40%; margin: auto;">
             <thead>
                 <th>Symbo</th>
