@@ -48,11 +48,11 @@ Log In
             <thead>
                 <tr>
                     <th colspan="2">Total stock value:</th>
-                    <td>$ {{ total_stock_value }}</d>
+                    <td>{{ total_stock_value | usd }}</d>
                 </tr>
                 <tr>
                     <th colspan="2">Total cash:</th>
-                    <td>$ {{ userinfo.cash }}</d>
+                    <td>{{ userinfo.cash | usd }}</d>
                 </tr>
                 <tr class="table-info">
                     <th colspan="2">Total asset value:</th>
