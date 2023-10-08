@@ -1,53 +1,53 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+Log In
 {% endblock %}
 
 {% block main %}
-    <div>
-        <h4>Your latest transaction:</h4>
-        <div>You
-            {% if transaction.buy_or_sell == 'buy' %}
-                bought
-                {% else %}
-                sold
-            {% endif %}
-
-            {{ transaction.symbol }}
-            for
-            {{ transaction.total_price}}
-        </div>
-        <h4>Your assets:</h4>
-        <table class="table table-bordered" style="width: 40%; margin: auto;">
-            <thead>
-                <th>Symbo</th>
-                <th>Shares</th>
-                <th>Market value</th>
-            </thead>
-            <tbody>
-                {% for asset in balance %}
-                    <tr>
-                        <td>{{ asset.symbol }}</td>
-                        <td>{{ asset.balance }}</td>
-                        <td>$ {{ asset.current_value }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-            <thead>
-                <tr>
-                    <th colspan="2">Total stock value:</th>
-                    <td>$ {{ total_stock_value }}</d>
-                </tr>
-                <tr>
-                    <th colspan="2">Total cash:</th>
-                    <td>$ {{ userinfo.cash }}</d>
-                </tr>
-                <tr class="table-info">
-                    <th colspan="2">Total asset value:</th>
-                    <td>$ {{ userinfo.cash + total_stock_value }}</d>
-                </tr>
-            </thead>
-        </table>
+<div>
+    <h4>The latest transaction:</h4>
+    <div>You
+        {% if transaction.buy_or_sell == 'buy' %}
+        bought
+        {% else %}
+        sold
+        {% endif %}
+        {{ transaction.shares }}
+        {{ transaction.symbol }}
+        for
+        {{ transaction.total_price | usd }}.
     </div>
+    <h4>Your assets:</h4>
+    <table class="table table-bordered" style="width: 40%; margin: auto;">
+        <thead>
+            <th>Symbo</th>
+            <th>Shares</th>
+            <th>Market value</th>
+        </thead>
+        <tbody>
+            {% for asset in balance %}
+            <tr>
+                <td>{{ asset.symbol }}</td>
+                <td>{{ asset.balance }}</td>
+                <td>$ {{ asset.current_value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="2">Total stock value:</th>
+                <td>$ {{ total_stock_value }}</d>
+            </tr>
+            <tr>
+                <th colspan="2">Total cash:</th>
+                <td>$ {{ userinfo.cash }}</d>
+            </tr>
+            <tr class="table-info">
+                <th colspan="2">Total asset value:</th>
+                <td>$ {{ userinfo.cash + total_stock_value }}</d>
+            </tr>
+        </thead>
+    </table>
+</div>
 {% endblock %}
