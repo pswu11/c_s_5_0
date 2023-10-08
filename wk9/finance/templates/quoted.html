@@ -6,11 +6,17 @@
 
 {% block main %}
     <table class="table" style="width: 60%; margin: auto;">
-        {% for item in results %}
-        <tr>
-          <th>{{ item }}</th>
-          <td>{{ results[item] }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+        <thead>
+          <tr>
+            <td>Symbol</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ symbol.name }}</td>
+            <td>{{ symbol.price }}</td>
+          </tr>
+        </tbody>
+    </table>
 {% endblock %}
