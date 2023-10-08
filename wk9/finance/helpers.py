@@ -42,6 +42,9 @@ def login_required(f):
 def lookup(symbol):
     """Look up quote for symbol."""
 
+    # Prepare API request
+    symbol = symbol.upper()
+
     if (symbol == "AAAA"):
         return {"name": "Stock A", "price": 28.00, "symbol": "AAAA"}
     elif (symbol == "BBBB"):
@@ -49,8 +52,6 @@ def lookup(symbol):
     elif (symbol == "CCCC"):
         return {"name": "Stock C", "price": 2000.00, "symbol": "CCCC"}
 
-    # Prepare API request
-    symbol = symbol.upper()
     end = datetime.datetime.now(pytz.timezone("US/Eastern"))
     start = end - datetime.timedelta(days=7)
 
