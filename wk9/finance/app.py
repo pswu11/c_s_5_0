@@ -68,7 +68,7 @@ def buy():
         shares = int(shares)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 400)
-        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, -round(unit_price * shares, 2))
+        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price, buy_or_sell) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, round(unit_price * shares, 2), 'buy')
         current_balance = db.execute("SELECT balance FROM user_balance WHERE user = ? AND symbol = ?", uid, symbol)
         if not current_balance:
             db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, shares)
