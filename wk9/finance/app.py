@@ -37,7 +37,11 @@ def index():
     """Show portfolio of stocks"""
     uid = session['user_id']
     rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
-    latest_transaction = db.execute("SELECT * FROM transactions WHERE user = ? ORDER BY created_at DESC", uid)[0]
+    transactions = db.execute("SELECT * FROM transactions WHERE user = ? ORDER BY created_at DESC", uid)
+    if len(transactions) > 0:
+        latest_transaction = transactions[0]
+    else:
+        latest_transaction = None
     userinfo = rows[0]
     balance = db.execute("SELECT symbol, balance FROM user_balance WHERE user = ?", uid)
     balance_with_current_values = [{**item, "current_value": round(lookup(item["symbol"])["price"] * item["balance"], 2)} for item in balance]
