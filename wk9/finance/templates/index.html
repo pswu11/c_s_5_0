@@ -13,7 +13,11 @@ Log In
         {% else %}
         sold
         {% endif %}
-        {{ transaction.shares }}
+        {% if transaction.shares < 0 %}
+            {{ -transaction.shares }}
+            {% else %}
+            {{ transaction.shares }}
+        {% endif %}
         {{ transaction.symbol }}
         for
         {{ transaction.total_price | usd }}.
