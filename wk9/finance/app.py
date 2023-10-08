@@ -217,5 +217,5 @@ def sell():
         else:
             print("Symbol does not exist in the list.")
         print("sell something")
-        return redirect("/")
+        return redirect("/hostory")
     return render_template("sell.html", balance=balance)
