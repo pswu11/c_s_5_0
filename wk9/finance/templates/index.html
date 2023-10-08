@@ -6,7 +6,7 @@ Log In
 
 {% block main %}
 <div>
-    <p>Hi {{ userinfo.username }}, your latest transaction: </p>
+    <!-- <p>Hi {{ userinfo.username }}, your latest transaction: </p>
     <div>You
         {% if transaction.buy_or_sell == 'buy' %}
         bought
@@ -21,7 +21,7 @@ Log In
         {{ transaction.symbol }}
         for
         {{ transaction.total_price | usd }}.
-    </div>
+    </div> -->
     <h4>Your assets:</h4>
     <table class="table table-bordered" style="width: 40%; margin: auto;">
         <thead>
