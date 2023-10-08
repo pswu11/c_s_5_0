@@ -68,7 +68,7 @@ def buy():
         shares = int(shares)
         if shares * unit_price > cash:
             return apology("You don't have enough cash", 400)
-        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price, buy_or_sell) VALUES(?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, round(unit_price * shares, 2), 'buy')
+        db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price, buy_or_sell) VALUES(?, ?, ?, ?, ?, ?)", uid, symbol, shares, unit_price, round(unit_price * shares, 2), 'buy')
         current_balance = db.execute("SELECT balance FROM user_balance WHERE user = ? AND symbol = ?", uid, symbol)
         if not current_balance:
             db.execute("INSERT INTO user_balance (user, symbol, balance) VALUES(?, ?, ?)", uid, symbol, shares)
@@ -209,7 +209,7 @@ def sell():
                 # make a transaction to sell
                 unit_price = lookup(symbol)['price']
                 profit = round(unit_price * shares, 2)
-                db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price) VALUES(?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, profit)
+                db.execute("INSERT INTO transactions (user, symbol, shares, unit_price, total_price, buy_or_sell) VALUES(?, ?, ?, ?, ?, ?)", uid, symbol, -shares, unit_price, profit, "sell")
                 db.execute("UPDATE user_balance SET balance = ? WHERE user = ? AND symbol = ?", new_balance, uid, symbol)
                 db.execute("UPDATE users SET cash = ROUND(cash + ?, 2) WHERE id = ?", profit, uid)
         else:
