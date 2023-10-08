@@ -206,7 +206,7 @@ def sell():
             # If the symbol exists, check if the balance (shares) is enough
             new_balance = symbol_exists['balance'] - shares
             if new_balance < 0:
-                return apology("You don't have enough shares.", 403)
+                return apology("You don't have enough shares.", 400)
             else:
                 # make a transaction to sell
                 unit_price = lookup(symbol)['price']
