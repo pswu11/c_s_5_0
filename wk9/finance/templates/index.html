@@ -6,7 +6,7 @@ Log In
 
 {% block main %}
 <div>
-    <h4>The latest transaction:</h4>
+    <p>Hi {{ userinfo.username }}, your latest transaction: </p>
     <div>You
         {% if transaction.buy_or_sell == 'buy' %}
         bought
