@@ -87,7 +87,9 @@ def history():
     """Show history of transactions"""
     uid = session['user_id']
     rows = db.execute("SELECT * FROM transactions WHERE user = ? ORDER BY created_at DESC", uid)
-    return render_template("history.html", rows=rows)
+    userinfo = db.execute("SELECT cash FROM users WHERE id = ?", uid)
+    cash = userinfo[0]
+    return render_template("history.html", rows=rows, cash=cash)
 
 
 @app.route("/login", methods=["GET", "POST"])
