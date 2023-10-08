@@ -155,23 +155,6 @@ def quote():
     if not results or not symbol:
         return apology("Symbol doesn't exist.", 400)
     return render_template("quoted.html", symbol=results)
-    # User reached route via POST (as by submitting a form via POST)
-    # if request.method == "POST":
-    #     symbol = request.form.get("symbol")
-    #     # Ensure symbol is not blank
-    #     if symbol == "":
-    #         return apology("input is blank", 400)
-
-    #     stock_quote = lookup(symbol)
-
-    #     if not stock_quote:
-    #         return apology("INVALID SYMBOL", 400)
-    #     else:
-    #         return render_template("quoted.html", symbol=stock_quote)
-
-    # User reached route via GET
-    # else:
-    #     return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
