@@ -88,7 +88,7 @@ def history():
     uid = session['user_id']
     rows = db.execute("SELECT * FROM transactions WHERE user = ? ORDER BY created_at DESC", uid)
     userinfo = db.execute("SELECT cash FROM users WHERE id = ?", uid)
-    cash = userinfo[0]
+    cash = userinfo[0]["cash"]
     return render_template("history.html", rows=rows, cash=cash)
 
 
