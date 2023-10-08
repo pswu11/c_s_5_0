@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Symbol</th>
-                <th>Buy / Sell</th>
+                <!-- <th>Buy / Sell</th> -->
                 <th>Shares</th>
                 <th>Unit price</th>
                 <th>Total price</th>
@@ -20,7 +20,7 @@
             {% for row in rows%}
             <tr>
                 <td>{{ row.symbol }}</td>
-                <td>{{ row.buy_or_sell }}</td>
+                <!-- <td>{{ row.buy_or_sell }}</td> -->
                 <td>{{ row.shares }}</td>
                 <td>{{ row.unit_price | usd }}</td>
                 <td>
@@ -30,5 +30,11 @@
             </tr>
             {% endfor %}
         </tbody>
+        <thead>
+            <tr>
+                <td colspan="4">Cash: </td>
+                <td></td>
+            </tr>
+        </thead>
     </table>
 {% endblock %}
