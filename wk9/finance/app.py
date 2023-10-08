@@ -37,11 +37,12 @@ def index():
     """Show portfolio of stocks"""
     uid = session['user_id']
     rows = db.execute("SELECT * FROM users WHERE id = ?", uid)
+    transactions = db.execute("SELECT * FROM transactions WHERE user = ? ORDER BY created_at DESC", uid)[0]
     userinfo = rows[0]
     balance = db.execute("SELECT symbol, balance FROM user_balance WHERE user = ?", uid)
     balance_with_current_values = [{**item, "current_value": round(lookup(item["symbol"])["price"] * item["balance"], 2)} for item in balance]
     total_stock_value = sum([item["current_value"] for item in balance_with_current_values])
-    return render_template("index.html", userinfo=userinfo, balance=balance_with_current_values, total_stock_value=total_stock_value)
+    return render_template("index.html", userinfo=userinfo, balance=balance_with_current_values, total_stock_value=total_stock_value, transactions=transactions)
 
 
 @app.route("/buy", methods=["GET", "POST"])
