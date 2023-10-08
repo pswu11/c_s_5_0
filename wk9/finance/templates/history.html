@@ -20,13 +20,9 @@
             <tr>
                 <td>{{ row.symbol }}</td>
                 <td>{{ row.shares }}</td>
-                <td>$ {{ row.unit_price }}</td>
+                <td>{{ row.unit_price | usd }}</td>
                 <td>
-                    {% if row.total_price < 0 %}
-                    - ${{ -row.total_price }}
-                    {% else %}
-                    + ${{ row.total_price }}
-                    {% endif %}
+                    {{ row.total_price | usd }}
                 </td>
                 <td>{{ row.created_at }}</td>
             </tr>
