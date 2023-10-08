@@ -1,11 +1,33 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+Log In
 {% endblock %}
 
 {% block main %}
-    <h4>You're loged in as {{ userinfo.username }}</h4>
+    <p>Hello, {{ userinfo.username }}:
+        {% if transaction == None %}
+            You don't have any recent transactions.
+        {% else %}
+            You just
+
+            {% if transaction.buy_or_sell == "buy" %}
+            bought
+            {% else %}
+            sold
+            {% endif %}
+
+            {% if transaction.shares < 0 %}
+                {{ -transaction.shares }}
+                {% else %}
+                {{ transaction.shares }}
+            {% endif %}
+
+            {{ transaction.symbol }}
+            for
+            {{ transaction.total_price | usd }}.
+        {% endif %}
+    </p>
     <div>
         Your assets:
         <table class="table table-bordered" style="width: 40%; margin: auto;">
@@ -16,11 +38,11 @@
             </thead>
             <tbody>
                 {% for asset in balance %}
-                    <tr>
-                        <td>{{ asset.symbol }}</td>
-                        <td>{{ asset.balance }}</td>
-                        <td>$ {{ asset.current_value }}</td>
-                    </tr>
+                <tr>
+                    <td>{{ asset.symbol }}</td>
+                    <td>{{ asset.balance }}</td>
+                    <td>$ {{ asset.current_value }}</td>
+                </tr>
                 {% endfor %}
             </tbody>
             <thead>
