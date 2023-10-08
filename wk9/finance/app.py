@@ -216,6 +216,5 @@ def sell():
                 db.execute("UPDATE users SET cash = ROUND(cash + ?, 2) WHERE id = ?", profit, uid)
         else:
             print("Symbol does not exist in the list.")
-        print("sell something")
-        return redirect("/hostory")
+        return redirect("/")
     return render_template("sell.html", balance=balance)
