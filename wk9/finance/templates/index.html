@@ -9,10 +9,16 @@
     <div>
         Your latest transaction:
         <div>You
-            {% if transaction.buy_or_sell == buy %}
-                
+            {% if transaction.buy_or_sell == 'buy' %}
+                bought
+                {% else %}
+                sold
             {% endif %}
-            {{ transaction.symbol }}</div>
+            {% if %}
+            {{ transaction.symbol }}
+            for
+            {{ transaction.total_price}}
+        </div>
         Your assets:
         <table class="table table-bordered" style="width: 40%; margin: auto;">
             <thead>
